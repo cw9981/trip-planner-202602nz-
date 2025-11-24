@@ -1,186 +1,132 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>202602 NZ 旅行協作站</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; max-width: 900px; margin: auto; line-height: 1.6; }
-    h1, h2 { text-align: center; }
-    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-    th, td { border: 1px solid #aaa; padding: 10px; text-align: center; }
-    input[type="text"] { width: 100%; padding: 6px; box-sizing: border-box; }
-    input[type="checkbox"] { transform: scale(1.3); }
-    button { padding: 10px 20px; font-size: 16px; margin: 10px 5px; cursor: pointer; }
-    .confirmed { background-color: #e6f4ea; }
-    .todo-item { display: flex; align-items: center; margin: 8px 0; }
-    #new-todo { padding: 8px; width: 70%; }
-  </style>
+    <meta charset="UTF-8">
+    <title>航班資訊</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="travel-dates">
+        <div class="travel-info">
+            <div class="date-info">
+                ✈️ 旅行日期：2026年2月7日 - 2026年3月2日 (共24天)
+            </div>
+            <div class="participants">
+                👥 參加人員：chingwen, jane, zhi
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button class="nav-button" onclick="window.location.href='places.html'">
+            行程規劃
+        </button>
+        <button class="nav-button" onclick="window.location.href='todo.html'">
+            待辦事件
+        </button>
+        <button class="nav-button" onclick="window.location.href='sleep.html'">
+            住宿預約
+        </button>
+    </div>
 
-<h1>✈️ 202602 NZ 旅行協作站</h1>
+    <h2>去程航班</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>航班</th>
+                <th>出發地</th>
+                <th>目的地</th>
+                <th>日期</th>
+                <th>出發時間</th>
+                <th>到達時間</th>
+                <th>飛行時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CX443</td>
+                <td>台北桃園國際機場 第一航廈<br>Taipei Taoyuan International Airport T1</td>
+                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
+                <td>2026年2月7日</td>
+                <td>15:50</td>
+                <td>17:55</td>
+                <td class="flight-duration">02:05</td>
+            </tr>
+            <tr class="transfer">
+                <td colspan="7">🔄 香港轉機時間：1小時10分鐘</td>
+            </tr>
+            <tr>
+                <td>CX135</td>
+                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
+                <td>墨爾本機場 第二航廈<br>Melbourne Airport T2</td>
+                <td>2026年2月7日</td>
+                <td>19:05</td>
+                <td>07:10 (+1天)</td>
+                <td class="flight-duration">09:05</td>
+            </tr>
+            <tr class="transfer">
+                <td colspan="7">🔄 墨爾本轉機時間：2小時</td>
+            </tr>
+            <tr>
+                <td>QF167</td>
+                <td>墨爾本機場 第二航廈<br>Melbourne Airport T2</td>
+                <td>基督城機場<br>Christchurch Airport</td>
+                <td>2026年2月8日</td>
+                <td>09:10</td>
+                <td>14:30</td>
+                <td class="flight-duration">03:20</td>
+            </tr>
+        </tbody>
+    </table>
 
-<label style="display:block; margin:15px 0;">
-  我是：
-  <select id="person" onchange="reloadViews()">
-    <option value="chingwen">chingwen</option>
-    <option value="jane">jane</option>
-    <option value="zhi">zhi</option>
-  </select>
-</label>
-
-<!-- 行程區 -->
-<h2>📅 每日行程（第 1～22 天）</h2>
-<table id="itinerary-table">
-  <thead><tr><th>第幾天</th><th>想去哪裡？</th><th>確認行程？</th></tr></thead>
-  <tbody id="itinerary-body"></tbody>
-</table>
-<button onclick="saveItinerary()">💾 儲存行程</button>
-
-<!-- 待辦清單 -->
-<h2>✅ 我的行李與待辦事項</h2>
-<div id="todo-list"></div>
-<input type="text" id="new-todo" placeholder="輸入要帶的東西或待辦..." />
-<button onclick="addTodo()">➕ 新增</button>
-<button onclick="saveTodos()">💾 儲存待辦</button>
-
-<script>
-  // 🔧 替換成你的 Google Apps Script Web App URL！
-  const API_URL = "https://script.google.com/macros/s/AKfycbzXUXrfy2sCxF7VuG3nW9kmwl9iaYgbamNcn7_JuhGPhl8VkY1Dd6ZcCt6xQ2IvK44w/exec";
-
-  let itineraryData = [];
-  let todosData = [];
-
-  function PERSON() {
-    return document.getElementById("person").value;
-  }
-
-  // 初始化
-  window.onload = async () => {
-    await loadAllData();
-    reloadViews();
-  };
-
-  async function loadAllData() {
-    try {
-      const res1 = await fetch(`${API_URL}?action=getItinerary`);
-      itineraryData = await res1.json();
-      
-      const res2 = await fetch(`${API_URL}?action=getTodos`);
-      todosData = await res2.json();
-    } catch (e) {
-      alert("⚠️ 載入失敗，請確認 API_URL 是否正確！");
-      console.error(e);
-    }
-  }
-
-  function reloadViews() {
-    renderItinerary();
-    renderTodos();
-  }
-
-  function renderItinerary() {
-    const tbody = document.getElementById("itinerary-body");
-    tbody.innerHTML = "";
-    for (let day = 1; day <= 22; day++) {
-      const myRecord = itineraryData.find(r => r[0] == day && r[1] === PERSON());
-      const activity = myRecord ? (r => r[2] || "")(myRecord) : "";
-      const confirmed = myRecord ? (r => r[3] === true || r[3] === "TRUE")(myRecord) : false;
-
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${day}</td>
-        <td><input type="text" data-day="${day}" value="${activity}"></td>
-        <td><input type="checkbox" ${confirmed ? "checked" : ""} data-day="${day}"></td>
-      `;
-      if (confirmed) row.classList.add("confirmed");
-      tbody.appendChild(row);
-    }
-  }
-
-  function renderTodos() {
-    const container = document.getElementById("todo-list");
-    container.innerHTML = "";
-    const myTodos = todosData.filter(r => r[0] === PERSON());
-    myTodos.forEach((row, i) => {
-      const div = document.createElement("div");
-      div.className = "todo-item";
-      const completed = row[2] === true || row[2] === "TRUE";
-      div.innerHTML = `
-        <input type="checkbox" ${completed ? "checked" : ""} data-index="${i}">
-        <span>${row[1]}</span>
-      `;
-      container.appendChild(div);
-    });
-  }
-
-  async function saveItinerary() {
-    const inputs = document.querySelectorAll("#itinerary-body input[type='text']");
-    const checks = document.querySelectorAll("#itinerary-body input[type='checkbox']");
-
-    const newData = itineraryData.filter(r => r[1] !== PERSON());
-    inputs.forEach((input, i) => {
-      const day = input.dataset.day;
-      const activity = input.value.trim();
-      const confirmed = checks[i].checked;
-      if (activity || confirmed) {
-        newData.push([parseInt(day), PERSON(), activity, confirmed]);
-      }
-    });
-    newData.sort((a, b) => a[0] - b[0]);
-
-    try {
-      await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          person: PERSON(),
-          type: "updateItinerary",
-          data: [["day", "person", "activity", "confirmed"], ...newData]
-        })
-      });
-      alert("✅ 行程已儲存！");
-    } catch (e) {
-      alert("❌ 儲存失敗：" + e.message);
-    }
-  }
-
-  async function saveTodos() {
-    const checkboxes = document.querySelectorAll("#todo-list .todo-item input[type='checkbox']");
-    const texts = Array.from(document.querySelectorAll("#todo-list .todo-item span")).map(el => el.innerText);
-
-    const newData = todosData.filter(r => r[0] !== PERSON());
-    texts.forEach((text, i) => {
-      const completed = checkboxes[i].checked;
-      newData.push([PERSON(), text, completed]);
-    });
-
-    try {
-      await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          person: PERSON(),
-          type: "updateTodos",
-          data: [["person", "item", "completed"], ...newData]
-        })
-      });
-      alert("✅ 待辦已儲存！");
-    } catch (e) {
-      alert("❌ 儲存失敗：" + e.message);
-    }
-  }
-
-  function addTodo() {
-    const input = document.getElementById("new-todo");
-    const text = input.value.trim();
-    if (!text) return;
-    todosData.push([PERSON(), text, false]);
-    renderTodos();
-    input.value = "";
-  }
-</script>
-
+    <h2>回程航班</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>航班</th>
+                <th>出發地</th>
+                <th>目的地</th>
+                <th>日期</th>
+                <th>出發時間</th>
+                <th>到達時間</th>
+                <th>飛行時間</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>QF138</td>
+                <td>基督城機場<br>Christchurch Airport</td>
+                <td>悉尼金斯福德史密斯機場 第一航廈<br>Sydney Kingsford Smith Airport T1</td>
+                <td>2026年3月2日</td>
+                <td>06:00</td>
+                <td>07:30</td>
+                <td class="flight-duration">03:30</td>
+            </tr>
+            <tr class="transfer">
+                <td colspan="7">🔄 悉尼轉機時間：1小時15分鐘</td>
+            </tr>
+            <tr>
+                <td>CX110</td>
+                <td>悉尼金斯福德史密斯機場 第一航廈<br>Sydney Kingsford Smith Airport T1</td>
+                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
+                <td>2026年3月2日</td>
+                <td>08:45</td>
+                <td>15:10</td>
+                <td class="flight-duration">09:25</td>
+            </tr>
+            <tr class="transfer">
+                <td colspan="7">🔄 香港轉機時間：3小時20分鐘</td>
+            </tr>
+            <tr>
+                <td>CX402</td>
+                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
+                <td>台北桃園國際機場 第一航廈<br>Taipei Taoyuan International Airport T1</td>
+                <td>2026年3月2日</td>
+                <td>18:30</td>
+                <td>20:15</td>
+                <td class="flight-duration">01:45</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
