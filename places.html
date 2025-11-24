@@ -2,8 +2,153 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>行程規劃</title>
+    <title>行程規劃 - 紐西蘭南島之旅</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .phase-container {
+            margin-bottom: 25px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        /* 雙色設計 - 淡藍色和深藍色交替 */
+        .phase-container:nth-child(odd) .phase-header {
+            background: #e8f0fe; /* 淡藍色 */
+        }
+        
+        .phase-container:nth-child(even) .phase-header {
+            background: #d4e3fc; /* 稍深一點的藍色 */
+        }
+        
+        .phase-header {
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #d1e0f0;
+        }
+        
+        .phase-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+        
+        .phase-dates {
+            color: #2c5282; /* 加深日期顏色，提高可讀性 */
+            font-size: 0.9em;
+            font-weight: 600; /* 增加字重 */
+        }
+        
+        .phase-content {
+            padding: 15px;
+            background: white;
+        }
+        
+        .location-info {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .day-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .day-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .day-date {
+            font-weight: bold;
+            color: #2c5282; /* 使用更深的藍色，提高對比度 */
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            background: #f7fafc; /* 添加淺背景增強可讀性 */
+            padding: 5px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .day-activities {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        
+        .day-activities div {
+            margin-bottom: 5px;
+        }
+        
+        .travel-note {
+            background: #f8f9fa;
+            padding: 8px 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 0.85em;
+            border-left: 3px solid #4a6fa5;
+        }
+        
+        .travel-distance {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-left: 5px;
+            color: #666;
+        }
+        
+        .booking-link {
+            display: inline-block;
+            color: #2c5282; /* 使用更深的藍色 */
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-top: 5px;
+            font-weight: 500;
+            padding: 5px 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+        }
+        
+        .booking-link:hover {
+            background: #f7fafc;
+            text-decoration: none;
+        }
+        
+        .important-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 0.85em;
+        }
+        
+        .pending-note {
+            background: #e8f4fd;
+            border: 1px solid #bee5eb;
+            padding: 8px 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #0c5460;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4a6fa5;
+        }
+    </style>
 </head>
 <body>
     <div class="travel-dates">
@@ -31,69 +176,201 @@
 
     <h1>紐西蘭南島行程規劃</h1>
     
-    <div class="itinerary-day">
-        <div class="day-header">
-            <div class="day-title">第1天：抵達基督城</div>
-            <div class="day-date">2月8日（週日）</div>
+    <!-- 第一階段：基督城 -->
+    <div class="phase-container">
+        <div class="phase-header">
+            <div class="phase-title">第一階段：基督城</div>
+            <div class="phase-dates">2月8日 - 2月11日 (3天)</div>
         </div>
-        <div class="activity">
-            <div class="activity-time">14:30</div>
-            <div class="activity-details">
-                <div class="activity-title">抵達基督城機場</div>
-                <div class="activity-location">基督城機場 (CHC)</div>
+        <div class="phase-content">
+            <div class="location-info">📍 Christchurch</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月8日 (週日)</div>
+                <div class="day-activities">
+                    <div>14:30 抵達基督城機場</div>
+                    <div>15:30 租車取車</div>
+                    <div>17:00 前往超市「PAK'nSAVE」採買</div>
+                    <div>18:30 前往住宿</div>
+                </div>
             </div>
-        </div>
-        <div class="activity">
-            <div class="activity-time">15:30</div>
-            <div class="activity-details">
-                <div class="activity-title">租車取車</div>
-                <div class="activity-location">機場租車中心</div>
-            </div>
-        </div>
-        <div class="activity">
-            <div class="activity-time">16:30</div>
-            <div class="activity-details">
-                <div class="activity-title">入住住宿</div>
-                <div class="activity-location">基督城市區飯店</div>
-            </div>
-        </div>
-        <div class="activity">
-            <div class="activity-time">18:00</div>
-            <div class="activity-details">
-                <div class="activity-title">晚餐</div>
-                <div class="activity-location">市中心餐廳</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月9日 - 2月11日</div>
+                <div class="day-activities">
+                    自由活動或探索基督城周邊
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="itinerary-day">
-        <div class="day-header">
-            <div class="day-title">第2天：基督城市區觀光</div>
-            <div class="day-date">2月9日（週一）</div>
+    
+    <!-- 第二階段：皇后鎮 / Glenorchy -->
+    <div class="phase-container">
+        <div class="phase-header">
+            <div class="phase-title">第二階段：皇后鎮 / Glenorchy</div>
+            <div class="phase-dates">2月12日 - 2月14日 (2天)</div>
         </div>
-        <div class="activity">
-            <div class="activity-time">09:00</div>
-            <div class="activity-details">
-                <div class="activity-title">基督城植物園</div>
-                <div class="activity-location">Hagley Park, Christchurch</div>
+        <div class="phase-content">
+            <div class="location-info">📍 皇后鎮、Glenorchy</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月12日 (週四)</div>
+                <div class="day-activities">
+                    <div>從基督城出發至皇后鎮 <span class="travel-distance">6小時 (500公里)</span></div>
+                    <div class="travel-note">Fairlie有一間排隊的派店，六點開門</div>
+                </div>
             </div>
-        </div>
-        <div class="activity">
-            <div class="activity-time">11:00</div>
-            <div class="activity-details">
-                <div class="activity-title">基督城大教堂</div>
-                <div class="activity-location">Cathedral Square</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月13日 (週五)</div>
+                <div class="day-activities">
+                    <div>從皇后鎮前往Glenorchy <span class="travel-distance">1小時 (50公里)</span></div>
+                    <div>Routeburn Track 健行</div>
+                </div>
             </div>
-        </div>
-        <div class="activity">
-            <div class="activity-time">14:00</div>
-            <div class="activity-details">
-                <div class="activity-title">國際南極中心</div>
-                <div class="activity-location">38 Orchard Road, Christchurch Airport</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月14日 (週六)</div>
+                <div class="day-activities">
+                    <div>農夫市場</div>
+                    <div>皇后鎮觀賞日落</div>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- 更多天的行程... -->
+    
+    <!-- 第三階段：蒂阿瑙 -->
+    <div class="phase-container">
+        <div class="phase-header">
+            <div class="phase-title">第三階段：蒂阿瑙</div>
+            <div class="phase-dates">2月15日 - 2月19日 (4天)</div>
+        </div>
+        <div class="phase-content">
+            <div class="location-info">📍 Te Anau</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月15日 (週日)</div>
+                <div class="day-activities">
+                    <div>從皇后鎮前往Te Anau <span class="travel-distance">2小時 (170公里)</span></div>
+                    <div class="travel-note">Fergburger排隊漢堡店七點開門</div>
+                </div>
+            </div>
+            
+            <div class="day-item">
+                <div class="day-date">2月16日 - 2月19日</div>
+                <div class="day-activities">
+                    探索 Mildford Sound / Te Anau
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 第四階段：瓦納卡 -->
+    <div class="phase-container">
+        <div class="phase-header">
+            <div class="phase-title">第四階段：瓦納卡</div>
+            <div class="phase-dates">2月20日 - 2月24日 (4天)</div>
+        </div>
+        <div class="phase-content">
+            <div class="location-info">📍 瓦納卡 Wanaka</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月20日 (週五)</div>
+                <div class="day-activities">
+                    從Te Anau前往瓦納卡 <span class="travel-distance">3小時 (230公里)</span>
+                </div>
+            </div>
+            
+            <div class="day-item">
+                <div class="day-date">2月21日 - 2月24日</div>
+                <div class="day-activities">
+                    自由活動或探索瓦納卡
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- 第五階段：Twizel / Mt Cook -->
+    <div class="phase-container">
+        <div class="phase-header">
+            <div class="phase-title">第五階段：Twizel / Mt Cook</div>
+            <div class="phase-dates">2月25日 - 2月26日 (健行路線)</div>
+        </div>
+        <div class="phase-content">
+            <div class="location-info">📍 Twizel / Mt Cook</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月25日 (週三)</div>
+                <div class="day-activities">
+                    從瓦納卡前往Mt Cook <span class="travel-distance">2.5小時 (200公里)</span>
+                </div>
+            </div>
+            
+            <div class="day-item">
+                <div class="day-date">2月26日 (週四)</div>
+                <div class="day-activities">
+                    於Mt Cook停留一整天，進行健行活動
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 第六階段：Springfield -->
+    <div class="phase-container">
+        <div class="phase-header">
+            <div class="phase-title">第六階段：Springfield</div>
+            <div class="phase-dates">2月27日 - 2月28日 (2天)</div>
+        </div>
+        <div class="phase-content">
+            <div class="location-info">📍 Springfield 或 基督城外</div>
+            
+            <div class="day-item">
+                <div class="day-date">2月27日 (週五)</div>
+                <div class="day-activities">
+                    <div>Twizel → Springfield <span class="travel-distance">5小時 (400公里)</span></div>
+                    <div class="pending-note">
+                        Rakaia Gorge Walkway 二月顏色沒春天漂亮，待確認值不值得去，離 73 公路近
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-item">
+                <div class="day-date">2月28日 (週六)</div>
+                <div class="day-activities">
+                    於73號公路（Arthur's Pass）健行一日 <span class="travel-distance">1小時 (60公里)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 第七階段：返回基督城機場 -->
+    <div class="phase-container">
+        <div class="phase-header">
+            <div class="phase-title">第七階段：返回基督城機場</div>
+            <div class="phase-dates">3月1日 (1天)</div>
+        </div>
+        <div class="phase-content">
+            <div class="location-info">📍 基督城機場</div>
+            
+            <div class="day-item">
+                <div class="day-date">3月1日 (週日)</div>
+                <div class="day-activities">
+                    <div>從Springfield返回基督城 <span class="travel-distance">1小時 (60公里)</span></div>
+                    <div class="important-note">
+                        <strong>注意事項：</strong><br>
+                        • 需於當日下午四點前完成還車
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-item">
+                <div class="day-date">3月2日 (週一)</div>
+                <div class="day-activities">
+                    <div>基督城機場回台航班：早上06:00起飛</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
