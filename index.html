@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>航班資訊</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main-style.css">
 </head>
 <body>
     <div class="travel-dates">
@@ -30,7 +30,7 @@
     </div>
 
     <h2>去程航班</h2>
-    <table>
+    <table id="outbound-table">
         <thead>
             <tr>
                 <th>航班</th>
@@ -42,45 +42,13 @@
                 <th>飛行時間</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>CX443</td>
-                <td>台北桃園國際機場 第一航廈<br>Taipei Taoyuan International Airport T1</td>
-                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
-                <td>2026年2月7日</td>
-                <td>15:50</td>
-                <td>17:55</td>
-                <td class="flight-duration">02:05</td>
-            </tr>
-            <tr class="transfer">
-                <td colspan="7">🔄 香港轉機時間：1小時10分鐘</td>
-            </tr>
-            <tr>
-                <td>CX135</td>
-                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
-                <td>墨爾本機場 第二航廈<br>Melbourne Airport T2</td>
-                <td>2026年2月7日</td>
-                <td>19:05</td>
-                <td>07:10 (+1天)</td>
-                <td class="flight-duration">09:05</td>
-            </tr>
-            <tr class="transfer">
-                <td colspan="7">🔄 墨爾本轉機時間：2小時</td>
-            </tr>
-            <tr>
-                <td>QF167</td>
-                <td>墨爾本機場 第二航廈<br>Melbourne Airport T2</td>
-                <td>基督城機場<br>Christchurch Airport</td>
-                <td>2026年2月8日</td>
-                <td>09:10</td>
-                <td>14:30</td>
-                <td class="flight-duration">03:20</td>
-            </tr>
+        <tbody id="outbound-tbody">
+            <!-- 航班数据将通过JavaScript动态生成 -->
         </tbody>
     </table>
 
     <h2>回程航班</h2>
-    <table>
+    <table id="inbound-table">
         <thead>
             <tr>
                 <th>航班</th>
@@ -92,41 +60,76 @@
                 <th>飛行時間</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>QF138</td>
-                <td>基督城機場<br>Christchurch Airport</td>
-                <td>悉尼金斯福德史密斯機場 第一航廈<br>Sydney Kingsford Smith Airport T1</td>
-                <td>2026年3月2日</td>
-                <td>06:00</td>
-                <td>07:30</td>
-                <td class="flight-duration">03:30</td>
-            </tr>
-            <tr class="transfer">
-                <td colspan="7">🔄 悉尼轉機時間：1小時15分鐘</td>
-            </tr>
-            <tr>
-                <td>CX110</td>
-                <td>悉尼金斯福德史密斯機場 第一航廈<br>Sydney Kingsford Smith Airport T1</td>
-                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
-                <td>2026年3月2日</td>
-                <td>08:45</td>
-                <td>15:10</td>
-                <td class="flight-duration">09:25</td>
-            </tr>
-            <tr class="transfer">
-                <td colspan="7">🔄 香港轉機時間：3小時20分鐘</td>
-            </tr>
-            <tr>
-                <td>CX402</td>
-                <td>香港國際機場 第一航廈<br>Hong Kong International Airport T1</td>
-                <td>台北桃園國際機場 第一航廈<br>Taipei Taoyuan International Airport T1</td>
-                <td>2026年3月2日</td>
-                <td>18:30</td>
-                <td>20:15</td>
-                <td class="flight-duration">01:45</td>
-            </tr>
+        <tbody id="inbound-tbody">
+            <!-- 航班数据将通过JavaScript动态生成 -->
         </tbody>
     </table>
+
+    <script>
+        // 获取航班数据并渲染表格
+        fetch('data/data_flights.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('网络响应不正常');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // 渲染去程航班
+                renderFlights(data[0].outbound, 'outbound-tbody');
+                
+                // 渲染回程航班
+                renderFlights(data[0].inbound, 'inbound-tbody');
+            })
+            .catch(error => {
+                console.error('获取航班数据时出错:', error);
+                document.getElementById('outbound-tbody').innerHTML = '<tr><td colspan="7">无法加载航班数据</td></tr>';
+                document.getElementById('inbound-tbody').innerHTML = '<tr><td colspan="7">无法加载航班数据</td></tr>';
+            });
+
+        // 渲染航班数据的函数
+        function renderFlights(flights, tbodyId) {
+            const tbody = document.getElementById(tbodyId);
+            tbody.innerHTML = ''; // 清空现有内容
+            
+            flights.forEach((flight, index) => {
+                // 创建航班行
+                const flightRow = document.createElement('tr');
+                
+                // 解析机场信息
+                const departureParts = flight.departure.split('/');
+                const destinationParts = flight.destination.split('/');
+                
+                flightRow.innerHTML = `
+                    <td>${flight.flight}</td>
+                    <td>${departureParts[0]}<br>${departureParts[2]}<br>${departureParts[1]}</td>
+                    <td>${departureParts[0]}<br>${destinationParts[2]}<br>${destinationParts[1]}</td>
+                    <td>${formatDate(flight.date)}</td>
+                    <td>${flight.departure_time}</td>
+                    <td>${flight.arrival_time}</td>
+                    <td class="flight-duration">${flight.flight_duration}</td>
+                `;
+                
+                tbody.appendChild(flightRow);
+                
+                // 如果不是最后一个航班，添加转机信息
+                if (index < flights.length - 1 && flight.layover) {
+                    const transferRow = document.createElement('tr');
+                    transferRow.className = 'transfer';
+                    transferRow.innerHTML = `<td colspan="7">🔄 ${destinationParts[2]}轉機時間：${flight.layover}</td>`;
+                    tbody.appendChild(transferRow);
+                }
+            });
+        }
+
+        // 格式化日期函数
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = date.getMonth() + 1;
+            const day = date.getDate();
+            return `${year}年${month}月${day}日`;
+        }
+    </script>
 </body>
 </html>

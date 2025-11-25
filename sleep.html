@@ -1,9 +1,11 @@
+<!-- sleep.html 修改后的版本 -->
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <title>住宿預約</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="css/sleep-style.css">
 </head>
 <body>
     <div class="travel-dates">
@@ -31,45 +33,30 @@
 
     <h1>住宿預約資訊</h1>
     
-    <div class="accommodation-list">
-        <div class="accommodation-item">
-            <div class="accommodation-header">
-                <h3>基督城 - 城市花園飯店</h3>
-                <span class="status confirmed">已確認</span>
-            </div>
-            <div class="accommodation-details">
-                <p><strong>日期：</strong>2026年2月8日 - 2月10日 (2晚)</p>
-                <p><strong>房型：</strong>家庭房 (3人)</p>
-                <p><strong>地址：</strong>123 City Center, Christchurch</p>
-                <p><strong>預訂編號：</strong>CHC20260208</p>
-            </div>
-        </div>
-
-        <div class="accommodation-item">
-            <div class="accommodation-header">
-                <h3>蒂卡波湖 - 星空觀景旅館</h3>
-                <span class="status pending">待確認</span>
-            </div>
-            <div class="accommodation-details">
-                <p><strong>日期：</strong>2026年2月10日 - 2月12日 (2晚)</p>
-                <p><strong>房型：</strong>湖景套房</p>
-                <p><strong>地址：</strong>Lake Tekapo, Mackenzie District</p>
-                <p><strong>備註：</strong>等待空房確認</p>
-            </div>
-        </div>
-
-        <div class="accommodation-item">
-            <div class="accommodation-header">
-                <h3>皇后鎮 - 湖畔度假村</h3>
-                <span class="status todo">待預訂</span>
-            </div>
-            <div class="accommodation-details">
-                <p><strong>日期：</strong>2026年2月12日 - 2月15日 (3晚)</p>
-                <p><strong>房型：</strong>尚未選擇</p>
-                <p><strong>區域：</strong>皇后鎮市中心</p>
-                <p><strong>備註：</strong>需在1月前完成預訂</p>
+    <!-- 添加时间线概览 -->
+    <div class="timeline-overview">
+        <h2>住宿時間軸</h2>
+        <div class="overview-container">
+            <div class="overview-bar">
+                <div class="overview-dates">
+                    <span>2月7日</span>
+                    <span>2月14日</span>
+                    <span>2月21日</span>
+                    <span>2月28日</span>
+                    <span>3月2日</span>
+                </div>
+                <div class="overview-items" id="overview-items">
+                    <!-- 这里将通过JS动态生成时间线 -->
+                </div>
             </div>
         </div>
     </div>
+    
+    <div id="accommodation-container">
+        <div class="loading">載入住宿資料中...</div>
+    </div>
+    
+    <script src="js/sleep-render.js"></script>
+    <script src="js/sleep-main.js"></script>
 </body>
 </html>

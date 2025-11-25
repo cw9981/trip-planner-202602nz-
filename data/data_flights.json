@@ -1,0 +1,66 @@
+[
+    {
+  "outbound": [
+    {
+      "flight": "CX443",
+      "departure": "TPE T1/Taipei Taoyuan International Airport T1/台北桃園國際機場 第一航廈",
+      "destination": "HKG T1/Hong Kong International Airport T1/香港國際機場 第一航廈",
+      "date": "2026-02-07",
+      "departure_time": "15:50",
+      "arrival_time": "17:55",
+      "flight_duration": "02:05",
+       "layover": "01:10"
+    },
+    {
+      "flight": "CX135",
+      "departure": "HKG T1/Hong Kong International Airport T1/香港國際機場 第一航廈",
+      "destination": "MEL T2/Melbourne Airport T2/墨爾本機場 第二航廈",
+      "date": "2026-02-07",
+      "departure_time": "19:05",
+      "arrival_time": "07:10 (+1)",
+      "flight_duration": "09:05",
+       "layover": "02:00"
+    },
+    {
+      "flight": "QF167",
+      "departure": "MEL T2/Melbourne Airport T2/墨爾本機場 第二航廈",
+      "destination": "CHC/Christchurch Airport/基督城機場",
+      "date": "2026-02-08",
+      "departure_time": "09:10",
+      "arrival_time": "14:30",
+      "flight_duration": "03:20"
+    }
+  ],
+  "inbound": [
+    {
+      "flight": "QF138",
+      "departure": "CHC T1/Christchurch Airport/基督城機場",
+      "destination": "SYD/Sydney Kingsford Smith Airport T1/悉尼金斯福德史密斯機場 第一航廈",
+      "date": "2026-03-02",
+      "departure_time": "06:00",
+      "arrival_time": "07:30",
+      "flight_duration": "03:30",
+      "layover": "01:15"
+    },
+    {
+      "flight": "CX110",
+      "departure": "SYD T1/Sydney Kingsford Smith Airport T1/悉尼金斯福德史密斯機場 第一航廈",
+      "destination": "HKG T1/Hong Kong International Airport T1/香港國際機場 第一航廈",
+      "date": "2026-03-02",
+      "departure_time": "08:45",
+      "arrival_time": "15:10",
+      "flight_duration": "09:25",
+      "layover": "03:20"
+    },
+    {
+      "flight": "CX402",
+      "departure": "HKG T1/Hong Kong International Airport T1/香港國際機場 第一航廈",
+      "destination": "TPE T1/Taipei Taoyuan International Airport T1/台北桃園國際機場 第一航廈",
+      "date": "2026-03-02",
+      "departure_time": "18:30",
+      "arrival_time": "20:15",
+      "flight_duration": "01:45"
+    }
+  ]
+}
+]

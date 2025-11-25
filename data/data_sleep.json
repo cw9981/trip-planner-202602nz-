@@ -1,0 +1,177 @@
+{
+  "confirmed": [
+    {
+      "date_start": "2026-02-08",
+      "date_end": "2026-02-12",
+      "nights": 4,
+      "location": "基督城 (Christchurch)",
+      "accommodation": "Brand New 3BR Home with Parking",
+      "booking_source": "Booking",
+      "details": "三臥室公寓/廚房 / 市中心, 三房 兩大床 兩小床",
+      "address": "3/14 Short Street, 8011 基督城",
+      "links": "https://www.booking.com/Share-27MWz5, https://share.google/bRcYVr67jwjYWtlGi"
+    },
+    {
+      "date_start": "2026-02-12",
+      "date_end": "2026-02-15",
+      "nights": 3,
+      "location": "皇后鎮鎮外 (Queenstown)",
+      "accommodation": "Vibrant Frankton Villa",
+      "booking_source": "Booking",
+      "details": "廚房, 洗衣機, 兩房, 兩大床",
+      "check_in": "2026-02-11 15:00-22:00",
+      "check_out": "2026-02-15 10:00",
+      "links": ""
+    },
+    {
+      "date_start": "2026-02-15",
+      "date_end": "2026-02-20",
+      "nights": 5,
+      "location": "蒂阿瑙 (Te Anau)",
+      "accommodation": "Cosy cottage by the park (flat rate)",
+      "booking_source": "Airbnb HM2ZPH2WMR",
+      "details": "整套房子／公寓, 三個房間",
+      "check_in": "2026-02-15 14:00",
+      "check_out": "2026-02-20 10:00",
+      "links": "https://www.airbnb.com.tw/rooms/48445518?source_impression_id=p3_1756260377_P30GbBbtuiaCzxpd"
+    },
+    {
+      "date_start": "2026-02-20",
+      "date_end": "2026-02-25",
+      "nights": 5,
+      "location": "Albert Town (Wanaka 附近)",
+      "accommodation": "Riverside Terrace",
+      "booking_source": "Booking",
+      "details": "整間出租的公寓, 廚房, 洗衣機, 兩房, 一大床 兩小床",
+      "address": "Alison Avenue 20, Albert Town, 9305 New Zealand",
+      "links": "https://maps.app.goo.gl/Avp4BVbnEdSZwmWS9"
+    },
+    {
+      "date_start": "2026-02-25",
+      "date_end": "2026-02-27",
+      "nights": 2,
+      "location": "特威澤爾 (Twizel)",
+      "accommodation": "Pinegrove Cottage - Unit2",
+      "booking_source": "Booking",
+      "details": "雙臥室公寓, 兩大床, 含廚房",
+      "check_in": "2026-02-25 14:00",
+      "check_out": "2026-02-27 10:00",
+      "address": "29 North West Arch Unit 2, 7901 Twizel, 紐西蘭",
+      "links": "https://maps.app.goo.gl/auJ8BQFyA7bFnMMo7"
+    },
+    {
+      "date_start": "2026-02-27",
+      "date_end": "2026-03-01",
+      "nights": 2,
+      "location": "Springfield or 基督城西方山區",
+      "accommodation": "Torokiki bach",
+      "booking_source": "Booking",
+      "details": "三臥室小木屋",
+      "check_in": "2026-02-27 14:00-22:00",
+      "check_out": "2026-03-01 05:00-10:00",
+      "links": ""
+    },
+    {
+      "date_start": "2026-03-01",
+      "date_end": "2026-03-02",
+      "nights": 1,
+      "location": "基督城機場 (Christchurch Airport)",
+      "accommodation": "LyLo Christchurch Airport",
+      "booking_source": "Booking",
+      "details": "宿舍床位 1: 女性专用8人共用房中的私人单人舱, 公共廚房",
+      "check_in": "2026-03-01 15:00",
+      "check_out": "2026-03-02 10:00",
+      "address": "5 Peter Leeming Road, Christchurch Airport, Christchurch 8053紐西蘭",
+      "links": "https://maps.app.goo.gl/R5xCA1q5P6Lyrwms6"
+    }
+  ],
+  "canceled": [
+    {
+      "date_start": "2026-02-12",
+      "date_end": "2026-02-13",
+      "nights": 1,
+      "location": "Cromwell",
+      "accommodation": "ASURE中金克倫威爾汽車旅館",
+      "booking_source": "Booking",
+      "details": "一大床 兩小床",
+      "links": ""
+    },
+    {
+      "date_start": "2026-02-12",
+      "date_end": "2026-02-13",
+      "nights": 1,
+      "location": "Fairlie",
+      "accommodation": "Mackenzie Motels",
+      "booking_source": "Booking",
+      "details": "標準公寓, 簡易廚房, 兩大床一小床",
+      "check_in": "2026-02-12 14:00-22:00",
+      "check_out": "2026-02-13 10:00",
+      "address": "14 School Road, Fairlie 7925 紐西蘭",
+      "links": "https://maps.app.goo.gl/QUSngsiBPWLfKBpa8"
+    },
+    {
+      "date_start": "2026-02-13",
+      "date_end": "2026-02-14",
+      "nights": 1,
+      "location": "Glenorchy",
+      "accommodation": "#3 Glenorchy Alpine Suite ASPEN",
+      "booking_source": "Booking",
+      "details": "單臥室公寓, 簡易廚房, 1 張單人床 和 1 張加大雙人床",
+      "check_in": "2026-02-13 15:00-21:00",
+      "check_out": "2026-02-14 07:00-10:00",
+      "address": "89 Oban Street, 9372 格林諾奇, 紐西蘭",
+      "links": "https://www.booking.com/Share-ZcH1pBZ"
+    },
+    {
+      "date_start": "2026-02-13",
+      "date_end": "2026-02-14",
+      "nights": 1,
+      "location": "皇后鎮 (Queenstown)",
+      "accommodation": "Haka House Queenstown Lakefront",
+      "booking_source": "Booking (青旅)",
+      "details": "宿舍床位 1: 6床女性宿舍间的1张床位 - 带连接浴室, 公共廚坊, 收費停車場",
+      "check_in": "2026-02-13 14:00-23:00",
+      "check_out": "2026-02-14 10:00",
+      "address": "88-90 Lake Esplanade, Queenstown 9300紐西蘭",
+      "links": "https://maps.app.goo.gl/cLiERjMi4udpLmqm6"
+    },
+    {
+      "date_start": "2026-02-14",
+      "date_end": "2026-02-15",
+      "nights": 1,
+      "location": "皇后鎮 (Queenstown)",
+      "accommodation": "Haka House Queenstown Lakefront",
+      "booking_source": "Booking (青旅)",
+      "details": "宿舍床位 1: 6床女性宿舍间的1张床位 - 带连接浴室, 公共廚坊, 收費停車場",
+      "check_in": "2026-02-14 14:00-20:00",
+      "check_out": "2026-02-15 10:00",
+      "address": "88-90 Lake Esplanade, Queenstown 9300紐西蘭",
+      "links": ""
+    },
+    {
+      "date_start": "2026-02-25",
+      "date_end": "2026-02-27",
+      "nights": 2,
+      "location": "Glentanner (格林坦納)",
+      "accommodation": "20 km to mt cook (Glentanner Park Centre)",
+      "booking_source": "Booking",
+      "details": "1 間平房小屋 (七人標準房), 標準小屋- 帶共用浴室, 公共廚房 待查",
+      "check_in": "2026-02-25 14:00-17:00",
+      "check_out": "2026-02-27 10:00",
+      "links": ""
+    },
+    {
+      "date_start": "2026-02-27",
+      "date_end": "2026-03-01",
+      "nights": 2,
+      "location": "基督城 海邊 靠北方",
+      "accommodation": "Margaret Home",
+      "booking_source": "Booking",
+      "details": "雙臥室公寓, 廚房, 洗衣機, 兩房 一大床 兩小床, 水按摩池",
+      "check_in": "2026-02-27 15:00-19:00",
+      "check_out": "2026-03-01 08:00-10:00",
+      "address": "117 Inwoods Close, 8083 基督城, 紐西蘭",
+      "links": ""
+    }
+  ]
+}

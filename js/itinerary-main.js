@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 加载行程数据的函数
     async function loadItineraryData() {
         try {
-            const response = await fetch('data_itinerary.json');
+            const response = await fetch('data/data_itinerary.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
