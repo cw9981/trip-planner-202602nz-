@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button id="retry-btn" class="edit-stage-btn">重新載入</button>
             </div>
         `;
-        
         document.getElementById('retry-btn').addEventListener('click', function() {
             location.reload();
         });

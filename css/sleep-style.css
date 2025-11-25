@@ -1,4 +1,4 @@
-/* sleep-style.css 修改后的版本 - 改进时间轴样式 */
+/* sleep-style.css 修改后的版本 */
 :root {
     --primary-color: #4a6fa5;
     --secondary-color: #3a5a8a;
@@ -103,69 +103,71 @@ h2 {
     border-bottom: 1px solid var(--border-color);
 }
 
-/* 时间线概览样式 - 改进版 */
+/* 时间线概览样式 */
 .timeline-overview {
     background: white;
-    border-radius: 15px;
-    padding: 25px;
+    border-radius: 10px;
+    padding: 20px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border: 1px solid #f0f0f0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .overview-container {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .overview-bar {
     position: relative;
-    height: 70px;
-    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-    border-radius: 35px;
-    padding: 15px 0;
-    margin-bottom: 15px;
-    border: 2px solid #e0e0e0;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    height: 80px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-bottom: 10px;
 }
 
 .overview-dates {
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
-    font-size: 0.75em;
+    padding: 0 10px;
+    font-size: 0.8em;
     color: #666;
-    font-weight: 500;
-    margin-top: 40px;
 }
 
 .overview-items {
     position: absolute;
     top: 10px;
-    left: 10px;
-    right: 10px;
-    height: 50px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    padding: 0 10px;
 }
 
 .overview-item {
     position: absolute;
-    height: 50px;
-    border-radius: 25px;
+    height: 40px;
+    border-radius: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0.7em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 8px;
     transition: all 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    border: 2px solid white;
-    min-width: 50px; /* 确保即使是单晚住宿也有足够宽度 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 1.2;
 }
 
 .overview-item:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 20;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 10;
 }
 
 .overview-item.confirmed {
@@ -173,14 +175,18 @@ h2 {
 }
 
 .overview-item.canceled {
-    opacity: 0.6;
-    background: linear-gradient(135deg, #cccccc, #999999) !important;
-    color: #666 !important;
+    opacity: 0.7;
+    background: linear-gradient(135deg, var(--canceled-color), #c62828) !important;
 }
 
 .overview-nights {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 0.9em;
+}
+
+.overview-location {
+    font-size: 0.6em;
+    opacity: 0.9;
 }
 
 /* 住宿列表样式 */
@@ -192,10 +198,10 @@ h2 {
 
 .accommodation-item {
     background: white;
-    border-radius: 12px;
-    padding: 25px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    border-left: 6px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--primary-color);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -205,23 +211,14 @@ h2 {
 }
 
 @keyframes highlightPulse {
-    0% { 
-        box-shadow: 0 0 0 0 rgba(74, 111, 165, 0.7); 
-        transform: scale(1);
-    }
-    50% { 
-        box-shadow: 0 0 0 15px rgba(74, 111, 165, 0); 
-        transform: scale(1.02);
-    }
-    100% { 
-        box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        transform: scale(1);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(74, 111, 165, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(74, 111, 165, 0); }
+    100% { box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
 }
 
 .accommodation-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .confirmed .accommodation-item {
@@ -237,7 +234,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     gap: 15px;
 }
 
@@ -246,39 +243,36 @@ h2 {
 }
 
 .accommodation-title h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
     color: var(--primary-color);
-    font-size: 1.4em;
-    font-weight: 600;
+    font-size: 1.3em;
 }
 
 .location-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-    color: #1565c0;
-    padding: 6px 14px;
-    border-radius: 15px;
-    font-size: 0.9em;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85em;
     font-weight: 500;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .status {
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 6px 12px;
+    border-radius: 15px;
     font-size: 0.9em;
     font-weight: bold;
     white-space: nowrap;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .status.confirmed {
-    background: linear-gradient(135deg, var(--confirmed-color), #3d8b40);
+    background: var(--confirmed-color);
     color: white;
 }
 
 .status.canceled {
-    background: linear-gradient(135deg, var(--canceled-color), #c62828);
+    background: var(--canceled-color);
     color: white;
 }
 
@@ -286,30 +280,29 @@ h2 {
 .stay-duration {
     display: flex;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    padding: 15px 0;
-    border-bottom: 2px solid #f5f5f5;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .nights-badge {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
+    color: white;
     font-weight: bold;
-    font-size: 1.6em;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-size: 1.5em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     flex-shrink: 0;
-    border: 3px solid white;
 }
 
 .nights-badge span {
-    font-size: 0.5em;
+    font-size: 0.6em;
     margin-left: 2px;
-    opacity: 0.8;
 }
 
 .date-range {
@@ -320,14 +313,14 @@ h2 {
 
 /* 住宿详情样式 */
 .accommodation-details {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .detail-row {
     display: flex;
-    margin-bottom: 12px;
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f5f5f5;
 }
 
 .detail-row:last-child {
@@ -348,16 +341,14 @@ h2 {
 
 /* 链接样式 */
 .links-container {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 2px dashed #e0e0e0;
+    margin-top: 10px;
 }
 
 .links-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 8px;
 }
 
 .link-button {
@@ -367,17 +358,17 @@ h2 {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 25px;
+    padding: 8px 16px;
+    border-radius: 20px;
     font-size: 0.9em;
     font-weight: 500;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .link-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     background: linear-gradient(135deg, #5a7fb5, #4a6a9a);
 }
 
@@ -391,20 +382,19 @@ h2 {
 
 .loading {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     font-size: 1.2em;
     color: var(--primary-color);
 }
 
 .error {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     font-size: 1.2em;
     color: var(--canceled-color);
     background-color: #ffebee;
-    border-radius: 12px;
+    border-radius: 10px;
     margin: 20px 0;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 /* 响应式设计 */
@@ -427,7 +417,7 @@ h2 {
     .stay-duration {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        gap: 10px;
     }
     
     .detail-row {
@@ -447,25 +437,12 @@ h2 {
         justify-content: center;
     }
     
-    .overview-bar {
-        height: 60px;
-    }
-    
-    .overview-items {
-        height: 40px;
-    }
-    
     .overview-item {
-        height: 40px;
-        min-width: 40px;
-        font-size: 1em;
+        font-size: 0.6em;
+        padding: 0 4px;
     }
     
-    .overview-dates {
-        font-size: 0.7em;
-    }
-    
-    .timeline-overview {
-        padding: 20px;
+    .overview-nights, .overview-location {
+        display: block;
     }
 }

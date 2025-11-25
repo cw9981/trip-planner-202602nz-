@@ -32,12 +32,12 @@ async function loadAccommodationData() {
             const confirmedList = document.createElement('div');
             confirmedList.className = 'accommodation-list';
             
-            data.confirmed.forEach((item, index) => {
-                confirmedList.innerHTML += renderAccommodationItem(item, 'confirmed', index);
+            data.confirmed.forEach(item => {
+                confirmedList.innerHTML += renderAccommodationItem(item, 'confirmed');
                 
                 // 添加到时间线概览
                 const timelinePos = calculateTimelinePosition(item, tripStart, tripEnd);
-                overviewContainer.innerHTML += renderTimelineItem(item, 'confirmed', timelinePos.position, timelinePos.width, index);
+                overviewContainer.innerHTML += renderTimelineItem(item, 'confirmed', timelinePos.position, timelinePos.width);
             });
             
             confirmedSection.appendChild(confirmedList);
@@ -56,16 +56,17 @@ async function loadAccommodationData() {
             const canceledList = document.createElement('div');
             canceledList.className = 'accommodation-list';
             
-            data.canceled.forEach((item, index) => {
-                canceledList.innerHTML += renderAccommodationItem(item, 'canceled', index + data.confirmed.length);
+            data.canceled.forEach(item => {
+                canceledList.innerHTML += renderAccommodationItem(item, 'canceled');
+                
+                // 添加到时间线概览
+                // const timelinePos = calculateTimelinePosition(item, tripStart, tripEnd);
+                // overviewContainer.innerHTML += renderTimelineItem(item, 'canceled', timelinePos.position, timelinePos.width);
             });
             
             canceledSection.appendChild(canceledList);
             container.appendChild(canceledSection);
         }
-        
-        // 添加交互效果
-        addTimelineInteractions();
         
     } catch (error) {
         console.error('載入住宿資料時發生錯誤:', error);
@@ -75,46 +76,6 @@ async function loadAccommodationData() {
             </div>
         `;
     }
-}
-
-// 添加时间轴交互效果
-function addTimelineInteractions() {
-    const timelineItems = document.querySelectorAll('.overview-item');
-    const accommodationItems = document.querySelectorAll('.accommodation-item');
-    
-    timelineItems.forEach(timelineItem => {
-        const index = timelineItem.getAttribute('data-index');
-        const accommodationItem = document.querySelector(`.accommodation-item[data-index="${index}"]`);
-        
-        if (accommodationItem) {
-            // 鼠标悬停效果
-            timelineItem.addEventListener('mouseenter', () => {
-                accommodationItem.style.transform = 'translateY(-5px)';
-                accommodationItem.style.boxShadow = '0 8px 20px rgba(0,0,0,0.15)';
-                accommodationItem.style.zIndex = '10';
-            });
-            
-            timelineItem.addEventListener('mouseleave', () => {
-                accommodationItem.style.transform = '';
-                accommodationItem.style.boxShadow = '';
-                accommodationItem.style.zIndex = '';
-            });
-            
-            // 点击跳转到对应住宿项
-            timelineItem.addEventListener('click', () => {
-                accommodationItem.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
-                });
-                
-                // 添加高亮效果
-                accommodationItem.classList.add('highlight');
-                setTimeout(() => {
-                    accommodationItem.classList.remove('highlight');
-                }, 2000);
-            });
-        }
-    });
 }
 
 // 页面载入完成后执行

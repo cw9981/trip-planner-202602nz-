@@ -4,6 +4,7 @@ class ItineraryRenderer {
         this.container = document.getElementById(containerId);
         this.notesData = {}; // 存储意见数据
         this.scriptUrl = 'https://script.google.com/macros/s/AKfycbyKs2l6MedR-NhCP5PSuhv7AF_h1sly8byERatD-zw-TjPCDx3ACIRY6JaXoXBD8hPN/exec';
+        this.isNotesLoaded = false; // 标记意见数据是否已加载
     }
 
     // 渲染所有阶段
@@ -11,23 +12,27 @@ class ItineraryRenderer {
         // 清空容器
         this.container.innerHTML = '';
         
-        // 加载意见数据
-        this.loadNotesData()
-            .then(() => {
-                // 为每个阶段创建HTML
-                stagesData.forEach(stage => {
-                    const stageElement = this.createStageElement(stage);
-                    this.container.appendChild(stageElement);
-                });
-            })
-            .catch(error => {
-                console.error('加载意见数据失败:', error);
-                // 即使意见数据加载失败，仍然渲染阶段
-                stagesData.forEach(stage => {
-                    const stageElement = this.createStageElement(stage);
-                    this.container.appendChild(stageElement);
-                });
-            });
+        // 先渲染阶段内容，不包含意见数据
+        stagesData.forEach(stage => {
+            const stageElement = this.createStageElement(stage);
+            this.container.appendChild(stageElement);
+        });
+
+        // 在后台加载意见数据
+        this.loadNotesDataInBackground();
+    }
+
+    // 后台加载意见数据
+    async loadNotesDataInBackground() {
+        try {
+            await this.loadNotesData();
+            this.isNotesLoaded = true;
+            console.log('意见数据加载完成');
+        } catch (error) {
+            console.error('加载意见数据失败:', error);
+            // 即使失败也标记为已加载，避免无限等待
+            this.isNotesLoaded = true;
+        }
     }
 
     // 创建单个阶段的HTML元素
@@ -35,9 +40,6 @@ class ItineraryRenderer {
         const stageElement = document.createElement('div');
         stageElement.className = 'itinerary-stage expanded';
         stageElement.dataset.stageId = stage.stage_id;
-        
-        // 获取该阶段的意见
-        const stageNotes = this.getStageNotes(stage.stage_id);
         
         stageElement.innerHTML = `
             <div class="stage-header">
@@ -52,10 +54,17 @@ class ItineraryRenderer {
             <div class="stage-content">
                 ${this.renderItinerary(stage.itinerary)}
                 <div class="stage-notes">
-                    <h3>意見與備註</h3>
-                    ${this.renderNotes(stageNotes)}
+                    <div class="notes-header">
+                        <h3>意見與備註</h3>
+                        <div class="notes-actions">
+                            <button class="toggle-notes-btn" data-stage-id="${stage.stage_id}">展開意見</button>
+                            <button class="edit-notes-btn" data-stage-id="${stage.stage_id}" disabled>編輯意見</button>
+                        </div>
+                    </div>
+                    <div class="notes-content" id="notes-${stage.stage_id}">
+                        <div class="loading-notes">載入意見中...</div>
+                    </div>
                 </div>
-                <button class="edit-stage-btn" data-stage-id="${stage.stage_id}">編輯意見</button>
             </div>
         `;
         
@@ -65,8 +74,15 @@ class ItineraryRenderer {
             stageElement.classList.toggle('expanded');
         });
         
+        // 添加意见展开/收起按钮事件
+        const toggleBtn = stageElement.querySelector('.toggle-notes-btn');
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleNotes(stage.stage_id, toggleBtn);
+        });
+        
         // 添加编辑按钮事件
-        const editBtn = stageElement.querySelector('.edit-stage-btn');
+        const editBtn = stageElement.querySelector('.edit-notes-btn');
         editBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             this.handleEditStage(stage.stage_id, stage.location);
@@ -105,28 +121,106 @@ class ItineraryRenderer {
         return html;
     }
 
-    // 渲染意见区域
-    renderNotes(notes) {
-        if (!notes || notes.length === 0) {
-            return '<p class="no-notes">尚無意見</p>';
+    // 切换意见展开/收起状态
+    toggleNotes(stageId, toggleBtn) {
+        const notesContent = document.getElementById(`notes-${stageId}`);
+        const editBtn = toggleBtn.closest('.notes-actions').querySelector('.edit-notes-btn');
+        
+        if (notesContent.classList.contains('expanded')) {
+            // 收起
+            notesContent.classList.remove('expanded');
+            toggleBtn.textContent = '展開意見';
+            editBtn.disabled = true;
+        } else {
+            // 展开
+            if (!this.isNotesLoaded) {
+                // 如果意见数据还没加载完成，显示加载状态
+                notesContent.innerHTML = '<div class="loading-notes">載入意見中...</div>';
+                // 等待数据加载完成
+                this.waitForNotesLoad().then(() => {
+                    this.renderNotesContent(stageId);
+                    notesContent.classList.add('expanded');
+                    toggleBtn.textContent = '收起意見';
+                    editBtn.disabled = false;
+                });
+            } else {
+                // 数据已加载，直接渲染
+                this.renderNotesContent(stageId);
+                notesContent.classList.add('expanded');
+                toggleBtn.textContent = '收起意見';
+                editBtn.disabled = false;
+            }
+        }
+    }
+
+    // 等待意见数据加载完成
+    waitForNotesLoad() {
+        return new Promise((resolve) => {
+            const checkInterval = setInterval(() => {
+                if (this.isNotesLoaded) {
+                    clearInterval(checkInterval);
+                    resolve();
+                }
+            }, 100);
+            
+            // 10秒超时
+            setTimeout(() => {
+                clearInterval(checkInterval);
+                resolve();
+            }, 10000);
+        });
+    }
+
+    // 渲染意见内容
+    renderNotesContent(stageId) {
+        const notesContent = document.getElementById(`notes-${stageId}`);
+        const stageNotes = this.getStageNotes(stageId);
+        
+        if (!stageNotes || stageNotes.length === 0) {
+            notesContent.innerHTML = '<p class="no-notes">尚無意見</p>';
+            return;
         }
 
         let html = '';
         const people = ['chingwen', 'jane', 'zhi'];
         
         people.forEach(person => {
-            const personNotes = notes.filter(note => note.person === person);
+            const personNotes = stageNotes.filter(note => note.person === person);
             if (personNotes.length > 0) {
                 html += `<div class="person-notes">
                     <strong>${this.getPersonDisplayName(person)}</strong>
                     <ul>
-                        ${personNotes.map(note => `<li>${note.activity}</li>`).join('')}
+                        ${personNotes.map(note => `<li>${this.formatNoteText(note.activity)}</li>`).join('')}
                     </ul>
                 </div>`;
             }
         });
 
-        return html;
+        notesContent.innerHTML = html;
+    }
+
+    // 格式化意見文本，支持換行且避免额外空格
+    formatNoteText(text) {
+        if (!text) return '';
+        
+        // 1. 先分割成行
+        const lines = text.split('\n');
+        
+        // 2. 對每一行進行處理
+        const processedLines = lines.map(line => {
+            // 移除行首和行尾的空格
+            const trimmedLine = line.trim();
+            
+            // 轉義HTML特殊字符
+            return trimmedLine
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+        });
+        
+        // 3. 過濾掉空行，然後用 <br> 連接
+        const nonEmptyLines = processedLines.filter(line => line.length > 0);
+        
+        return nonEmptyLines.join('<br>');
     }
 
     // 获取人员显示名称
@@ -184,7 +278,7 @@ class ItineraryRenderer {
         const transformed = {};
         data.forEach(row => {
             const stageId = parseInt(row.stage);
-            const person = row.person.trim(); // 去除可能的多余空格
+            const person = row.person.trim();
             if (!transformed[stageId]) {
                 transformed[stageId] = [];
             }
@@ -235,7 +329,7 @@ class ItineraryRenderer {
                     </div>
                     <div class="form-section">
                         <h3>意見內容</h3>
-                        <textarea id="note-content" class="note-content" placeholder="請輸入您的意見..." rows="6"></textarea>
+                        <textarea id="note-content" class="note-content" placeholder="請輸入您的意見...（支援換行）" rows="6"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -280,7 +374,11 @@ class ItineraryRenderer {
                     closeModal();
                     // 重新加载意见数据并刷新显示
                     this.loadNotesData().then(() => {
-                        this.refreshStage(stageId);
+                        // 如果当前意见区域是展开状态，则更新显示
+                        const notesContent = document.getElementById(`notes-${stageId}`);
+                        if (notesContent.classList.contains('expanded')) {
+                            this.renderNotesContent(stageId);
+                        }
                     });
                 })
                 .catch(error => {
@@ -304,49 +402,39 @@ class ItineraryRenderer {
         textarea.value = noteContent;
     }
 
-    // 保存意见到Google Apps Script
-    async saveNote(stageId, person, activity) {
-        try {
-            // 使用表单提交方式，路径为 update
-            return new Promise((resolve, reject) => {
-                const form = document.createElement('form');
-                form.method = 'POST';
-                form.action = `${this.scriptUrl}?path=update`;
-                form.target = '_blank'; // 在新窗口打开，避免页面跳转
-                
-                // 添加参数
-                const stageInput = document.createElement('input');
-                stageInput.name = 'stage';
-                stageInput.value = stageId;
-                form.appendChild(stageInput);
-                
-                const personInput = document.createElement('input');
-                personInput.name = 'person';
-                personInput.value = person;
-                form.appendChild(personInput);
-                
-                const activityInput = document.createElement('input');
-                activityInput.name = 'activity';
-                activityInput.value = activity;
-                form.appendChild(activityInput);
-                
-                // 添加到页面并提交
-                document.body.appendChild(form);
-                form.submit();
-                document.body.removeChild(form);
-                
-                console.log('意见已提交到Google Apps Script');
-                resolve();
-            });
-        } catch (error) {
-            console.error('保存意见失败:', error);
-            throw error;
-        }
-    }
 
-    // 刷新特定阶段
-    refreshStage(stageId) {
-        // 简单实现：重新加载整个页面
-        location.reload();
+    // 保存意见到Google Apps Script（使用 AJAX 避免页面跳转）
+    async saveNote(stageId, person, activity) {
+    try {
+        // 构造表单数据（和原来一样，但用 fetch 发送）
+        const formData = new FormData();
+        formData.append('stage', stageId);
+        formData.append('person', person);
+        formData.append('activity', activity);
+
+        // 使用 fetch 发送 POST 请求
+        const response = await fetch(`${this.scriptUrl}?path=update`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json' // 明确要求返回 JSON
+        }
+        });
+
+        // 1. 从响应中获取 JSON 数据（避免浏览器直接显示）
+        const result = await response.json();
+        
+        console.log('意见已保存:', result);
+        
+        // 2. 仅当成功时提示（不跳转页面）
+        if (result.success) {
+        alert('保存成功！'); // 或用 Toast 提示
+        }
+        return result;
+    } catch (error) {
+        console.error('保存失败:', error);
+        alert('保存失败，请重试！');
+        throw error;
+    }
     }
 }
