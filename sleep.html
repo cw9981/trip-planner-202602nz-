@@ -1,167 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-  <base target="_top">
-  <style>
-    /* 簡單的 CSS 樣式讓介面更好看 */
-    body { font-family: sans-serif; padding: 10px; }
-    #data-output {
-      margin-top: 15px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      max-height: 400px;
-      overflow-y: auto;
-      white-space: pre-wrap; /* 保持換行和空格 */
-      background-color: #f9f9f9;
-    }
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 10px;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 4px;
-        text-align: left;
-    }
-    th {
-        background-color: #f2f2f2;
-        position: sticky; /* 讓標題欄固定 */
-        top: 0;
-    }
-    .loading { color: gray; font-style: italic; }
-  </style>
+    <meta charset="UTF-8">
+    <title>住宿預約</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <h3>分頁資料讀取工具</h3>
-  
-  <div>
-    <label for="sheet-select">選擇分頁:</label>
-    <select id="sheet-select"></select>
-    <button onclick="handleReadData()">讀取資料</button>
-  </div>
-  
-  <p id="status-message" style="margin-top: 10px; color: green;"></p>
-  
-  <div id="data-output">
-    請選擇一個分頁並點擊「讀取資料」。
-  </div>
+    <div class="travel-dates">
+        <div class="travel-info">
+            <div class="date-info">
+                ✈️ 旅行日期：2026年2月7日 - 2026年3月2日 (共24天)
+            </div>
+            <div class="participants">
+                👥 參加人員：chingwen, jane, zhi
+            </div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button class="nav-button" onclick="window.location.href='index.html'">
+            航班資訊
+        </button>
+        <button class="nav-button" onclick="window.location.href='itinerary-display.html'">
+            行程規劃
+        </button>
+        <button class="nav-button" onclick="window.location.href='todo.html'">
+            待辦事件
+        </button>
+    </div>
 
-  <script>
-    // -------------------------------------------------------------------
-    // A. 初始化：載入分頁名稱
-    // -------------------------------------------------------------------
-    document.addEventListener('DOMContentLoaded', () => {
-      google.script.run
-        .withSuccessHandler(populateSheetSelect) // 成功時執行 populateSheetSelect
-        .getSheetNames(); // 呼叫 Apps Script 的 getSheetNames 函式
-    });
+    <h1>住宿預約資訊</h1>
+    
+    <div class="accommodation-list">
+        <div class="accommodation-item">
+            <div class="accommodation-header">
+                <h3>基督城 - 城市花園飯店</h3>
+                <span class="status confirmed">已確認</span>
+            </div>
+            <div class="accommodation-details">
+                <p><strong>日期：</strong>2026年2月8日 - 2月10日 (2晚)</p>
+                <p><strong>房型：</strong>家庭房 (3人)</p>
+                <p><strong>地址：</strong>123 City Center, Christchurch</p>
+                <p><strong>預訂編號：</strong>CHC20260208</p>
+            </div>
+        </div>
 
-    /**
-     * 將 Apps Script 傳回的分頁名稱列表填入下拉式選單
-     * @param {Array<string>} sheetNames - 分頁名稱列表
-     */
-    function populateSheetSelect(sheetNames) {
-      const select = document.getElementById('sheet-select');
-      
-      if (sheetNames && sheetNames.length > 0) {
-        sheetNames.forEach(name => {
-          const option = document.createElement('option');
-          option.value = name;
-          option.textContent = name;
-          select.appendChild(option);
-        });
-      } else {
-         document.getElementById('status-message').textContent = '找不到任何分頁。';
-      }
-    }
+        <div class="accommodation-item">
+            <div class="accommodation-header">
+                <h3>蒂卡波湖 - 星空觀景旅館</h3>
+                <span class="status pending">待確認</span>
+            </div>
+            <div class="accommodation-details">
+                <p><strong>日期：</strong>2026年2月10日 - 2月12日 (2晚)</p>
+                <p><strong>房型：</strong>湖景套房</p>
+                <p><strong>地址：</strong>Lake Tekapo, Mackenzie District</p>
+                <p><strong>備註：</strong>等待空房確認</p>
+            </div>
+        </div>
 
-
-    // -------------------------------------------------------------------
-    // B. 處理讀取資料按鈕事件
-    // -------------------------------------------------------------------
-    function handleReadData() {
-      const select = document.getElementById('sheet-select');
-      const selectedSheetName = select.value;
-      const outputDiv = document.getElementById('data-output');
-      const statusMsg = document.getElementById('status-message');
-      
-      statusMsg.textContent = '正在從伺服器讀取資料...';
-      outputDiv.innerHTML = '<div class="loading">載入中...</div>';
-
-      // 呼叫 Apps Script 的 readDataFromSheet 函式
-      google.script.run
-        .withSuccessHandler(displayData) // 成功時執行 displayData
-        .withFailureHandler(showError)   // 失敗時執行 showError
-        .readDataFromSheet(selectedSheetName);
-    }
-
-    /**
-     * 處理 Apps Script 傳回的資料並顯示
-     * @param {Array<Array<any>> | string} result - Apps Script 傳回的資料陣列或錯誤訊息
-     */
-    function displayData(result) {
-      const outputDiv = document.getElementById('data-output');
-      const statusMsg = document.getElementById('status-message');
-      
-      // 檢查是否為錯誤訊息（如果 Apps Script 回傳的是字串，則視為錯誤或警告）
-      if (typeof result === 'string') {
-          outputDiv.innerHTML = `<p style="color: red;">${result}</p>`;
-          statusMsg.textContent = '讀取失敗或資料為空。';
-          return;
-      }
-      
-      // 檢查是否為有效的二維陣列
-      if (Array.isArray(result) && result.length > 0) {
-        
-        // 建立 HTML 表格
-        let htmlTable = '<table><thead><tr>';
-        const headers = result[0]; // 假設第一列是標題
-        
-        // 建立表頭 (Header)
-        headers.forEach(header => {
-            htmlTable += `<th>${header}</th>`;
-        });
-        htmlTable += '</tr></thead><tbody>';
-        
-        // 建立內容 (Body) - 從第二行開始 (索引 1)
-        for (let i = 1; i < result.length; i++) {
-            htmlTable += '<tr>';
-            const row = result[i];
-            row.forEach(cell => {
-                // 簡單處理日期格式 (Apps Script 傳回的日期是 JS Date 物件)
-                let displayValue = cell;
-                if (cell instanceof Date) {
-                    displayValue = cell.toLocaleDateString();
-                }
-                htmlTable += `<td>${displayValue}</td>`;
-            });
-            htmlTable += '</tr>';
-        }
-        
-        htmlTable += '</tbody></table>';
-        
-        outputDiv.innerHTML = htmlTable;
-        statusMsg.textContent = `成功讀取 ${result.length - 1} 筆資料 (含標題共 ${result.length} 行)。`;
-        
-      } else {
-        // 資料為空陣列
-        outputDiv.innerHTML = '<p style="color: red;">分頁中沒有任何資料可以讀取。</p>';
-        statusMsg.textContent = '讀取失敗或資料為空。';
-      }
-    }
-
-    /**
-     * 處理 Apps Script 執行失敗時的錯誤
-     * @param {Error} error - 錯誤物件
-     */
-    function showError(error) {
-      const outputDiv = document.getElementById('data-output');
-      const statusMsg = document.getElementById('status-message');
-      outputDiv.innerHTML = `<p style="color: red;">應用程式錯誤: ${error.message}</p>`;
-      statusMsg.textContent = '發生連線錯誤！';
-    }
-  </script>
+        <div class="accommodation-item">
+            <div class="accommodation-header">
+                <h3>皇后鎮 - 湖畔度假村</h3>
+                <span class="status todo">待預訂</span>
+            </div>
+            <div class="accommodation-details">
+                <p><strong>日期：</strong>2026年2月12日 - 2月15日 (3晚)</p>
+                <p><strong>房型：</strong>尚未選擇</p>
+                <p><strong>區域：</strong>皇后鎮市中心</p>
+                <p><strong>備註：</strong>需在1月前完成預訂</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

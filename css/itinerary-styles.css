@@ -1,0 +1,462 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+header {
+    background: linear-gradient(135deg, #1a6dcc 0%, #0d47a1 100%);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    margin-top: 2rem;
+}
+
+/* 行程容器 */
+.itinerary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 单个阶段样式 */
+.itinerary-stage {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.itinerary-stage:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stage-header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stage-header h2 {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.stage-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.3rem;
+}
+
+.stage-toggle {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.itinerary-stage.expanded .stage-toggle {
+    transform: rotate(180deg);
+}
+
+/* 修改这里：默认展开状态 */
+.stage-content {
+    padding: 1.5rem;
+    max-height: none; /* 移除高度限制 */
+    overflow: visible; /* 移除溢出隐藏 */
+}
+
+/* 可以保留收起状态的样式，但默认是展开的 */
+.itinerary-stage:not(.expanded) .stage-content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* 行程日期样式 */
+.itinerary-date {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.itinerary-date:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.date-header {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.date-header::before {
+    content: "📅";
+    margin-right: 0.5rem;
+}
+
+.activity-list {
+    list-style-type: none;
+    padding-left: 1.5rem;
+}
+
+.activity-item {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.activity-item::before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    position: absolute;
+    left: -1rem;
+}
+
+/* 重要注意事项样式 */
+.important-note {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    color: #856404;
+    font-weight: bold;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.important-note::before {
+    content: "⚠️";
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+.normal-activity {
+    margin-bottom: 0.2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .stage-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .stage-meta {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    
+    .stage-toggle {
+        align-self: flex-end;
+        margin-top: -2rem;
+    }
+}
+
+/* 加载状态 */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+}
+
+/* 编辑按钮样式 */
+.edit-stage-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.edit-stage-btn:hover {
+    background-color: #c0392b;
+}
+
+/* 意见与备注样式 */
+.stage-notes {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.stage-notes h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2em;
+}
+
+.no-notes {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+.person-notes {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 5px;
+}
+
+.person-notes strong {
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.person-notes ul {
+    list-style-type: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.person-notes li {
+    margin-bottom: 0.3rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.person-notes li:last-child {
+    border-bottom: none;
+}
+
+/* 编辑模态框样式 */
+.edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.close-modal {
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+}
+
+.close-modal:hover {
+    opacity: 0.8;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+}
+
+.form-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* 人员选择样式 */
+.person-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.person-option {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.person-option:hover {
+    background-color: #f8f9fa;
+    border-color: var(--primary-color);
+}
+
+.person-option input[type="radio"] {
+    margin-right: 0.8rem;
+    transform: scale(1.2);
+}
+
+.person-name {
+    font-weight: 500;
+}
+
+.person-option input[type="radio"]:checked + .person-name {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 文本区域样式 */
+.note-content {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 150px;
+    line-height: 1.5;
+}
+
+.note-content:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.cancel-btn, .save-btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+}
+
+.save-btn {
+    background: var(--primary-color);
+    color: white;
+}
+
+.save-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.1em;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .cancel-btn, .save-btn {
+        width: 100%;
+    }
+    
+    .person-options {
+        gap: 0.3rem;
+    }
+    
+    .person-option {
+        padding: 0.6rem;
+    }
+}

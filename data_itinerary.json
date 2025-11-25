@@ -1,0 +1,196 @@
+[
+  {
+    "stage_id": 1,
+    "dates": "2月8日 至 2月11日",
+    "location": "Christchurch",
+    "itinerary": [
+      {
+        "date": "2/8",
+        "activities": [
+          "下午五點前往超市「PAK'nSAVE」採買",
+          "之後前往住宿"
+        ]
+      },
+      {
+        "date": "2/9",
+        "activities": [
+          "自由活動或探索基督城周邊"
+        ]
+      },
+      {
+        "date": "2/10",
+        "activities": [
+          "自由活動或探索基督城周邊"
+        ]
+      },
+      {
+        "date": "2/11",
+        "activities": [
+          "自由活動或探索基督城周邊"
+        ]
+      }
+    ]
+  },
+  {
+    "stage_id": 2,
+    "dates": "2月12日至2月14日",
+    "location": "皇后鎮、Glenorchy",
+    "itinerary": [
+      {
+        "date": "2/12",
+        "activities": [
+          "從基督城出發至皇后鎮，車程6小時（500公里）",
+          "Fairlie有一間排隊的派店，六點開門"
+        ]
+      },
+      {
+        "date": "2/13",
+        "activities": [
+          "從皇后鎮前往Glenorchy，車程1小時（50公里）",
+          "Routeburn Track 健行"
+        ]
+      },
+      {
+        "date": "2/14",
+        "activities": [
+          "農夫市場",
+          "皇后鎮觀賞日落"
+        ]
+      }
+    ]
+  },
+  {
+    "stage_id": 3,
+    "dates": "2月15日至2月19日",
+    "location": "Te Anau",
+    "itinerary": [
+      {
+        "date": "2/15",
+        "activities": [
+          "從皇后鎮前往Te Anau，車程2小時（170公里）",
+          "Fergburger排隊漢堡店七點開門"
+        ]
+      },
+      {
+        "date": "2/16",
+        "activities": [
+          "探索 Mildford Sound/ Te Anau"
+        ]
+      },
+      {
+        "date": "2/17",
+        "activities": [
+          "探索 Mildford Sound/ Te Anau"
+        ]
+      },
+      {
+        "date": "2/18",
+        "activities": [
+          "探索 Mildford Sound/ Te Anau"
+        ]
+      },
+      {
+        "date": "2/19",
+        "activities": [
+          "探索 Mildford Sound/ Te Anau"
+        ]
+      }
+    ]
+  },
+  {
+    "stage_id": 4,
+    "dates": "2月20日至2月24日",
+    "location": "Wanaka",
+    "itinerary": [
+      {
+        "date": "2/20",
+        "activities": [
+          "從Te Anau前往瓦納卡，車程3小時（230公里）"
+        ]
+      },
+      {
+        "date": "2/21",
+        "activities": [
+          "自由活動或探索瓦納卡"
+        ]
+      },
+      {
+        "date": "2/22",
+        "activities": [
+          "自由活動或探索瓦納卡"
+        ]
+      },
+      {
+        "date": "2/23",
+        "activities": [
+          "自由活動或探索瓦納卡"
+        ]
+      },
+      {
+        "date": "2/24",
+        "activities": [
+          "自由活動或探索瓦納卡"
+        ]
+      }
+    ]
+  },
+  {
+    "stage_id": 5,
+    "dates": "2月25日至2月26日",
+    "location": "Twizel/Mt Cook",
+    "itinerary": [
+      {
+        "date": "2/25",
+        "activities": [
+          "從瓦納卡前往Mt Cook，車程2.5小時（200公里）"
+        ]
+      },
+      {
+        "date": "2/26",
+        "activities": [
+          "於Mt Cook停留一整天，進行健行活動"
+        ]
+      }
+    ]
+  },
+  {
+    "stage_id": 6,
+    "dates": "2月27日至2月28日",
+    "location": "Springfield 或 基督城外",
+    "itinerary": [
+      {
+        "date": "2/27",
+        "activities": [
+          "Twizel → Springfield：5小時，400公里",
+          "Rakaia Gorge Walkway 二月顏色沒春天漂亮，待確認值不值得去，離73公路近"
+        ]
+      },
+      {
+        "date": "2/28",
+        "activities": [
+          "於73號公路（Arthur's Pass）健行一日，車程1小時60公里"
+        ]
+      }
+    ]
+  },
+  {
+    "stage_id": 7,
+    "dates": "3月1日至3月2日",
+    "location": "基督城機場",
+    "itinerary": [
+      {
+        "date": "3/1",
+        "activities": [
+          "從Springfield返回基督城，車程1小時60公里",
+          "注意:需於當日下午四點前完成還車"
+        ]
+      },
+      {
+        "date": "3/2",
+        "activities": [
+          "注意:基督城機場回台航班：早上06:00起飛"
+        ]
+      }
+    ]
+  }
+]
