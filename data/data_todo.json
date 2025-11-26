@@ -16,6 +16,10 @@
       "住宿預訂",
       "租車預訂",
       "額外帶煎鍋",
+      "旅行安排 - 02/13 皇后鎮-Glenorchy",
+      "旅行安排 - 02/25 Wanaka-Twizel",   
+      "旅行安排 - 02/27 Twizel-Springfield",     
+      "旅行安排 - 03/01 Springfield-基督城",      
       "gpx - Rakaia Gorge Walkway  02/27 ",
       "gpx - Routeburn Track 2/13",
       "gpx - Kepler Track Luxmore Hut side  2/16",
@@ -33,8 +37,12 @@
       "國際駕照",
       "旅行安排 - 02/10 基督城 Lyttelton",
       "旅行安排 - 02/11 基督城 Akaroa",
-      "旅行安排 - 02/26 Mt. Cook",
+      "旅行安排 - 02/12 基督城-皇后鎮",
+      "旅行安排 - 02/15 皇后鎮-Te Anau",
+      "旅行安排 - 02/20 Te Anau-Wanaka",   
+      "旅行安排 - 02/26 Mt.Cook", 
       "旅行安排 - 02/28 Arthur's Pass"
+
     ]
   },
   {
@@ -42,7 +50,7 @@
     "activities": [
       "旅行安排 - 02/09 基督城內",
       "旅行安排 - 02/11 基督城 Banks Peninsula",
-      "旅行安排 - Cromwell-水果鎮 採櫻桃",
+      "旅行安排 - 2/25 Cromwell-水果鎮 採櫻桃",
       "旅行安排 - 基督城 採藍莓",
       "旅行安排 - 薰衣草園"
     ]
