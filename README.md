@@ -2,15 +2,23 @@
 
 ## 行程資訊
 - **旅行日期**：2026年2月7日 – 2026年3月2日（共24天）
-- **參加人員**：Chingwen, Jane, Zhi
+
 
 ## 行程規劃
 - [行程總覽網站](https://cw9981.github.io/trip-planner-202602nz-/)
 
 
 ## 技術說明
-本專案使用 **Google Apps Script** 開發，作為 Web 應用提供 API 介面，前端可透過 URL 查詢或更新行程資料。  
+本專案以 **Google Apps Script** 開發，部署為 Web 應用程式，提供簡易的 API 介面，供前端透過 URL 查詢或更新行程資料。
+
+- **對應工作表（Sheet）**：`itinerary`  
+- **主要欄位**：
+  - `stage`：行程階段（例如第1天、第2天等）
+  - `person`：參與者
+  - `activity`：該階段的活動內容
+
 相關程式碼如下：
+
 
 ```javascript
 // Google Apps Script 代碼 - 部署為 Web 應用
