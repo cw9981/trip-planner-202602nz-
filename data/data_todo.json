@@ -3,8 +3,10 @@
     "name": "所有人",
     "activities": [
       "紐西蘭電子旅行授權(NZeTA)",
+      "電子入境卡（New Zealand Traveller Online Declaration），在搭機前24小時內先上網填妥入境申報表單 快速通關",      
       "購買旅行保險",
-      "兌換紐西蘭幣"
+      "兌換紐西蘭幣",
+      "sim/eSim"
     ]
   },
   {
@@ -14,7 +16,15 @@
       "住宿預訂",
       "租車預訂",
       "額外帶煎鍋",
-      "確認值不值得去 Rakaia Gorge Walkway "
+      "gpx - Rakaia Gorge Walkway  02/27 ",
+      "gpx - Routeburn Track 2/13",
+      "gpx - Kepler Track Luxmore Hut side  2/16",
+      "gpx - Kepler Track - Rainbow Reach  2/16 ",
+      "gpx - Gertrude Saddle track 2/16",
+      "gpx - Lake Marian Track",
+      "gpx - Brewster Glacier track 2/21",
+      "gpx - Isthmus Peak 2/21",
+      "gpx - Roy’s Peak 2/21"
     ]
   },
   {
@@ -23,13 +33,15 @@
       "國際駕照",
       "旅行安排 - 02/10 基督城 Lyttelton",
       "旅行安排 - 02/11 基督城 Akaroa",
-      "旅行安排 - 02/26 Mt. Cook"
+      "旅行安排 - 02/26 Mt. Cook",
+      "旅行安排 - 02/28 Arthur's Pass"
     ]
   },
   {
     "name": "黃德芝",
     "activities": [
-      "旅行安排 -02/09 基督城內"
+      "旅行安排 -02/09 基督城內",
+      "旅行安排 - 02/11 基督城 Banks Peninsula"
     ]
   }
 ]
