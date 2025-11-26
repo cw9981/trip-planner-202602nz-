@@ -1,0 +1,74 @@
+/* 待办事项特定样式 */
+.todo-category {
+    margin-bottom: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.category-title {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.todo-list {
+    padding: 15px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+    background-color: #f5f5f5;
+}
+
+.todo-item .status-icon {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.todo-item .task-text {
+    flex-grow: 1;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #d32f2f;
+    background-color: #ffebee;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .todo-category {
+        margin-bottom: 15px;
+    }
+    
+    .category-title {
+        padding: 10px;
+        font-size: 1em;
+    }
+    
+    .todo-list {
+        padding: 10px;
+    }
+}
