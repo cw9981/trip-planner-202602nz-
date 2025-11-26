@@ -182,7 +182,7 @@ class ItineraryRenderer {
         }
 
         let html = '';
-        const people = ['chingwen', 'jane', 'zhi'];
+        const people = ['chingwen', 'zhi' , 'jane'];
         
         people.forEach(person => {
             const personNotes = stageNotes.filter(note => note.person === person);
@@ -226,9 +226,9 @@ class ItineraryRenderer {
     // 获取人员显示名称
     getPersonDisplayName(person) {
         const names = {
-            'chingwen': 'chingwen',
-            'jane': 'jane',
-            'zhi': 'zhī'
+            'chingwen': '吳靜雯',
+            'jane': '郭志貞',
+            'zhi': '黃德芝'
         };
         return names[person] || person;
     }

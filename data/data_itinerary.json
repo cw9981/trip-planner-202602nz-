@@ -7,26 +7,25 @@
       {
         "date": "2/8",
         "activities": [
-          "下午五點前往超市「PAK'nSAVE」採買",
-          "之後前往住宿"
+          "五點前往超市「PAK'nSAVE」採買"
         ]
       },
       {
         "date": "2/9",
         "activities": [
-          "自由活動或探索基督城周邊"
+          "探索基督城市區 ＠zhi"
         ]
       },
       {
         "date": "2/10",
         "activities": [
-          "自由活動或探索基督城周邊"
+          "Lyttelton 沿海小鎮 @Jane"
         ]
       },
       {
         "date": "2/11",
         "activities": [
-          "自由活動或探索基督城周邊"
+          "Akaroa 法國小鎮 or 沿海步道 Taylor's Mistake  @Jane"
         ]
       }
     ]
@@ -39,15 +38,22 @@
       {
         "date": "2/12",
         "activities": [
-          "從基督城出發至皇后鎮，車程6小時（500公里）",
-          "Fairlie有一間排隊的派店，六點開門"
+          "注意:從基督城出發至皇后鎮，車程6小時（500公里）早上10點出發，晚上7點左右到達 ",
+          "(x)Rakaia River waterfall -> (x)The Rabbit (Ashburton) -> Geraldine Fairlie lookout",
+          "Fairlie 有一間排隊的派店，六點開門 人潮多可能會超過20～30分鐘",
+          "Burkes pass -> Dog Kennel Corner -> Lake Tekopo -> Lake Pukaki",
+          "Omarama 買杯咖啡和汽油",
+          "Lindis Scenic hill spot/Lindis pass viewpoint",
+          "Cromwell-水果鎮 瓊斯太太的水果攤(Jones Family Fruit Stall),The Stoaker Room (Cromwell)",
+          "皇后鎮外大超市採買"
         ]
       },
       {
         "date": "2/13",
         "activities": [
           "從皇后鎮前往Glenorchy，車程1小時（50公里）",
-          "Routeburn Track 健行"
+          "Routeburn Track 健行",
+          "Glenorchy 落日？"
         ]
       },
       {
@@ -67,8 +73,10 @@
       {
         "date": "2/15",
         "activities": [
-          "從皇后鎮前往Te Anau，車程2小時（170公里）",
-          "Fergburger排隊漢堡店七點開門"
+          "Fergburger排隊漢堡店七點開門",
+          "注意: 從皇后鎮前往Te Anau，車程2小時（170公里）",
+          "Jack’s Point Loop   這條2.5小時的環路大部分都是上坡，但山頂的景色美不勝收",
+          "Mossburn/Kingston 加油便宜"
         ]
       },
       {
@@ -105,7 +113,12 @@
       {
         "date": "2/20",
         "activities": [
-          "從Te Anau前往瓦納卡，車程3小時（230公里）"
+          "注意: Te Anau 前往 瓦納卡，車程3小時（230公里）",
+          "Mossburn/Kingston 加油便宜?",
+          "皇后鎮「PAK'nSAVE」超市採買",
+          "Lake Hayes/ Arrowtown",
+          "Arrow Junction lookout point",
+          "Cardrona 餐廳—百年酒店The Cardrona Hotel  最有名的是羊肉漢堡，更推鹿肉（venison"
         ]
       },
       {
@@ -142,13 +155,17 @@
       {
         "date": "2/25",
         "activities": [
-          "從瓦納卡前往Mt Cook，車程2.5小時（200公里）"
+          "注意: 從瓦納卡前往Mt Cook，車程2.5小時（200公里）",
+          "Kawasaki Gorge Suspension bridge",
+          "Cromwell-水果鎮 採櫻桃  @chingwen",
+          "Lindis Scenic hill spot/Lindis pass viewpoint",
+          "Twizel High country salmon"
         ]
       },
       {
         "date": "2/26",
         "activities": [
-          "於Mt Cook停留一整天，進行健行活動"
+          "於Mt Cook停留一整天，進行健行活動 @Jane"
         ]
       }
     ]
@@ -156,19 +173,20 @@
   {
     "stage_id": 6,
     "dates": "2月27日至2月28日",
-    "location": "Springfield 或 基督城外",
+    "location": "Springfield 近基督城",
     "itinerary": [
       {
         "date": "2/27",
         "activities": [
-          "Twizel → Springfield：5小時，400公里",
-          "Rakaia Gorge Walkway 二月顏色沒春天漂亮，待確認值不值得去，離73公路近"
+          "注意: Twizel → Springfield：5小時，400公里",
+          "Burkes pass  富含古蹟的街道", 
+          "Rakaia Gorge Walkway 二月顏色沒春天漂亮，待確認值不值得去，離73公路近 @chingwen"
         ]
       },
       {
         "date": "2/28",
         "activities": [
-          "於73號公路（Arthur's Pass）健行一日，車程1小時60公里"
+          "於73號公路（Arthur's Pass）健行一日，車程1小時60公里. @Zhi"
         ]
       }
     ]
@@ -182,7 +200,9 @@
         "date": "3/1",
         "activities": [
           "從Springfield返回基督城，車程1小時60公里",
-          "注意:需於當日下午四點前完成還車"
+          "基督城- The Tannery 很有設計感的 mall",
+          "注意:需於當日下午四點前完成還車",
+          "超市購買紀念品與晚餐"
         ]
       },
       {
