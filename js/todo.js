@@ -21,6 +21,21 @@ async function loadTodoData() {
     }
 }
 
+// 根据活动内容获取对应的图标
+function getActivityIcon(activity) {
+    if (activity.includes('攜帶')) {
+        return '🎒'; // 背包图标表示携带物品
+    } else if (activity.includes('安排')) {
+        return '📅'; // 日历图标表示安排事项
+    } else if (activity.includes('確認') || activity.includes('預訂')) {
+        return '✅'; // 确认图标
+    } else if (activity.includes('購買') || activity.includes('兌換')) {
+        return '💰'; // 金钱图标
+    } else {
+        return '📝'; // 默认图标
+    }
+}
+
 // 页面加载完成后初始化待办事项
 document.addEventListener('DOMContentLoaded', async function() {
     // 隐藏加载消息
@@ -62,7 +77,7 @@ function initializeTodoList(todoData) {
             icon = '👤';
         }
         
-        titleElement.textContent = `${icon} ${category.name}`;
+        titleElement.innerHTML = `<span class="category-icon">${icon}</span> ${category.name}`;
         categoryElement.appendChild(titleElement);
         
         // 创建待办事项列表
@@ -74,18 +89,15 @@ function initializeTodoList(todoData) {
             const todoItem = document.createElement('div');
             todoItem.className = 'todo-item';
             
-            // 创建状态图标
-            const statusIcon = document.createElement('span');
-            statusIcon.className = 'status-icon';
-            statusIcon.textContent = '•'; // 使用圆点作为列表标记
+            // 获取对应的图标
+            const activityIcon = getActivityIcon(activity);
             
-            // 创建任务文本
-            const taskText = document.createElement('span');
+            // 创建任务文本 - 添加活动图标
+            const taskText = document.createElement('div');
             taskText.className = 'task-text';
-            taskText.textContent = activity;
+            taskText.innerHTML = `<span class="activity-icon">${activityIcon}</span> ${activity}`;
             
             // 组装待办事项项
-            todoItem.appendChild(statusIcon);
             todoItem.appendChild(taskText);
             
             // 添加到列表
