@@ -18,9 +18,6 @@ class ItineraryRenderer {
             this.container.appendChild(stageElement);
         });
 
-        // 设置备注按钮事件监听
-        this.setupCommentButtons();
-
         // 在后台加载意见数据
         this.loadNotesDataInBackground();
     }
@@ -99,21 +96,9 @@ class ItineraryRenderer {
         let html = '';
         
         itinerary.forEach(day => {
-            // 生成按钮HTML
-            let buttonsHtml = '';
-            if (day.webpage) {
-                buttonsHtml += `<button class="webpage-btn" data-webpage-url="${day.webpage}">🌐 相關網站</button>`;
-            }
-            if (day.comments) {
-                buttonsHtml += `<button class="comments-btn" data-comment-file="${day.comments}">📝 查看備註</button>`;
-            }
-            
             html += `
                 <div class="itinerary-date">
-                    <div class="date-header">
-                        ${day.date}
-                        ${buttonsHtml ? `<div class="date-buttons">${buttonsHtml}</div>` : ''}
-                    </div>
+                    <div class="date-header">${day.date}</div>
                     <ul class="activity-list">
                         ${day.activities.map(activity => {
                             if (activity.includes('注意:')) {
@@ -417,132 +402,39 @@ class ItineraryRenderer {
         textarea.value = noteContent;
     }
 
+
     // 保存意见到Google Apps Script（使用 AJAX 避免页面跳转）
     async saveNote(stageId, person, activity) {
-        try {
-            // 构造表单数据（和原来一样，但用 fetch 发送）
-            const formData = new FormData();
-            formData.append('stage', stageId);
-            formData.append('person', person);
-            formData.append('activity', activity);
+    try {
+        // 构造表单数据（和原来一样，但用 fetch 发送）
+        const formData = new FormData();
+        formData.append('stage', stageId);
+        formData.append('person', person);
+        formData.append('activity', activity);
 
-            // 使用 fetch 发送 POST 请求
-            const response = await fetch(`${this.scriptUrl}?path=update`, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json' // 明确要求返回 JSON
-                }
-            });
-
-            // 1. 从响应中获取 JSON 数据（避免浏览器直接显示）
-            const result = await response.json();
-            
-            console.log('意见已保存:', result);
-            
-            // 2. 仅当成功时提示（不跳转页面）
-            if (result.success) {
-                alert('保存成功！'); // 或用 Toast 提示
-            }
-            return result;
-        } catch (error) {
-            console.error('保存失败:', error);
-            alert('保存失败，请重试！');
-            throw error;
+        // 使用 fetch 发送 POST 请求
+        const response = await fetch(`${this.scriptUrl}?path=update`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json' // 明确要求返回 JSON
         }
-    }
-
-    // 设置按钮事件
-    setupCommentButtons() {
-        // 使用事件委托处理动态生成的按钮
-        this.container.addEventListener('click', (e) => {
-            if (e.target.classList.contains('comments-btn')) {
-                const commentFile = e.target.getAttribute('data-comment-file');
-                this.openCommentModal(commentFile);
-            }
-            if (e.target.classList.contains('webpage-btn')) {
-                const webpageUrl = e.target.getAttribute('data-webpage-url');
-                this.openWebpage(webpageUrl);
-            }
-        });
-    }
-
-    // 打开备注模态框
-    async openCommentModal(commentFile) {
-        try {
-            // 显示加载中的模态框
-            const modal = this.createCommentModal('載入中...', true);
-            
-            // 加载备注文件内容
-            const response = await fetch(commentFile);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const commentContent = await response.text();
-            
-            // 更新模态框内容
-            this.updateCommentModalContent(modal, commentContent);
-            
-        } catch (error) {
-            console.error('加载备注文件失败:', error);
-            // 显示错误信息的模态框
-            const modal = this.createCommentModal('無法載入備註內容，請稍後再試。', false);
-        }
-    }
-
-    // 创建备注模态框
-    createCommentModal(content, isLoading = false) {
-        const modal = document.createElement('div');
-        modal.className = 'edit-modal comment-modal';
-        
-        const loadingClass = isLoading ? 'loading-comment' : '';
-        
-        modal.innerHTML = `
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2>行程備註</h2>
-                    <span class="close-modal">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <div class="comment-content ${loadingClass}">
-                        ${content}
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="cancel-btn">關閉</button>
-                </div>
-            </div>
-        `;
-
-        document.body.appendChild(modal);
-
-        // 设置关闭事件
-        const closeModal = () => document.body.removeChild(modal);
-        
-        modal.querySelector('.close-modal').addEventListener('click', closeModal);
-        modal.querySelector('.cancel-btn').addEventListener('click', closeModal);
-        
-        // 点击模态框外部关闭
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
         });
 
-        return modal;
+        // 1. 从响应中获取 JSON 数据（避免浏览器直接显示）
+        const result = await response.json();
+        
+        console.log('意见已保存:', result);
+        
+        // 2. 仅当成功时提示（不跳转页面）
+        if (result.success) {
+        alert('保存成功！'); // 或用 Toast 提示
+        }
+        return result;
+    } catch (error) {
+        console.error('保存失败:', error);
+        alert('保存失败，请重试！');
+        throw error;
     }
-
-    // 更新备注模态框内容
-    updateCommentModalContent(modal, content) {
-        const commentContent = modal.querySelector('.comment-content');
-        commentContent.classList.remove('loading-comment');
-        commentContent.innerHTML = content;
-    }
-
-    // 打开网页（新标签页）
-    openWebpage(url) {
-        console.log('打开网页:', url);
-        window.open(url, '_blank');
     }
 }

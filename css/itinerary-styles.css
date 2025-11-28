@@ -520,3 +520,247 @@ main {
     padding: 2rem;
     color: #7f8c8d;
 }
+
+
+/* 备注按钮样式 */
+.comments-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    transition: background-color 0.3s;
+}
+
+.comments-btn:hover {
+    background-color: #219653;
+}
+
+/* 日期头部布局调整 */
+.date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* 响应式设计调整 */
+@media (max-width: 768px) {
+    .date-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comments-btn {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        align-self: flex-start;
+    }
+}
+
+
+/* 备注模态框样式 */
+.comment-modal .modal-content {
+    max-width: 800px;
+    max-height: 80vh;
+}
+
+.comment-content {
+    padding: 1rem;
+    line-height: 1.6;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.comment-content.loading-comment {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* 备注内容样式 */
+.comment-content h1,
+.comment-content h2,
+.comment-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.comment-content p {
+    margin-bottom: 1rem;
+}
+
+.comment-content ul,
+.comment-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.comment-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* 备注按钮样式 */
+.comments-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    transition: background-color 0.3s;
+}
+
+.comments-btn:hover {
+    background-color: #219653;
+}
+
+/* 日期头部布局调整 */
+.date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* 响应式设计调整 */
+@media (max-width: 768px) {
+    .date-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comments-btn {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        align-self: flex-start;
+    }
+    
+    .comment-modal .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+}
+
+
+/* 日期按钮容器 */
+.date-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* 备注按钮样式 */
+.comments-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.comments-btn:hover {
+    background-color: #219653;
+}
+
+/* 网页按钮样式 */
+.webpage-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.webpage-btn:hover {
+    background-color: #2980b9;
+}
+
+/* 日期头部布局调整 */
+.date-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* 备注模态框样式 */
+.comment-modal .modal-content {
+    max-width: 800px;
+    max-height: 80vh;
+}
+
+.comment-content {
+    padding: 1rem;
+    line-height: 1.6;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.comment-content.loading-comment {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* 备注内容样式 */
+.comment-content h1,
+.comment-content h2,
+.comment-content h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.comment-content p {
+    margin-bottom: 1rem;
+}
+
+.comment-content ul,
+.comment-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.comment-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* 响应式设计调整 */
+@media (max-width: 768px) {
+    .date-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .date-buttons {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    .comments-btn,
+    .webpage-btn {
+        flex: 1;
+        text-align: center;
+    }
+    
+    .comment-modal .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+}

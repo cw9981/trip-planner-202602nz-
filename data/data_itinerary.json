@@ -44,15 +44,16 @@
     "itinerary": [
       {
         "date": "02/12(四)",
+        "comments": "comment_0212.html",
         "activities": [
           "注意:從基督城出發至皇后鎮，車程6小時（500公里）早上10點出發，晚上7點左右到達 ",
-          "📸 (x)Rakaia River waterfall -> (x)The Rabbit (Ashburton) -> Geraldine Fairlie lookout",
+          "📸 Geraldine Fairlie lookout",
           "🍴 Fairlie 有一間排隊的派店，六點開門 人潮多可能會超過20～30分鐘",
           "📸 Burkes pass -> Dog Kennel Corner -> Lake Tekopo -> Lake Pukaki",
           "🍴 Omarama 買杯咖啡和汽油",
           "📸 Lindis Scenic hill spot/Lindis pass viewpoint",
           "📸 Cromwell-水果鎮 瓊斯太太的水果攤(Jones Family Fruit Stall)",
-          "🍴 Cromwell-The Stoaker Room 木桶烤肉餐廳。如果想在Cromwell吃飯的話可推薦這裡。 54/人",
+          "📸 Kawarau Gorge Suspension bridge:高空彈跳的發源地",
           "🛒 皇后鎮外大超市採買"
         ]
       },
@@ -88,52 +89,64 @@
           "注意: 從皇后鎮前往Te Anau，車程2小時（170公里）",
           "🍴 吃 Fergburger排隊漢堡店七點開門",
           "🥾 Jack’s Point Loop 這條2.5小時的環路大部分都是上坡，但山頂的景色美不勝收",
-          "⛽️ Mossburn/Kingston 加油便宜",
           "📸 Devil's Staircase Lookout Point",
-          "📸 Lake Wakatipu lookout",
-          "📸 Mataura River Bridge",
-          "📸 Wilderness Scientific Reserve",
-          "📸 Lion’s Lookout  觀賞日落的神奇地點"
+          "📸 Kingston Lake Wakatipu lookout",
+          "⛽️ Mossburn 加油便宜- 總是比皇后鎮或蒂阿瑙便宜得多",
+          "📸 94 Hwy – 2905 Lookout (94 號公路– 2905 景觀台)",
+          "📸 Wilderness Scientific Reserve-The Wilderness Lookout",
+          "📸 Te Anau Lions Lookout Point  觀賞日落的神奇地點"
         ]
       },
       {
         "date": "02/16(一)",
+        "webpage":"https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk",
         "activities": [
-          "🥾 Te Anau: Kepler Track Luxmore Hut 一天(須先預約水上 taxi) 免開車 @ching"
+          "🥾 Kepler Track Luxmore Hut 一日挑戰 (約 7-9 小時)",
+          "🚢 預約水上 taxi  從 Te Anau 碼頭至 Brod Bay [8:30am, 9:30am, 10:30am and 2.30pm] 30 NZ ",
+          "🚢 預約水上 taxi  從 Brod Bay 返回 Te Anau[8.45am, 9.45am, 2.45pm and 4.30pm] 30NZ"
         ]
       },
       {
         "date": "02/17(二)",
+        "comments": "comment_0217.html",
         "activities": [
-          "📸 探索 Milford Sound/ Te Anau",
-          "🥾 Te Anau: Kepler Track - Rainbow Reach（沿湖與河邊走），來回約 3 小時",
-          "📸 Lake Te Anau (蒂阿瑙湖) 湖岸散步，湖景很美，夕陽時分風光絕佳",
-          "📸 Te Anau Bird Sanctuary (蒂阿瑙鳥類保護園區)免費",
-          "🍴 吃 Te Anau — Miles Better Pie (鹹派料理)",
-          "🍴 吃 Te Anau - Ristorante Pizzeria Paradiso 主打「正宗義大利窯烤披薩」",
-          " ⛽️ Lake Te Anau 油价便宜。 这里2.3多一点，皇后镇是2.6"
+          "📸 Mirror Lakes（鏡湖）- 共同觀光",
+          "📸 Eglinton Valley（大草原）- 共同觀光",
+          "📌 The Divide 停車場：分流點",
+          "🛶 探索 Milford Sound (遊船) - 僅遊船者 (A) 參與",
+          "🥾 Lake Marian Track（瑪麗安湖步道）- 僅健行者 (B/C) 參與 (中高難度, 3-4小時)",
+          "📌 The Divide 會合與午餐",
+          "🥾 The Chasm (裂谷步道) - 共同活動 (短程)",
+          "📸 Homer Tunnel - 共同活動",
+          "📸 Monkey Creek（湧泉）/ Ceddau River 可裝河水直接喝 - 共同活動",
+          "📸 Pop’s Viewpoint（Hollyford Lookout）- 共同活動",
+          "📸 Falls Creek Waterfall (瀑布溪瀑布) - 共同活動"
         ]
       },
       {
         "date": "02/18(三)",
+        "comments": "comment_0218.html",
         "activities": [
-          "🥾 Milford Sound: Gertrude Saddle track 健行 半天 + 瑪麗安湖步道半天"
+          "🚗 早起出發，前往 The Divide",
+          "🧗 Gertrude Saddle Track (高難度攀爬, 6-7小時) 或 🥾 Key Summit Track (中等難度, 3.5小時) - 挑戰者依體能二選一",
+          "📌 The Divide/Lake Gunn 享用遲來的午餐",
+          "🥾 Lake Gunn Nature Walk（湖畔輕鬆步道, 45分鐘）",
+          "📸 Cascade Creek（濕地生態與水鳥觀賞）"
         ]
       },
       {
         "date": "02/19(四)",
         "activities": [
-          "📸 探索 Milford Sound",
-          "📸 Pop’s Viewpoint（Hollyford Lookout）",
-          "📸 Falls Creek Waterfall (瀑布溪瀑布)",
-          "📸 Monkey Creek（湧泉）",
-          "📸 Homer Tunnel",
-          "🥾 The Chasm (裂谷步道)",
-          "🥾 Key Summit Track",
-          "🥾 Lake Gunn Nature Walk",
-          "📸 Eglinton Valley（大草原）",
-          "📸 Mirror Lakes（鏡湖）",
-          "享用紐西蘭最純淨的水: Monkey Creek/Ceddau River"
+          "📸 探索 Te Anau",
+          "🥾 Te Anau: Kepler Track - Rainbow Reach（沿湖與河邊走），來回約 3 小時",
+          "📸 Lake Manapouri 湖景散步與 📸 Two Wee Bookshops. (10:00–15:30) - 步道後觀光",
+          "🍴 The Church at Manapouri（在 Manapouri 悠閒享用早午餐）",
+          "📸 Te Anau Bird Sanctuary (蒂阿瑙鳥類保護園區)免費 - 輕鬆觀鳥",
+          "🌳 Ivan Wilson Park 湖畔公園休息與散步",
+          "📸 Control Gates / Lake Te Anau 出水口 - 順路觀景",
+          "📸 Lake Te Anau (蒂阿瑙湖) 湖岸散步，捕捉夕陽時分風光絕佳",
+          "🍴 吃 Te Anau — Miles Better Pie (鹹派料理)",
+          "🍴 吃 Te Anau - Ristorante Pizzeria Paradiso 主打「正宗義大利窯烤披薩」"
         ]
       }
     ]
@@ -147,9 +160,10 @@
         "date": "02/20(五)",
         "activities": [
           "注意: Te Anau 前往 瓦納卡，車程3小時（230公里）",
-          "⛽️ Mossburn/Kingston 加油便宜?",
+          "皇冠山脈公路 (Crown Range Road)。有許多急彎和陡坡，但風景無敵",
+          "⛽️ Mossburn 加油便宜- 總是比皇后鎮或蒂阿瑙便宜得多",
           "🛒 皇后鎮「PAK'nSAVE」超市採買",
-          "📸 Lake Hayes/ Arrowtown",
+          "📸 Lake Hayes Walkway/ Arrowtown",
           "📸 Arrow Junction lookout point",
           "🍴 吃: Cardrona 餐廳—百年酒店 The Cardrona Hotel 最有名的是羊肉漢堡，更推鹿肉（venison)"
         ]
@@ -163,9 +177,8 @@
       {
         "date": "02/22(日)",
         "activities": [
-          "📸 瓦納卡薰衣草農場紐幣$7夏季限定",
+          "📸 瓦納卡薰衣草農場紐幣$7夏季限定 需注意薰衣草的花期",
           "🥾 Mount Iron Track（小而美）適合清晨或黃昏走一圈",
-          "🥾 Diamond Lake & Rocky Mountain Track距離：3–7 km",
           "📸 That Wanaka Tree紐西蘭最有名的樹之一清晨或黃昏",
           "📸 Lake Wanaka",
           "🍴 吃 Big Fig：中東風格便餐，自選熱食（很受當地人歡迎）",
@@ -177,13 +190,16 @@
       {
         "date": "02/23(一)",
         "activities": [
-          "🥾 Isthmus Peak or Roy’s Peak 步道健行 健行一天"
+          "🥾 Isthmus Peak or Roy’s Peak 步道健行 健行一天 清晨出發，避開夏季中午的烈日曝曬"
         ]
       },
       {
         "date": "02/24(二)",
         "activities": [
           "🔹 自由活動或探索瓦納卡",
+          "🥾Rob Roy Glacier Track 30 公里碎石路 沒下雨/積水 可考慮前往",
+          "🥾 Diamond Lake & Rocky Mountain Track距離：3–7 km",
+          "📸 Rippon Vineyard： 這可能是紐西蘭風景最美的酒莊",
           "🍴 吃 墨西哥餐廳——Amigos Amigos 逢星期二必吃！Taco特價日"
         ]
       }
@@ -198,16 +214,21 @@
         "date": "02/25(三)",
         "activities": [
           "注意: 從瓦納卡前往Mt Cook，車程2.5小時（200公里）",
-          "📸 Kawarau Gorge Suspension bridge",
           "📸 Cromwell-水果鎮 採櫻桃 @zhi",
+          "🍴 Cromwell-The Stoaker Room 木桶烤肉餐廳。如果想在Cromwell吃飯的話可推薦這裡。 54/人",
           "📸 Lindis Scenic hill spot/Lindis pass viewpoint",
-          "📸 Twizel High country salmon"
+          "🍴 Musterer's Hut Cafe (Omarama) The Wrinkly Ram Cafe & Store",
+          "📸 Lake Ruataniwha/Lake Pukaki", 
+          "🍴 Twizel High country salmon"
         ]
       },
       {
         "date": "02/26(四)",
         "activities": [
           "🥾 於Mt Cook停留一整天，進行健行活動 @Jane",
+          "📍 Lake Pukaki Information Centre",
+          "📸 Peter's Lookout",
+          "📸 Blue Lakes and Tasman Glacier Walks",
           "🥾 Hooker Valley Track：約10公里",
           "🥾 Kea Point Track",
           "🍴 Old Mountaineers’ Cafe（健行後熱門）"
