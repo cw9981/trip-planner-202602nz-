@@ -87,91 +87,16 @@
   ],
   "canceled": [
     {
-      "date_start": "2026-02-12",
-      "date_end": "2026-02-13",
-      "nights": 1,
-      "location": "Cromwell",
-      "accommodation": "ASURE中金克倫威爾汽車旅館",
-      "booking_source": "Booking",
-      "details": "一大床 兩小床",
-      "links": ""
-    },
-    {
-      "date_start": "2026-02-12",
-      "date_end": "2026-02-13",
-      "nights": 1,
-      "location": "Fairlie",
-      "accommodation": "Mackenzie Motels",
-      "booking_source": "Booking",
-      "details": "標準公寓, 簡易廚房, 兩大床一小床",
-      "check_in": "2026-02-12 14:00-22:00",
-      "check_out": "2026-02-13 10:00",
-      "address": "14 School Road, Fairlie 7925 紐西蘭",
-      "links": "https://maps.app.goo.gl/QUSngsiBPWLfKBpa8"
-    },
-    {
-      "date_start": "2026-02-13",
-      "date_end": "2026-02-14",
-      "nights": 1,
-      "location": "Glenorchy",
-      "accommodation": "#3 Glenorchy Alpine Suite ASPEN",
-      "booking_source": "Booking",
-      "details": "單臥室公寓, 簡易廚房, 1 張單人床 和 1 張加大雙人床",
-      "check_in": "2026-02-13 15:00-21:00",
-      "check_out": "2026-02-14 07:00-10:00",
-      "address": "89 Oban Street, 9372 格林諾奇, 紐西蘭",
-      "links": "https://www.booking.com/Share-ZcH1pBZ"
-    },
-    {
-      "date_start": "2026-02-13",
-      "date_end": "2026-02-14",
-      "nights": 1,
-      "location": "皇后鎮 (Queenstown)",
-      "accommodation": "Haka House Queenstown Lakefront",
-      "booking_source": "Booking (青旅)",
-      "details": "宿舍床位 1: 6床女性宿舍间的1张床位 - 带连接浴室, 公共廚坊, 收費停車場",
-      "check_in": "2026-02-13 14:00-23:00",
-      "check_out": "2026-02-14 10:00",
-      "address": "88-90 Lake Esplanade, Queenstown 9300紐西蘭",
-      "links": "https://maps.app.goo.gl/cLiERjMi4udpLmqm6"
-    },
-    {
-      "date_start": "2026-02-14",
-      "date_end": "2026-02-15",
-      "nights": 1,
-      "location": "皇后鎮 (Queenstown)",
-      "accommodation": "Haka House Queenstown Lakefront",
-      "booking_source": "Booking (青旅)",
-      "details": "宿舍床位 1: 6床女性宿舍间的1张床位 - 带连接浴室, 公共廚坊, 收費停車場",
-      "check_in": "2026-02-14 14:00-20:00",
-      "check_out": "2026-02-15 10:00",
-      "address": "88-90 Lake Esplanade, Queenstown 9300紐西蘭",
-      "links": ""
-    },
-    {
       "date_start": "2026-02-25",
       "date_end": "2026-02-27",
       "nights": 2,
-      "location": "Glentanner (格林坦納)",
-      "accommodation": "20 km to mt cook (Glentanner Park Centre)",
+      "location": "Mt Cook",
+      "accommodation": "Haka House Hostel Aoraki Mt Cook",
       "booking_source": "Booking",
-      "details": "1 間平房小屋 (七人標準房), 標準小屋- 帶共用浴室, 公共廚房 待查",
-      "check_in": "2026-02-25 14:00-17:00",
-      "check_out": "2026-02-27 10:00",
-      "links": ""
-    },
-    {
-      "date_start": "2026-02-27",
-      "date_end": "2026-03-01",
-      "nights": 2,
-      "location": "基督城 海邊 靠北方",
-      "accommodation": "Margaret Home",
-      "booking_source": "Booking",
-      "details": "雙臥室公寓, 廚房, 洗衣機, 兩房 一大床 兩小床, 水按摩池",
-      "check_in": "2026-02-27 15:00-19:00",
-      "check_out": "2026-03-01 08:00-10:00",
-      "address": "117 Inwoods Close, 8083 基督城, 紐西蘭",
-      "links": ""
+      "details": "宿舍床位",
+      "check_in": "2026-02-27 14:00-22:00",
+      "check_out": "2026-03-01 05:00-10:00",
+      "links": "https://hakahouse.com/aoraki-mt-cook/"
     }
   ]
 }

@@ -100,7 +100,7 @@ function renderAccommodationItem(item, status, index) {
                     <h3>${item.accommodation}</h3>
                     <div class="location-badge">${item.location}</div>
                 </div>
-                <span class="status ${status}">${status === 'confirmed' ? '已確認' : '待取消'}</span>
+                <span class="status ${status}">${status === 'confirmed' ? '已確認' : '待討論'}</span>
             </div>
             <div class="stay-duration">
                 <div class="nights-badge" style="background-color: ${itemColor}; color: ${textColor}; border-color: ${itemColor}">

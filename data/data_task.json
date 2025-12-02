@@ -6,21 +6,21 @@
       "國際旅客保育及旅遊捐(IVL)：35紐幣",
       "電子入境卡（New Zealand Traveller Online Declaration），在搭機前24小時內先上網填妥入境申報表單 快速通關",      
       "購買旅行保險",
-      "兌換紐西蘭幣",
-      "sim/eSim"
+      "兌換紐西蘭幣: 100紐幣",
+      "準備網卡: sim/eSim"
     ]
   },
   {
     "name": "吳靜雯",
     "tasks": [
-      "帶國際駕照",
-      "住宿預訂",
-      "租車預訂",
-      "額外帶煎鍋",
-      "旅行安排 - 02/13 皇后鎮-Glenorchy",
-      "旅行安排 - 02/25 Wanaka-Twizel",   
-      "旅行安排 - 02/27 Twizel-Springfield",     
-      "旅行安排 - 03/01 Springfield-基督城",      
+      "準備-帶國際駕照",
+      "住宿 預訂",
+      "租車 預訂",
+      "準備-額外帶煎鍋",
+      "安排 - 02/13 皇后鎮-Glenorchy",
+      "安排 - 02/25 Wanaka-Twizel",   
+      "安排 - 02/27 Twizel-Springfield",     
+      "安排 - 03/01 Springfield-基督城",      
       "gpx - Rakaia Gorge Walkway  02/27 ",
       "gpx - Routeburn Track 2/13",
       "gpx - Kepler Track Luxmore Hut side  2/16",
@@ -36,25 +36,25 @@
     "name": "郭志貞",
     "tasks": [
       "國際駕照",
-      "旅行安排 - 02/10 基督城 Lyttelton",
-      "旅行安排 - 02/11 基督城 Akaroa",
-      "旅行安排 - 02/12 基督城-皇后鎮",
-      "旅行安排 - 02/15 皇后鎮-Te Anau",
-      "旅行安排 - 02/20 Te Anau-Wanaka",   
-      "旅行安排 - 02/26 Mt.Cook", 
-      "旅行安排 - 02/28 Arthur's Pass"
+      "安排 - 02/10 基督城 Lyttelton",
+      "安排 - 02/11 基督城 Akaroa",
+      "安排 - 02/12 基督城-皇后鎮",
+      "安排 - 02/15 皇后鎮-Te Anau",
+      "安排 - 02/20 Te Anau-Wanaka",   
+      "安排 - 02/26 Mt.Cook", 
+      "安排 - 02/28 Arthur's Pass"
 
     ]
   },
   {
     "name": "黃德芝",
     "tasks": [
-      "旅行安排 - 02/09 基督城內",
-      "旅行安排 - 02/11 基督城 Banks Peninsula",
-      "旅行安排 - 2/25 Cromwell-水果鎮 採櫻桃",
-      "旅行安排 - 基督城 採藍莓",
-      "旅行安排 - 薰衣草園",
-      "旅行安排 - Te Anau, Kepler Track 水上計程車",
+      "安排 - 02/09 基督城內",
+      "安排 - 02/11 基督城 Banks Peninsula",
+      "安排 - 2/25 Cromwell-水果鎮 採櫻桃",
+      "安排 - 基督城 採藍莓",
+      "安排 - 薰衣草園",
+      "安排 - Te Anau, Kepler Track 水上計程車",
       "超市 New World 直接到櫃檯索取旅客專屬的 Tourist Club Deals Card "
     ]
   }

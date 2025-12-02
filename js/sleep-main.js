@@ -50,7 +50,7 @@ async function loadAccommodationData() {
             canceledSection.className = 'canceled';
             
             const canceledTitle = document.createElement('h2');
-            canceledTitle.textContent = '待取消';
+            canceledTitle.textContent = '待討論';
             canceledSection.appendChild(canceledTitle);
             
             const canceledList = document.createElement('div');

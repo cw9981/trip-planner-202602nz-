@@ -3,64 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 頂級步道挑戰</title>
+    <title>頂級步道挑戰</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 15px;
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: #0f172a; /* 暗藍色背景 */
+            color: #e2e8f0; /* 淺灰色文字 */
         }
+        
         h1 {
-            color: #004d40;
-            border-bottom: 3px solid #004d40;
+            color: #60a5fa; /* 藍色標題 */
+            border-bottom: 3px solid #334155;
             padding-bottom: 10px;
             text-align: center;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
+        
         .container {
             max-width: 800px;
             margin: auto;
-            background: #fff;
+            background: linear-gradient(145deg, #121828, #1a2035);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid #334155;
         }
+        
         .table-wrapper {
-            overflow-x: auto; /* 支援手機橫向滾動 */
+            overflow-x: auto;
+            margin-top: 20px;
         }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
-            min-width: 600px; /* 確保在小螢幕下有足夠的內容寬度 */
+            min-width: 600px;
+            background-color: #1a2035;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            overflow: hidden;
         }
+        
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #334155;
             padding: 12px 8px;
             text-align: left;
             vertical-align: top;
+            color: #e2e8f0;
         }
+        
         th {
-            background-color: #e0f2f1;
-            color: #004d40;
+            background-color: #1e3a8a; /* 深藍色表頭 */
+            color: #f1f5f9;
             font-weight: bold;
-            white-space: nowrap; /* 防止標題斷行 */
+            white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
+        
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #121828; /* 交替行深色背景 */
         }
+        
+        tr:hover {
+            background-color: rgba(96, 165, 250, 0.1); /* 懸停效果 */
+        }
+        
         .note {
             font-style: italic;
-            color: #555;
+            color: #93c5fd; /* 亮藍色文字 */
             margin-top: 10px;
             padding: 10px;
-            border-left: 5px solid #00796b;
-            background-color: #e0f2f1;
+            border-left: 5px solid #60a5fa;
+            background-color: rgba(96, 165, 250, 0.1);
             border-radius: 4px;
         }
+        
         .warning {
-            color: #d32f2f;
+            color: #fbbf24; /* 黃色警告文字 */
+            font-weight: bold;
+            background-color: rgba(234, 179, 8, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border-left: 3px solid #fbbf24;
+        }
+        
+        strong {
+            color: #93c5fd; /* 亮藍色強調 */
+        }
+        
+        .highlight {
+            background-color: rgba(234, 179, 8, 0.15); /* 黃色高亮 */
+            color: #fbbf24;
             font-weight: bold;
         }
     </style>
@@ -91,8 +126,8 @@
                     <tr>
                         <td>07:30 - 14:30</td>
                         <td>高山健行（7 小時）</td>
-                        <td>🥾 **Gertrude Saddle Track**</td>
-                        <td>🥾 **Key Summit Track** (替代方案 步道很短，只需 2.5 到 3 個小時 (天氣不好，基峰頂的健行就毫無意義，因為視野會被遮住))</td>
+                        <td>🥾 <strong>Gertrude Saddle Track</strong></td>
+                        <td>🥾 <strong>Key Summit Track</strong> (替代方案 步道很短，只需 2.5 到 3 個小時 (天氣不好，基峰頂的健行就毫無意義，因為視野會被遮住))</td>
                         <td><span class="warning">警告：</span> Gertrude Saddle 難度極高，需視天氣和體能決定。若不適合，應選擇 Key Summit。</td>
                     </tr>
                     <tr>
@@ -111,7 +146,7 @@
                     </tr>
                     <tr>
                         <td>16:30 - 17:00</td>
-                        <td>**🆕 Cascade Creek**</td>
+                        <td><strong>🆕 Cascade Creek</strong></td>
                         <td>📸 Cascade Creek</td>
                         <td>📸 Cascade Creek</td>
                         <td>共同觀景，欣賞濕地生態和水鳥。非常輕鬆的收尾。</td>

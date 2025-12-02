@@ -3,61 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 米佛公路分流遊船日</title>
+    <title>米佛公路分流遊船日</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 15px;
-            background-color: #f4f7f6;
-            color: #333;
+            background-color: #0f172a; /* 暗藍色背景 */
+            color: #e2e8f0; /* 淺灰色文字 */
         }
+        
         h1 {
-            color: #004d40;
-            border-bottom: 3px solid #004d40;
+            color: #60a5fa; /* 藍色標題 */
+            border-bottom: 3px solid #334155;
             padding-bottom: 10px;
             text-align: center;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
+        
         .container {
             max-width: 800px;
             margin: auto;
-            background: #fff;
+            background: linear-gradient(145deg, #121828, #1a2035);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: 1px solid #334155;
         }
+        
         .table-wrapper {
-            overflow-x: auto; /* 支援手機橫向滾動 */
+            overflow-x: auto;
+            margin-top: 20px;
         }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
-            min-width: 600px; /* 確保在小螢幕下有足夠的內容寬度 */
+            min-width: 600px;
+            background-color: #1a2035;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            overflow: hidden;
         }
+        
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #334155;
             padding: 12px 8px;
             text-align: left;
             vertical-align: top;
+            color: #e2e8f0;
         }
+        
         th {
-            background-color: #e0f2f1;
-            color: #004d40;
+            background-color: #1e3a8a; /* 深藍色表頭 */
+            color: #f1f5f9;
             font-weight: bold;
-            white-space: nowrap; /* 防止標題斷行 */
+            white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
+        
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #121828; /* 交替行深色背景 */
         }
+        
+        tr:hover {
+            background-color: rgba(96, 165, 250, 0.1); /* 懸停效果 */
+        }
+        
         .note {
             font-style: italic;
-            color: #555;
+            color: #93c5fd; /* 亮藍色文字 */
             margin-top: 10px;
             padding: 10px;
-            border-left: 5px solid #00796b;
-            background-color: #e0f2f1;
+            border-left: 5px solid #60a5fa;
+            background-color: rgba(96, 165, 250, 0.1);
             border-radius: 4px;
+        }
+        
+        .highlight {
+            background-color: rgba(234, 179, 8, 0.15); /* 黃色高亮 */
+            color: #fbbf24;
+            font-weight: bold;
+            border-left: 3px solid #fbbf24;
+        }
+        
+        strong {
+            color: #93c5fd; /* 亮藍色強調 */
         }
     </style>
 </head>
@@ -89,12 +120,12 @@
                         <td>抵達 Lake Marian/The Divide</td>
                         <td></td>
                         <td></td>
-                        <td>**重要分流點**：鑰匙由遊船者 (A) 保管。</td>
+                        <td><strong>重要分流點</strong>：鑰匙由遊船者 (A) 保管。</td>
                     </tr>
                     <tr>
                         <td>10:45 - 15:00</td>
-                        <td>**分流活動（4.25 小時）**</td>
-                        <td>🥾 **Lake Marian Track** (B/C)</td>
+                        <td><strong>分流活動（4.25 小時）</strong></td>
+                        <td>🥾 <strong>Lake Marian Track</strong> (B/C)</td>
                         <td>遊船者 (A) 開往碼頭</td>
                         <td>B/C 挑戰中高難度步道。A 遊船建議 12:00 或 12:30 船班。</td>
                     </tr>
@@ -107,9 +138,9 @@
                     </tr>
                     <tr>
                         <td>16:00 - 18:30</td>
-                        <td>**共同回程精華**</td>
+                        <td><strong>共同回程精華</strong></td>
                         <td>🥾 The Chasm (30min)</td>
-                        <td>📸 Homer Tunnel, 📸 Monkey Creek, 📸 Pop’s Viewpoint, 📸 Falls Creek</td>
+                        <td>📸 Homer Tunnel, 📸 Monkey Creek, 📸 Pop's Viewpoint, 📸 Falls Creek</td>
                         <td>人潮較散，適合共同拍照。Monkey Creek 記得裝水。</td>
                     </tr>
                     <tr>
