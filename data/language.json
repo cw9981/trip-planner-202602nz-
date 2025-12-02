@@ -1,0 +1,40 @@
+{
+  "zh-TW": {
+    "title": "紐西蘭南島旅行 2026-02",
+    "flight": "航班資訊",
+    "itinerary": "行程規劃", 
+    "accommodation": "住宿預約",
+    "task": "任務",
+    "outboundFlights": "去程航班",
+    "inboundFlights": "回程航班",
+    "flightNumber": "航班",
+    "departure": "出發地",
+    "destination": "目的地",
+    "date": "日期",
+    "departureTime": "出發時間",
+    "arrivalTime": "到達時間",
+    "flightDuration": "飛行時間",
+    "transferAt": "轉機",
+    "loadingFlights": "加載航班數據中...",
+    "networkError": "無法加載航班數據，請檢查網絡連接"
+  },
+  "en": {
+    "title": "Kiwi South Island 2026-02",
+    "flight": "Flight Info",
+    "itinerary": "Itinerary",
+    "accommodation": "Accommodation", 
+    "task": "Tasks List",
+    "outboundFlights": "Outbound Flights",
+    "inboundFlights": "Inbound Flights",
+    "flightNumber": "Flight",
+    "departure": "Departure",
+    "destination": "Destination",
+    "date": "Date",
+    "departureTime": "Departure Time",
+    "arrivalTime": "Arrival Time",
+    "flightDuration": "Flight Duration",
+    "transferAt": "Layover",
+    "loadingFlights": "Loading flight data...",
+    "networkError": "Unable to load flight data, please check network connection"
+  }
+}

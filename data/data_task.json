@@ -1,7 +1,7 @@
 [
   {
     "name": "所有人",
-    "activities": [
+    "tasks": [
       "電子旅行授權(NZeTA)：APP申請為17紐幣、網頁申請為23紐幣",
       "國際旅客保育及旅遊捐(IVL)：35紐幣",
       "電子入境卡（New Zealand Traveller Online Declaration），在搭機前24小時內先上網填妥入境申報表單 快速通關",      
@@ -12,7 +12,7 @@
   },
   {
     "name": "吳靜雯",
-    "activities": [
+    "tasks": [
       "帶國際駕照",
       "住宿預訂",
       "租車預訂",
@@ -34,7 +34,7 @@
   },
   {
     "name": "郭志貞",
-    "activities": [
+    "tasks": [
       "國際駕照",
       "旅行安排 - 02/10 基督城 Lyttelton",
       "旅行安排 - 02/11 基督城 Akaroa",
@@ -48,7 +48,7 @@
   },
   {
     "name": "黃德芝",
-    "activities": [
+    "tasks": [
       "旅行安排 - 02/09 基督城內",
       "旅行安排 - 02/11 基督城 Banks Peninsula",
       "旅行安排 - 2/25 Cromwell-水果鎮 採櫻桃",

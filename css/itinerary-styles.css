@@ -1,4 +1,4 @@
-/* 基础样式 */
+/* 暗色系行程页面样式 */
 * {
     margin: 0;
     padding: 0;
@@ -8,26 +8,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
-}
-
-header {
-    background: linear-gradient(135deg, #1a6dcc 0%, #0d47a1 100%);
-    color: white;
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2.2rem;
-}
-
-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
+    color: #e2e8f0; /* 浅灰色文字 */
+    background-color: #0f172a; /* 深蓝背景，与header一致 */
 }
 
 main {
@@ -43,33 +25,38 @@ main {
     gap: 1.5rem;
 }
 
-/* 单个阶段样式 */
+/* 单个阶段样式 - 暗色版 */
 .itinerary-stage {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    background: linear-gradient(145deg, #121828, #1a2035); /* 深蓝渐变背景 */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(96, 165, 250, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(96, 165, 250, 0.2);
 }
 
 .itinerary-stage:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(96, 165, 250, 0.3);
 }
 
+/* 阶段头部 - 蓝色渐变 */
 .stage-header {
-    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); /* 深蓝色渐变 */
     color: white;
     padding: 1.2rem 1.5rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .stage-header h2 {
     font-size: 1.4rem;
     margin: 0;
+    color: #f1f5f9;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .stage-meta {
@@ -78,25 +65,26 @@ main {
     font-size: 0.9rem;
     opacity: 0.9;
     margin-top: 0.3rem;
+    color: #cbd5e1;
 }
 
 .stage-toggle {
     font-size: 1.5rem;
     transition: transform 0.3s ease;
+    color: #93c5fd;
 }
 
 .itinerary-stage.expanded .stage-toggle {
     transform: rotate(180deg);
 }
 
-/* 修改这里：默认展开状态 */
+/* 内容区域 */
 .stage-content {
     padding: 1.5rem;
-    max-height: none; /* 移除高度限制 */
-    overflow: visible; /* 移除溢出隐藏 */
+    max-height: none;
+    overflow: visible;
 }
 
-/* 可以保留收起状态的样式，但默认是展开的 */
 .itinerary-stage:not(.expanded) .stage-content {
     padding: 0;
     max-height: 0;
@@ -107,7 +95,7 @@ main {
 .itinerary-date {
     margin-bottom: 1.2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #334155; /* 深色分隔线 */
 }
 
 .itinerary-date:last-child {
@@ -117,11 +105,14 @@ main {
 
 .date-header {
     font-weight: 600;
-    color: #2c3e50;
+    color: #e2e8f0; /* 浅灰色 */
     margin-bottom: 0.7rem;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .date-header::before {
@@ -137,11 +128,13 @@ main {
 .activity-item {
     margin-bottom: 0.5rem;
     position: relative;
+    color: #cbd5e1; /* 稍浅的灰色 */
+    line-height: 1.5;
 }
 
 .activity-item::before {
     content: "•";
-    color: #3498db;
+    color: #60a5fa; /* 蓝色圆点 */
     font-weight: bold;
     position: absolute;
     left: -1rem;
@@ -149,12 +142,12 @@ main {
 
 /* 重要注意事项样式 */
 .important-note {
-    background-color: #fff3cd;
-    border: 1px solid #ffeaa7;
-    border-radius: 4px;
+    background-color: rgba(234, 179, 8, 0.15); /* 黄色背景，透明度降低 */
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    border-radius: 6px;
     padding: 0.5rem;
     margin-top: 0.3rem;
-    color: #856404;
+    color: #fbbf24; /* 亮黄色 */
     font-weight: bold;
     font-size: 0.95rem;
     position: relative;
@@ -172,11 +165,11 @@ main {
     margin-bottom: 0.2rem;
 }
 
-/* 修改意见区域样式 */
+/* 意见区域样式 */
 .stage-notes {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #334155; /* 深色分隔线 */
 }
 
 .notes-header {
@@ -186,45 +179,58 @@ main {
     margin-bottom: 0;
 }
 
+.notes-header h3 {
+    color: #e2e8f0;
+    margin: 0;
+}
+
 .notes-actions {
     display: flex;
     gap: 0.5rem;
 }
 
+/* 按钮样式 - 统一为蓝色系 */
 .toggle-notes-btn {
-    background-color: #3498db;
+    background: linear-gradient(145deg, #1e40af, #1e3a8a);
     color: white;
     border: none;
     padding: 0.4rem 0.8rem;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    border: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .toggle-notes-btn:hover {
-    background-color: #2980b9;
+    background: linear-gradient(145deg, #2563eb, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
 .edit-notes-btn {
-    background-color: #e74c3c;
+    background: linear-gradient(145deg, #dc2626, #b91c1c);
     color: white;
     border: none;
     padding: 0.4rem 0.8rem;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    border: 1px solid rgba(248, 113, 113, 0.3);
 }
 
 .edit-notes-btn:hover:not(:disabled) {
-    background-color: #c0392b;
+    background: linear-gradient(145deg, #ef4444, #dc2626);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
 }
 
 .edit-notes-btn:disabled {
-    background-color: #95a5a6;
+    background: #475569;
     cursor: not-allowed;
     opacity: 0.6;
+    border: 1px solid #64748b;
 }
 
 .notes-content {
@@ -236,45 +242,27 @@ main {
     display: block;
 }
 
-/* 支持多行文本显示 */
-.person-notes li {
-    white-space: pre-line;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-}
-
+/* 意见内容样式 */
 .loading-notes {
     padding: 1rem;
     text-align: center;
-    color: #7f8c8d;
+    color: #94a3b8;
     font-style: italic;
-}
-
-/* 意见与备注样式 */
-.stage-notes h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-    font-size: 1.2em;
-}
-
-.no-notes {
-    color: #666;
-    font-style: italic;
-    text-align: center;
-    padding: 1rem;
 }
 
 .person-notes {
     margin-bottom: 1rem;
     padding: 1rem;
-    background: #f8f9fa;
-    border-radius: 5px;
+    background: rgba(30, 41, 59, 0.7); /* 深蓝灰色背景 */
+    border-radius: 8px;
+    border: 1px solid #334155;
 }
 
 .person-notes strong {
-    color: #2980b9;
+    color: #60a5fa; /* 蓝色 */
     display: block;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
 .person-notes ul {
@@ -284,52 +272,66 @@ main {
 }
 
 .person-notes li {
-    margin-bottom: 0.3rem;
-    padding: 0.3rem 0;
-    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #475569; /* 深灰色分隔线 */
+    color: #cbd5e1;
+    line-height: 1.4;
+    white-space: pre-line; /* 支持换行显示 */
 }
 
 .person-notes li:last-child {
     border-bottom: none;
 }
 
-/* 编辑模态框样式 */
+.no-notes {
+    color: #94a3b8;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* 编辑模态框样式 - 暗色版 */
 .edit-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7); /* 深色半透明背景 */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    backdrop-filter: blur(4px);
 }
 
 .modal-content {
-    background: white;
-    border-radius: 10px;
+    background: linear-gradient(145deg, #121828, #1a2035);
+    border-radius: 12px;
     width: 90%;
     max-width: 500px;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(96, 165, 250, 0.2);
+    border: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .modal-header {
-    background: linear-gradient(135deg, #3498db, #2980b9);
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
     color: white;
     padding: 1.5rem;
-    border-radius: 10px 10px 0 0;
+    border-radius: 12px 12px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .modal-header h2 {
     margin: 0;
     font-size: 1.3em;
+    color: #f1f5f9;
 }
 
 .close-modal {
@@ -337,11 +339,12 @@ main {
     cursor: pointer;
     background: none;
     border: none;
-    color: white;
+    color: #93c5fd;
+    transition: color 0.3s;
 }
 
 .close-modal:hover {
-    opacity: 0.8;
+    color: #60a5fa;
 }
 
 .modal-body {
@@ -353,10 +356,10 @@ main {
 }
 
 .form-section h3 {
-    color: #2c3e50;
+    color: #e2e8f0;
     margin-bottom: 1rem;
     font-size: 1.1em;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #334155;
     padding-bottom: 0.5rem;
 }
 
@@ -371,15 +374,16 @@ main {
     display: flex;
     align-items: center;
     padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #475569;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
+    background: rgba(30, 41, 59, 0.5);
 }
 
 .person-option:hover {
-    background-color: #f8f9fa;
-    border-color: #3498db;
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #60a5fa;
 }
 
 .person-option input[type="radio"] {
@@ -389,10 +393,11 @@ main {
 
 .person-name {
     font-weight: 500;
+    color: #cbd5e1;
 }
 
 .person-option input[type="radio"]:checked + .person-name {
-    color: #3498db;
+    color: #60a5fa;
     font-weight: bold;
 }
 
@@ -400,23 +405,26 @@ main {
 .note-content {
     width: 100%;
     padding: 0.8rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    border: 2px solid #475569;
+    border-radius: 6px;
     font-size: 1em;
     font-family: inherit;
     resize: vertical;
     min-height: 150px;
     line-height: 1.5;
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
 .note-content:focus {
-    border-color: #3498db;
+    border-color: #60a5fa;
     outline: none;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
 }
 
 .modal-footer {
     padding: 1rem 1.5rem;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #334155;
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
@@ -425,37 +433,153 @@ main {
 .cancel-btn, .save-btn {
     padding: 0.8rem 1.5rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 1em;
     cursor: pointer;
     transition: all 0.3s ease;
     min-width: 80px;
+    font-weight: 600;
 }
 
 .cancel-btn {
-    background: #6c757d;
-    color: white;
+    background: linear-gradient(145deg, #475569, #334155);
+    color: #e2e8f0;
+    border: 1px solid #64748b;
 }
 
 .cancel-btn:hover {
-    background: #5a6268;
+    background: linear-gradient(145deg, #64748b, #475569);
 }
 
 .save-btn {
-    background: #3498db;
+    background: linear-gradient(145deg, #2563eb, #1d4ed8);
     color: white;
+    border: 1px solid rgba(96, 165, 250, 0.3);
 }
 
 .save-btn:hover {
-    background: #2980b9;
+    background: linear-gradient(145deg, #3b82f6, #2563eb);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* 备注按钮和网页按钮样式 */
+.date-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.comments-btn {
+    background: linear-gradient(145deg, #059669, #047857);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.comments-btn:hover {
+    background: linear-gradient(145deg, #10b981, #059669);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.webpage-btn {
+    background: linear-gradient(145deg, #1e40af, #1e3a8a);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.webpage-btn:hover {
+    background: linear-gradient(145deg, #2563eb, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* 备注模态框样式 */
+.comment-modal .modal-content {
+    max-width: 800px;
+    max-height: 80vh;
+}
+
+.comment-content {
+    padding: 1rem;
+    line-height: 1.6;
+    max-height: 60vh;
+    overflow-y: auto;
+    color: #cbd5e1;
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 6px;
+    border: 1px solid #334155;
+}
+
+.comment-content.loading-comment {
+    text-align: center;
+    color: #94a3b8;
+    font-style: italic;
+    padding: 2rem;
+}
+
+/* 备注内容样式 */
+.comment-content h1,
+.comment-content h2,
+.comment-content h3 {
+    color: #e2e8f0;
+    margin-bottom: 1rem;
+}
+
+.comment-content p {
+    margin-bottom: 1rem;
+}
+
+.comment-content ul,
+.comment-content ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.comment-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* 加载状态 */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #94a3b8;
+}
+
+/* 错误信息和重试按钮 */
+#retry-btn {
+    background: linear-gradient(145deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 1rem;
+    transition: all 0.3s;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+#retry-btn:hover {
+    background: linear-gradient(145deg, #3b82f6, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem;
-    }
-    
     .stage-header {
         flex-direction: column;
         align-items: flex-start;
@@ -512,237 +636,7 @@ main {
         flex: 1;
         text-align: center;
     }
-}
-
-/* 加载状态 */
-.loading {
-    text-align: center;
-    padding: 2rem;
-    color: #7f8c8d;
-}
-
-
-/* 备注按钮样式 */
-.comments-btn {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    margin-left: 1rem;
-    transition: background-color 0.3s;
-}
-
-.comments-btn:hover {
-    background-color: #219653;
-}
-
-/* 日期头部布局调整 */
-.date-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-/* 响应式设计调整 */
-@media (max-width: 768px) {
-    .date-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
     
-    .comments-btn {
-        margin-left: 0;
-        margin-top: 0.5rem;
-        align-self: flex-start;
-    }
-}
-
-
-/* 备注模态框样式 */
-.comment-modal .modal-content {
-    max-width: 800px;
-    max-height: 80vh;
-}
-
-.comment-content {
-    padding: 1rem;
-    line-height: 1.6;
-    max-height: 60vh;
-    overflow-y: auto;
-}
-
-.comment-content.loading-comment {
-    text-align: center;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 2rem;
-}
-
-/* 备注内容样式 */
-.comment-content h1,
-.comment-content h2,
-.comment-content h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.comment-content p {
-    margin-bottom: 1rem;
-}
-
-.comment-content ul,
-.comment-content ol {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-}
-
-.comment-content li {
-    margin-bottom: 0.5rem;
-}
-
-/* 备注按钮样式 */
-.comments-btn {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    margin-left: 1rem;
-    transition: background-color 0.3s;
-}
-
-.comments-btn:hover {
-    background-color: #219653;
-}
-
-/* 日期头部布局调整 */
-.date-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-/* 响应式设计调整 */
-@media (max-width: 768px) {
-    .date-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .comments-btn {
-        margin-left: 0;
-        margin-top: 0.5rem;
-        align-self: flex-start;
-    }
-    
-    .comment-modal .modal-content {
-        width: 95%;
-        margin: 1rem;
-    }
-}
-
-
-/* 日期按钮容器 */
-.date-buttons {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-/* 备注按钮样式 */
-.comments-btn {
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s;
-}
-
-.comments-btn:hover {
-    background-color: #219653;
-}
-
-/* 网页按钮样式 */
-.webpage-btn {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s;
-}
-
-.webpage-btn:hover {
-    background-color: #2980b9;
-}
-
-/* 日期头部布局调整 */
-.date-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-/* 备注模态框样式 */
-.comment-modal .modal-content {
-    max-width: 800px;
-    max-height: 80vh;
-}
-
-.comment-content {
-    padding: 1rem;
-    line-height: 1.6;
-    max-height: 60vh;
-    overflow-y: auto;
-}
-
-.comment-content.loading-comment {
-    text-align: center;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 2rem;
-}
-
-/* 备注内容样式 */
-.comment-content h1,
-.comment-content h2,
-.comment-content h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.comment-content p {
-    margin-bottom: 1rem;
-}
-
-.comment-content ul,
-.comment-content ol {
-    margin-bottom: 1rem;
-    padding-left: 2rem;
-}
-
-.comment-content li {
-    margin-bottom: 0.5rem;
-}
-
-/* 响应式设计调整 */
-@media (max-width: 768px) {
     .date-header {
         flex-direction: column;
         align-items: flex-start;

@@ -3,138 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>航班資訊</title>
-    <link rel="stylesheet" href="css/main-style.css">
+    <meta http-equiv="refresh" content="0; url=itinerary.html">
+    <title>旅行規劃器 - 重定向中</title>
+    <script>
+        // 備用跳轉方案
+        window.onload = function() {
+            window.location.href = "itinerary.html";
+        };
+    </script>
 </head>
 <body>
-    <div class="travel-dates">
-        <div class="travel-info">
-            <div class="date-info">
-                ✈️ 旅行日期：2026年2月7日 - 2026年3月2日 (共24天)
-            </div>
-            <div class="participants">
-                👥 參加人員：chingwen, jane, zhi
-            </div>
-        </div>
-    </div>
-    
-    <div class="navigation">
-        <button class="nav-button" onclick="window.location.href='itinerary-display.html'">
-            行程規劃
-        </button>
-        <button class="nav-button" onclick="window.location.href='todo.html'">
-            待辦事件
-        </button>
-        <button class="nav-button" onclick="window.location.href='sleep.html'">
-            住宿預約
-        </button>
-    </div>
-
-    <h2>去程航班</h2>
-    <div class="table-container">
-        <table id="outbound-table">
-            <thead>
-                <tr>
-                    <th>航班</th>
-                    <th>出發地</th>
-                    <th>目的地</th>
-                    <th>日期</th>
-                    <th>出發時間</th>
-                    <th>到達時間</th>
-                    <th>飛行時間</th>
-                </tr>
-            </thead>
-            <tbody id="outbound-tbody">
-                <!-- 航班数据将通过JavaScript动态生成 -->
-            </tbody>
-        </table>
-    </div>
-
-    <h2>回程航班</h2>
-    <div class="table-container">
-        <table id="inbound-table">
-            <thead>
-                <tr>
-                    <th>航班</th>
-                    <th>出發地</th>
-                    <th>目的地</th>
-                    <th>日期</th>
-                    <th>出發時間</th>
-                    <th>到達時間</th>
-                    <th>飛行時間</th>
-                </tr>
-            </thead>
-            <tbody id="inbound-tbody">
-                <!-- 航班数据将通过JavaScript动态生成 -->
-            </tbody>
-        </table>
-    </div>
-
-    <script>
-        // 获取航班数据并渲染表格
-        fetch('data/data_flights.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('网络响应不正常');
-                }
-                return response.json();
-            })
-            .then(data => {
-                // 渲染去程航班
-                renderFlights(data[0].outbound, 'outbound-tbody');
-                
-                // 渲染回程航班
-                renderFlights(data[0].inbound, 'inbound-tbody');
-            })
-            .catch(error => {
-                console.error('获取航班数据时出错:', error);
-                document.getElementById('outbound-tbody').innerHTML = '<tr><td colspan="7">无法加载航班数据</td></tr>';
-                document.getElementById('inbound-tbody').innerHTML = '<tr><td colspan="7">无法加载航班数据</td></tr>';
-            });
-
-        // 渲染航班数据的函数
-        function renderFlights(flights, tbodyId) {
-            const tbody = document.getElementById(tbodyId);
-            tbody.innerHTML = ''; // 清空现有内容
-            
-            flights.forEach((flight, index) => {
-                // 创建航班行
-                const flightRow = document.createElement('tr');
-                
-                // 解析机场信息
-                const departureParts = flight.departure.split('/');
-                const destinationParts = flight.destination.split('/');
-                
-                flightRow.innerHTML = `
-                    <td data-label="航班">${flight.flight}</td>
-                    <td data-label="出發地">${departureParts[0]}<br>${departureParts[2]}<br>${departureParts[1]}</td>
-                    <td data-label="目的地">${destinationParts[0]}<br>${destinationParts[2]}<br>${destinationParts[1]}</td>
-                    <td data-label="日期">${formatDate(flight.date)}</td>
-                    <td data-label="出發時間">${flight.departure_time}</td>
-                    <td data-label="到達時間">${flight.arrival_time}</td>
-                    <td data-label="飛行時間" class="flight-duration">${flight.flight_duration}</td>
-                `;
-                
-                tbody.appendChild(flightRow);
-                
-                // 如果不是最后一个航班，添加转机信息
-                if (index < flights.length - 1 && flight.layover) {
-                    const transferRow = document.createElement('tr');
-                    transferRow.className = 'transfer';
-                    transferRow.innerHTML = `<td colspan="7">🔄 ${destinationParts[2]}轉機時間：${flight.layover}</td>`;
-                    tbody.appendChild(transferRow);
-                }
-            });
-        }
-
-        // 格式化日期函数
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            const year = date.getFullYear();
-            const month = date.getMonth() + 1;
-            const day = date.getDate();
-            return `${year}年${month}月${day}日`;
-        }
-    </script>
+    <p style="text-align: center; margin-top: 50px;">
+        正在重定向到行程規劃頁面...
+        <br><br>
+        如果沒有自動跳轉，請點擊 <a href="itinerary.html">這裡</a>。
+    </p>
 </body>
 </html>

@@ -1,26 +1,26 @@
-// sleep-render.js 修改后的版本 - 改进颜色和时间轴显示
-// 更和谐的颜色映射 - 使用柔和的配色方案
+// sleep-render.js 修改后的版本 - 暗色系配色
+// 暗色系颜色映射 - 配合整體設計
 const colorMap = {
-    1: '#FF9AA2', // 柔和的粉色 - 1晚
-    2: '#FFB7B2', // 柔和的珊瑚色 - 2晚
-    3: '#FFDAC1', // 柔和的桃色 - 3晚
-    4: '#E2F0CB', // 柔和的绿色 - 4晚
-    5: '#B5EAD7', // 柔和的青色 - 5晚
-    6: '#C7CEEA', // 柔和的蓝色 - 6晚
-    7: '#D8BFD8', // 柔和的紫色 - 7晚
-    default: '#F0F0F0' // 默认灰色
+    1: '#3b82f6', // 蓝色 - 1晚
+    2: '#2563eb', // 深蓝色 - 2晚
+    3: '#1d4ed8', // 更深的蓝色 - 3晚
+    4: '#1e40af', // 深蓝紫色 - 4晚
+    5: '#1e3a8a', // 深蓝色 - 5晚
+    6: '#1c1f8a', // 蓝黑色 - 6晚
+    7: '#0f172a', // 深蓝黑色 - 7晚
+    default: '#334155' // 默认深灰色
 };
 
-// 深色文本颜色映射，确保可读性
+// 浅色文本颜色映射，确保在深色背景上的可读性
 const textColorMap = {
-    1: '#333333',
-    2: '#333333', 
-    3: '#333333',
-    4: '#333333',
-    5: '#333333',
-    6: '#333333',
-    7: '#333333',
-    default: '#666666'
+    1: '#f1f5f9',
+    2: '#f1f5f9',
+    3: '#f1f5f9',
+    4: '#f1f5f9',
+    5: '#f1f5f9',
+    6: '#f1f5f9',
+    7: '#f1f5f9',
+    default: '#cbd5e1'
 };
 
 // 格式化日期顯示
@@ -103,7 +103,7 @@ function renderAccommodationItem(item, status, index) {
                 <span class="status ${status}">${status === 'confirmed' ? '已確認' : '待取消'}</span>
             </div>
             <div class="stay-duration">
-                <div class="nights-badge" style="background-color: ${itemColor}; color: ${textColor}">
+                <div class="nights-badge" style="background-color: ${itemColor}; color: ${textColor}; border-color: ${itemColor}">
                     ${nights}<span>晚</span>
                 </div>
                 <div class="date-range">${dateRange}</div>
@@ -146,7 +146,7 @@ function getLinkSource(link) {
     return '查看詳情';
 }
 
-// 渲染时间线概览项目 - 简化版，只显示天数
+// 渲染时间线概览项目
 function renderTimelineItem(item, status, position, width, index) {
     const nights = calculateNights(item.date_start, item.end_date || item.date_end);
     const itemColor = getColorByNights(nights);

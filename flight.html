@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title> 會在 common-header.js 中自動設定 -->
+    <link rel="stylesheet" href="../css/common-header.css">
+    <link rel="stylesheet" href="../css/flights.css">
+</head>
+<body>
+    <div id="common-header"></div>
+    <h1 class="current-page-title" id="current-page-title"></h1>
+    
+    <main>
+        <h2><!-- 去程航班標題將由 JS 動態生成 --></h2>
+        <div class="table-container">
+            <table id="outbound-table">
+                <thead>
+                    <tr>
+                        <!-- 表頭將由 JS 動態生成 -->
+                    </tr>
+                </thead>
+                <tbody id="outbound-tbody">
+                    <!-- 航班數據將通過 flights.js 動態生成 -->
+                    <tr>
+                        <td colspan="7" class="loading-message">加載航班數據中...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2><!-- 回程航班標題將由 JS 動態生成 --></h2>
+        <div class="table-container">
+            <table id="inbound-table">
+                <thead>
+                    <tr>
+                        <!-- 表頭將由 JS 動態生成 -->
+                    </tr>
+                </thead>
+                <tbody id="inbound-tbody">
+                    <!-- 航班數據將通過 flights.js 動態生成 -->
+                    <tr>
+                        <td colspan="7" class="loading-message">加載航班數據中...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <script src="../js/common-header.js"></script>
+    <script src="../js/flights.js"></script>
+</body>
+</html>

@@ -1,0 +1,472 @@
+
+/* 航班頁面專用樣式 - 暗色系主題 */
+
+/* 全局變數定義 - 配合 common-header.css 的暗色系 */
+:root {
+    --bg-primary: #0a0e17;          /* 更深的藍黑背景 */
+    --bg-secondary: #121828;        /* 次要背景色 */
+    --bg-surface: #1e2436;          /* 表面顏色 */
+    --primary-blue: #60a5fa;        /* 更亮的藍色 */
+    --secondary-blue: #3b82f6;      /* 次要藍色 */
+    --accent-blue: #38bdf8;         /* 強調藍色 */
+    --glow-blue: #93c5fd;           /* 發光藍色 */
+    --text-primary: #f8fafc;        /* 主要文字 - 更亮的白色 */
+    --text-secondary: #e2e8f0;      /* 次要文字 */
+    --border-color: #475569;        /* 邊框色 */
+    --shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 4px 12px rgba(56, 189, 248, 0.25);
+    --table-header-bg: #1e293b;     /* 表格標頭背景 */
+    --table-row-even: rgba(30, 41, 59, 0.5); /* 偶數行背景 */
+    --table-row-hover: rgba(56, 189, 248, 0.1); /* 行懸停背景 */
+    --flight-duration-color: #60a5fa; /* 飛行時間顏色 */
+}
+
+/* 全局樣式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 頁面整體樣式 - 暗色背景 */
+body {
+    background-color: #0f172a;      /* 暗藍色背景 */
+    color: #e2e8f0;                 /* 淺灰色文字 */
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 頁面主標題 - 配合暗色主題 */
+.current-page-title {
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 12px;
+    margin: 32px 0 40px;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.current-page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-blue));
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+/* 區段標題 */
+h2 {
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 10px;
+    margin: 40px 0 25px;
+    font-size: 28px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 航班表格樣式 - 暗色主題 */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 25px 0 35px;
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-dark);
+}
+
+#outbound-table, #inbound-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 800px;
+    font-size: 0.95em;
+}
+
+#outbound-table th, #inbound-table th,
+#outbound-table td, #inbound-table td {
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    padding: 14px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+#outbound-table th, #inbound-table th {
+    background-color: var(--table-header-bg);
+    color: var(--primary-blue);
+    font-weight: 700;
+    font-size: 1em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+/* 表格行樣式 */
+#outbound-table td, #inbound-table td {
+    color: var(--text-secondary);
+}
+
+/* 轉機資訊行樣式 */
+.transfer {
+    background-color: rgba(255, 235, 59, 0.1);
+    color: #ffd54f;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid rgba(255, 213, 79, 0.3);
+    font-size: 1.1em;
+}
+
+.transfer td {
+    padding: 14px;
+    color: #ffd54f;
+    text-shadow: 0 0 5px rgba(255, 213, 79, 0.3);
+}
+
+/* 航班行懸停效果 */
+#outbound-table tbody tr:hover,
+#inbound-table tbody tr:hover {
+    background-color: var(--table-row-hover);
+    transition: background-color 0.2s ease;
+}
+
+/* 奇偶行顏色 */
+#outbound-table tbody tr:nth-child(even),
+#inbound-table tbody tr:nth-child(even) {
+    background-color: var(--table-row-even);
+}
+
+/* 飛行時間特殊樣式 */
+.flight-duration {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--flight-duration-color);
+    text-shadow: 0 0 5px rgba(96, 165, 250, 0.3);
+}
+
+/* 機場資訊樣式 */
+#outbound-table td:nth-child(2), #outbound-table td:nth-child(3),
+#inbound-table td:nth-child(2), #inbound-table td:nth-child(3) {
+    line-height: 1.5;
+    color: var(--glow-blue);
+}
+
+/* 加載訊息 */
+.loading-message {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-secondary);
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* 錯誤訊息 */
+.error-message {
+    text-align: center;
+    padding: 20px;
+    color: #fca5a5;
+    background-color: rgba(220, 38, 38, 0.1);
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* 響應式設計 - 移動設備 */
+@media (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+    
+    .current-page-title {
+        font-size: 30px;
+        margin: 24px 0 32px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        margin: 30px 0 20px;
+    }
+    
+    #outbound-table, #inbound-table {
+        min-width: 600px;
+    }
+    
+    #outbound-table th, #inbound-table th,
+    #outbound-table td, #inbound-table td {
+        padding: 12px 10px;
+        font-size: 0.9em;
+    }
+    
+    .table-container {
+        border-radius: 8px;
+        margin: 20px 0 30px;
+    }
+    
+    .transfer td {
+        padding: 12px;
+        font-size: 1em;
+    }
+}
+
+/* 更小屏幕的優化 */
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+    
+    .current-page-title {
+        font-size: 26px;
+        margin: 20px 0 28px;
+    }
+    
+    h2 {
+        font-size: 22px;
+        margin: 25px 0 18px;
+    }
+    
+    #outbound-table, #inbound-table {
+        min-width: 500px;
+    }
+    
+    #outbound-table th, #inbound-table th,
+    #outbound-table td, #inbound-table td {
+        padding: 10px 8px;
+        font-size: 0.85em;
+    }
+    
+    .table-container {
+        margin: 18px 0 25px;
+        border-radius: 6px;
+    }
+}
+
+/* 小屏幕手機優化 */
+@media (max-width: 360px) {
+    body {
+        padding: 10px;
+    }
+    
+    .current-page-title {
+        font-size: 24px;
+        margin: 16px 0 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+        margin: 22px 0 16px;
+    }
+}
+
+/* 黑暗主題增強 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #0a0e17;
+    }
+    
+    .table-container {
+        background: rgba(10, 14, 23, 0.8);
+    }
+}
+
+/* 打印樣式 */
+@media print {
+    body {
+        padding: 0;
+        background-color: white;
+        color: black;
+    }
+    
+    .table-container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+        background: white;
+    }
+    
+    #outbound-table th, #inbound-table th {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    #outbound-table td, #inbound-table td {
+        color: #333;
+    }
+}
+
+/* 在 flights.css 中添加以下樣式，確保空表頭也能正確顯示 */
+#outbound-table th, #inbound-table th {
+    min-width: 80px;
+    white-space: nowrap;
+}
+
+/* 確保響應式表格的 data-label 能正確顯示 */
+@media (max-width: 768px) {
+    #outbound-table td[data-label]::before,
+    #inbound-table td[data-label]::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        color: var(--primary-blue);
+    }
+}
+
+
+/* 在 flights.css 中新增更突出的轉機資訊樣式 */
+
+/* 轉機資訊行樣式 - 更加突出 */
+.transfer {
+    background: linear-gradient(135deg, 
+        rgba(255, 235, 59, 0.15) 0%, 
+        rgba(255, 193, 7, 0.2) 100%);
+    color: #fff3cd;
+    font-weight: 800;
+    text-align: center;
+    border: 2px solid rgba(255, 193, 7, 0.4);
+    font-size: 1.15em;
+    position: relative;
+    overflow: hidden;
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.transfer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 235, 59, 0.2), 
+        transparent);
+    animation: shimmer 2.5s infinite;
+}
+
+.transfer td {
+    padding: 18px 16px;
+    color: #ffd54f;
+    text-shadow: 0 0 8px rgba(255, 213, 79, 0.5);
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 轉機圖標特殊樣式 */
+.transfer td::before {
+    content: '🔄';
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 1.3em;
+    animation: spin 4s infinite linear;
+    filter: drop-shadow(0 0 4px rgba(255, 213, 79, 0.8));
+    vertical-align: middle;
+}
+
+/* 動畫效果 */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 
+            0 0 5px rgba(255, 193, 7, 0.3),
+            inset 0 0 10px rgba(255, 193, 7, 0.1);
+    }
+    50% {
+        box-shadow: 
+            0 0 15px rgba(255, 193, 7, 0.5),
+            inset 0 0 15px rgba(255, 193, 7, 0.2);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* 懸停效果 */
+.transfer:hover {
+    background: linear-gradient(135deg, 
+        rgba(255, 235, 59, 0.25) 0%, 
+        rgba(255, 193, 7, 0.3) 100%);
+    border-color: rgba(255, 193, 7, 0.6);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .transfer {
+        font-size: 1.05em;
+    }
+    
+    .transfer td {
+        padding: 16px 12px;
+    }
+    
+    .transfer td::before {
+        margin-right: 8px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .transfer {
+        font-size: 1em;
+    }
+    
+    .transfer td {
+        padding: 14px 10px;
+    }
+    
+    .transfer td::before {
+        margin-right: 6px;
+        font-size: 1.1em;
+    }
+}
+
+/* 打印時的特殊樣式 */
+@media print {
+    .transfer {
+        background-color: #fff9c4;
+        color: #5d4037;
+        border: 2px solid #ffd54f;
+        animation: none;
+    }
+    
+    .transfer::before {
+        display: none;
+    }
+    
+    .transfer td {
+        color: #5d4037;
+        text-shadow: none;
+    }
+    
+    .transfer td::before {
+        filter: none;
+        animation: none;
+    }
+}

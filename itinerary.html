@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title> 會在 common-header.js 中自動設定 -->
+    <link rel="stylesheet" href="../css/common-header.css">
+    <link rel="stylesheet" href="css/itinerary-styles.css">
+</head>
+<body>
+    <div id="common-header"></div>
+    <h1 class="current-page-title" id="current-page-title"></h1>
+    
+    <main>
+        <div id="itinerary-container" class="itinerary-container">
+            <!-- 行程阶段将通过JavaScript动态加载 -->
+        </div>
+    </main>
+
+    <script src="../js/common-header.js"></script>
+    <script src="js/itinerary-renderer.js"></script>
+    <script src="js/itinerary-main.js"></script>    
+
+</body>
+</html>

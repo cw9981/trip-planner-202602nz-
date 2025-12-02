@@ -1,0 +1,513 @@
+/* task.css - 任務管理頁面專用樣式 (四大分類版) */
+:root {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #121828;
+    --bg-surface: #1e2436;
+    --primary-blue: #60a5fa;
+    --secondary-blue: #3b82f6;
+    --accent-blue: #38bdf8;
+    --glow-blue: #93c5fd;
+    --text-primary: #ffffff;
+    --text-secondary: #f1f5f9;
+    --border-color: #475569;
+    --shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 4px 12px rgba(56, 189, 248, 0.25);
+    --border-radius: 12px;
+    --transition: all 0.25s ease;
+    
+    /* 分類顏色 */
+    --planning-color: #60a5fa;      /* 藍色 - 規劃 */
+    --shopping-color: #10b981;      /* 綠色 - 購物 */
+    --accommodation-color: #f59e0b; /* 黃色 - 住宿 */
+    --transportation-color: #a78bfa; /* 紫色 - 交通 */
+    --other-color: #94a3b8;         /* 灰色 - 其他 */
+}
+
+/* 任務容器 */
+#task-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 加載動畫 */
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: var(--text-secondary);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+/* 成員卡片 */
+.member-card {
+    background: linear-gradient(145deg, var(--bg-surface), #1a2035);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-dark);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    transition: var(--transition);
+    backdrop-filter: blur(8px);
+}
+
+.member-card:hover {
+    box-shadow: var(--shadow-dark), 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* 成員標題 */
+.member-header {
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(30, 36, 54, 0.9), rgba(18, 24, 40, 0.9));
+    border-bottom: 1px solid rgba(96, 165, 250, 0.2);
+    transition: var(--transition);
+}
+
+.member-header:hover {
+    background: linear-gradient(90deg, rgba(38, 46, 70, 0.9), rgba(26, 32, 53, 0.9));
+}
+
+.member-header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.member-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, var(--primary-blue), var(--accent-blue));
+    color: var(--bg-primary);
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(96, 165, 250, 0.3);
+}
+
+.toggle-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(96, 165, 250, 0.1);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    color: var(--primary-blue);
+    font-size: 20px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background: rgba(96, 165, 250, 0.2);
+    transform: rotate(90deg);
+}
+
+.toggle-btn.collapsed {
+    transform: rotate(-90deg);
+}
+
+.toggle-btn.collapsed:hover {
+    transform: rotate(0deg);
+}
+
+/* 任務列表 */
+.task-list {
+    padding: 0;
+    margin: 0;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.task-list.collapsed {
+    max-height: 0;
+    padding: 0;
+}
+
+.task-item {
+    padding: 18px 24px 18px 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-item:hover {
+    background: rgba(96, 165, 250, 0.05);
+}
+
+/* 任務圖標 */
+.task-icon {
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* 分類圖標顏色 */
+.task-icon.planning {
+    background: rgba(96, 165, 250, 0.2);
+    color: var(--planning-color);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.task-icon.shopping {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--shopping-color);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.task-icon.accommodation {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--accommodation-color);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.task-icon.transportation {
+    background: rgba(167, 139, 250, 0.2);
+    color: var(--transportation-color);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.task-icon.other {
+    background: rgba(148, 163, 184, 0.2);
+    color: var(--other-color);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* 任務內容 */
+.task-content {
+    flex: 1;
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 分類標籤 */
+.category-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* 分類標籤顏色 */
+.category-tag.planning {
+    background: rgba(96, 165, 250, 0.2);
+    color: var(--planning-color);
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+.category-tag.shopping {
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--shopping-color);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.category-tag.accommodation {
+    background: rgba(245, 158, 11, 0.2);
+    color: var(--accommodation-color);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.category-tag.transportation {
+    background: rgba(167, 139, 250, 0.2);
+    color: var(--transportation-color);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.category-tag.other {
+    background: rgba(148, 163, 184, 0.2);
+    color: var(--other-color);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* 任務計數 */
+.task-count {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(96, 165, 250, 0.2);
+    color: var(--primary-blue);
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 12px;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+}
+
+/* 任務日期標籤 */
+.task-date {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+    background: rgba(56, 189, 248, 0.2);
+    color: var(--accent-blue);
+    vertical-align: middle;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+/* 任務價格標籤 */
+.task-price {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 8px;
+    background: rgba(16, 185, 129, 0.2);
+    color: var(--shopping-color);
+    vertical-align: middle;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* 進度統計 */
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: linear-gradient(145deg, var(--bg-surface), #1a2035);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    box-shadow: var(--shadow-dark);
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin-bottom: 4px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* 分類統計 */
+.category-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 15px;
+    background: linear-gradient(145deg, var(--bg-surface), #1a2035);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    box-shadow: var(--shadow-dark);
+}
+
+.category-stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.category-stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.category-stat-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    #task-container {
+        padding: 0 16px 32px;
+        gap: 20px;
+    }
+    
+    .member-header {
+        padding: 18px 20px;
+    }
+    
+    .member-header h2 {
+        font-size: 20px;
+    }
+    
+    .member-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .task-item {
+        padding: 16px 20px 16px 50px;
+        gap: 14px;
+    }
+    
+    .task-content {
+        font-size: 15px;
+    }
+    
+    .task-icon {
+        left: 20px;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .progress-stats, .category-stats {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+    
+    .stat-item, .category-stat-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+    
+    .stat-value, .category-stat-value {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    
+    .stat-label, .category-stat-label {
+        font-size: 15px;
+    }
+    
+    .category-stat-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #task-container {
+        padding: 0 12px 24px;
+        gap: 16px;
+    }
+    
+    .member-header {
+        padding: 16px;
+    }
+    
+    .member-header h2 {
+        font-size: 18px;
+    }
+    
+    .member-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+    
+    .task-item {
+        padding: 14px 16px 14px 44px;
+        gap: 12px;
+    }
+    
+    .task-content {
+        font-size: 14px;
+    }
+    
+    .category-tag, .task-date, .task-price {
+        font-size: 11px;
+        margin-left: 6px;
+        margin-right: 2px;
+        padding: 2px 8px;
+    }
+    
+    .toggle-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+    }
+    
+    .task-icon {
+        left: 16px;
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+}
+
+/* 動畫效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.member-card {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.member-card:nth-child(2) { animation-delay: 0.1s; }
+.member-card:nth-child(3) { animation-delay: 0.2s; }
+.member-card:nth-child(4) { animation-delay: 0.3s; }
