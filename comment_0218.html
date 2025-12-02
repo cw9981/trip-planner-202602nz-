@@ -4,162 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>頂級步道挑戰</title>
+    <link rel="stylesheet" href="css/common-comment-model-styles.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 15px;
-            background-color: #0f172a; /* 暗藍色背景 */
-            color: #e2e8f0; /* 淺灰色文字 */
-        }
-        
-        h1 {
-            color: #60a5fa; /* 藍色標題 */
-            border-bottom: 3px solid #334155;
-            padding-bottom: 10px;
-            text-align: center;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: linear-gradient(145deg, #121828, #1a2035);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            border: 1px solid #334155;
-        }
-        
-        .table-wrapper {
-            overflow-x: auto;
-            margin-top: 20px;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-            background-color: #1a2035;
-            border: 1px solid #334155;
+        /* 專屬此頁面的額外樣式 */
+        .track-option {
+            background-color: rgba(30, 58, 138, 0.2);
             border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        th, td {
+            padding: 15px;
+            margin-bottom: 15px;
             border: 1px solid #334155;
-            padding: 12px 8px;
-            text-align: left;
-            vertical-align: top;
-            color: #e2e8f0;
         }
         
-        th {
-            background-color: #1e3a8a; /* 深藍色表頭 */
-            color: #f1f5f9;
+        .track-header {
+            color: #60a5fa;
             font-weight: bold;
-            white-space: nowrap;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
         
-        tr:nth-child(even) {
-            background-color: #121828; /* 交替行深色背景 */
+        .track-header::before {
+            content: "🥾";
+            margin-right: 8px;
         }
         
-        tr:hover {
-            background-color: rgba(96, 165, 250, 0.1); /* 懸停效果 */
+        .track-details {
+            padding-left: 25px;
         }
         
-        .note {
-            font-style: italic;
-            color: #93c5fd; /* 亮藍色文字 */
+        .track-details p {
+            margin-bottom: 8px;
+            color: #cbd5e1;
+        }
+        
+        .track-note {
+            background-color: rgba(148, 163, 184, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+            border-left: 3px solid #94a3b8;
             margin-top: 10px;
-            padding: 10px;
-            border-left: 5px solid #60a5fa;
-            background-color: rgba(96, 165, 250, 0.1);
-            border-radius: 4px;
+            font-style: italic;
         }
         
-        .warning {
-            color: #fbbf24; /* 黃色警告文字 */
+        .difficulty-high {
+            display: inline-block;
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
             font-weight: bold;
-            background-color: rgba(234, 179, 8, 0.15);
+            margin-left: 10px;
+        }
+        
+        .difficulty-medium {
+            display: inline-block;
+            background-color: rgba(234, 179, 8, 0.2);
+            color: #fbbf24;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .new-feature {
+            display: inline-block;
+            background-color: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
             padding: 2px 6px;
             border-radius: 4px;
-            border-left: 3px solid #fbbf24;
-        }
-        
-        strong {
-            color: #93c5fd; /* 亮藍色強調 */
-        }
-        
-        .highlight {
-            background-color: rgba(234, 179, 8, 0.15); /* 黃色高亮 */
-            color: #fbbf24;
+            font-size: 0.8rem;
             font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        @media (min-width: 768px) {
+            .track-options {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🗓️ Day 2: 02/18 (三) 頂級步道挑戰與生態緩衝</h1>
-        <p class="note">主題：挑戰 Gertrude Saddle Track 或 Key Summit Track，下午在輕鬆景點緩衝。</p>
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>時間</th>
-                        <th>活動內容 (共同/單獨)</th>
-                        <th>挑戰者（需體力）</th>
-                        <th>推薦活動（輕鬆）</th>
-                        <th>備註與建議</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>07:00 - 07:30</td>
-                        <td>早起出發</td>
-                        <td></td>
-                        <td></td>
-                        <td>前往 The Divide / Gertrude Saddle 步道起點。</td>
-                    </tr>
-                    <tr>
-                        <td>07:30 - 14:30</td>
-                        <td>高山健行（7 小時）</td>
-                        <td>🥾 <strong>Gertrude Saddle Track</strong></td>
-                        <td>🥾 <strong>Key Summit Track</strong> (替代方案 步道很短，只需 2.5 到 3 個小時 (天氣不好，基峰頂的健行就毫無意義，因為視野會被遮住))</td>
-                        <td><span class="warning">警告：</span> Gertrude Saddle 難度極高，需視天氣和體能決定。若不適合，應選擇 Key Summit。</td>
-                    </tr>
-                    <tr>
-                        <td>14:30 - 16:00</td>
-                        <td>午餐與休息</td>
-                        <td></td>
-                        <td></td>
-                        <td>健行結束後在 The Divide 附近享用遲來的午餐。</td>
-                    </tr>
-                    <tr>
-                        <td>16:00 - 16:30</td>
-                        <td>輕鬆步道緩衝</td>
-                        <td>🥾 Lake Gunn Nature Walk</td>
-                        <td>🥾 Lake Gunn Nature Walk</td>
-                        <td>共同散步，放鬆高強度健行後的肌肉。</td>
-                    </tr>
-                    <tr>
-                        <td>16:30 - 17:00</td>
-                        <td><strong>🆕 Cascade Creek</strong></td>
-                        <td>📸 Cascade Creek</td>
-                        <td>📸 Cascade Creek</td>
-                        <td>共同觀景，欣賞濕地生態和水鳥。非常輕鬆的收尾。</td>
-                    </tr>
-                    <tr>
-                        <td>17:00 之後</td>
-                        <td>返回皇后鎮/下一個目的地</td>
-                        <td></td>
-                        <td></td>
-                        <td>結束米佛公路兩日探索之旅。</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="header">
+            <h1>🗓️ Day 2: 02/18 (三) 頂級步道挑戰與生態緩衝</h1>
+            <div class="subtitle">主題：挑戰 Gertrude Saddle Track 或 Key Summit Track，下午在輕鬆景點緩衝</div>
+        </div>
+        
+        <div class="warning">
+            警告：Gertrude Saddle 難度極高，需視天氣和體能決定。若不適合，應選擇 Key Summit。
+        </div>
+        
+        <!-- 步道選擇說明 -->
+        <div class="track-options">
+            <div class="track-option">
+                <div class="track-header">Gertrude Saddle Track <span class="difficulty-high">高難度</span></div>
+                <div class="track-details">
+                    <p><strong>時間：</strong>7 小時</p>
+                    <p><strong>適合：</strong>挑戰者（需體力）</p>
+                    <div class="track-note">
+                        高山健行路線，需要良好的體能和合適的天氣條件
+                    </div>
+                </div>
+            </div>
+            
+            <div class="track-option">
+                <div class="track-header">Key Summit Track <span class="difficulty-medium">中難度</span></div>
+                <div class="track-details">
+                    <p><strong>時間：</strong>2.5-3 小時</p>
+                    <p><strong>適合：</strong>推薦活動（輕鬆）</p>
+                    <div class="track-note">
+                        天氣不好時，基峰頂的健行就毫無意義，因為視野會被遮住
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 早晨時段 -->
+        <div class="time-block">
+            <div class="time-header">07:00 - 07:30</div>
+            <div class="activity-details">
+                <div class="detail-row">
+                    <div class="detail-label">活動內容</div>
+                    <div class="detail-content">早起出發</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">備註與建議</div>
+                    <div class="detail-content">前往 The Divide / Gertrude Saddle 步道起點</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 上午時段 -->
+        <div class="time-block">
+            <div class="time-header">07:30 - 14:30</div>
+            <div class="activity-details">
+                <div class="detail-row">
+                    <div class="detail-label">活動內容</div>
+                    <div class="detail-content">高山健行（7 小時）</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">挑戰者（需體力）</div>
+                    <div class="detail-content">🥾 <strong>Gertrude Saddle Track</strong></div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">推薦活動（輕鬆）</div>
+                    <div class="detail-content">🥾 <strong>Key Summit Track</strong></div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">備註與建議</div>
+                    <div class="detail-content">
+                        根據天氣和體能選擇合適的步道。Key Summit Track 步道較短
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 午餐時段 -->
+        <div class="time-block">
+            <div class="time-header">14:30 - 16:00</div>
+            <div class="activity-details">
+                <div class="detail-row">
+                    <div class="detail-label">活動內容</div>
+                    <div class="detail-content">午餐與休息</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">備註與建議</div>
+                    <div class="detail-content">健行結束後在 The Divide 附近享用遲來的午餐</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 下午時段1 -->
+        <div class="time-block">
+            <div class="time-header">16:00 - 16:30</div>
+            <div class="activity-details">
+                <div class="detail-row">
+                    <div class="detail-label">活動內容</div>
+                    <div class="detail-content">輕鬆步道緩衝</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">挑戰者（需體力）</div>
+                    <div class="detail-content">🥾 Lake Gunn Nature Walk</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">推薦活動（輕鬆）</div>
+                    <div class="detail-content">🥾 Lake Gunn Nature Walk</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">備註與建議</div>
+                    <div class="detail-content">共同散步，放鬆高強度健行後的肌肉</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 下午時段2 -->
+        <div class="time-block">
+            <div class="time-header">16:30 - 17:00</div>
+            <div class="activity-details">
+                <div class="detail-row">
+                    <div class="detail-label">活動內容</div>
+                    <div class="detail-content">Cascade Creek <span class="new-feature">新景點</span></div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">挑戰者（需體力）</div>
+                    <div class="detail-content">📸 Cascade Creek</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">推薦活動（輕鬆）</div>
+                    <div class="detail-content">📸 Cascade Creek</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">備註與建議</div>
+                    <div class="detail-content">
+                        <div class="important-note">
+                            共同觀景，欣賞濕地生態和水鳥。非常輕鬆的收尾
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 晚上時段 -->
+        <div class="time-block">
+            <div class="time-header">17:00 之後</div>
+            <div class="activity-details">
+                <div class="detail-row">
+                    <div class="detail-label">活動內容</div>
+                    <div class="detail-content">返回皇后鎮/下一個目的地</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">備註與建議</div>
+                    <div class="detail-content">結束米佛公路兩日探索之旅</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

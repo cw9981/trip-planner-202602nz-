@@ -1,0 +1,323 @@
+/* shared-itinerary-styles.css - 共用行程樣式 */
+
+/* 重置樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基礎設定 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 頁首樣式 */
+.header {
+    background: linear-gradient(145deg, #121828, #1a2035);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    color: #60a5fa;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.subtitle {
+    color: #93c5fd;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(96, 165, 250, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #60a5fa;
+    margin-bottom: 15px;
+}
+
+/* 資訊卡片 */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    background-color: rgba(30, 58, 138, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #60a5fa;
+}
+
+.info-card strong {
+    color: #93c5fd;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* 時間區塊樣式 */
+.time-block {
+    background: linear-gradient(145deg, #121828, #1a2035);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #334155;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.time-block:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 100%;
+    width: 2px;
+    height: 20px;
+    background-color: #334155;
+    z-index: 1;
+}
+
+.time-header {
+    background: linear-gradient(90deg, #1e3a8a, #1e40af);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.time-header::before {
+    content: "🕐";
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.duration {
+    font-size: 0.9em;
+    opacity: 0.9;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* 活動詳細資訊 - 強制垂直排列 */
+.activity-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+    border-bottom: 1px solid #334155;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #93c5fd;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-label::after {
+    content: ":";
+}
+
+.detail-content {
+    color: #e2e8f0;
+    padding-left: 10px;
+    line-height: 1.5;
+}
+
+/* 特殊樣式 */
+.route-highlight {
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+.highlight-block {
+    background-color: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.highlight-block .detail-label {
+    color: #10b981;
+}
+
+.important-note {
+    background-color: rgba(234, 179, 8, 0.15);
+    color: #fbbf24;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #fbbf24;
+    margin-top: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.important-note::before {
+    content: "📌";
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
+
+.warning {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #ef4444;
+    margin: 15px 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.warning::before {
+    content: "⚠️";
+    font-size: 1.2em;
+}
+
+.emoji {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* 列印樣式 */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .time-block {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+/* 響應式設計 - 保持垂直排列 */
+/* 平板設備 */
+@media (min-width: 768px) {
+    .detail-row {
+        flex-direction: column;
+    }
+    
+    .detail-label {
+        min-width: auto;
+    }
+    
+    .detail-content {
+        padding-left: 10px;
+    }
+    
+    .info-section {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .info-card {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+/* 桌面設備 */
+@media (min-width: 1024px) {
+    .activity-details {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        padding: 10px;
+        border-bottom: 1px solid #334155;
+        gap: 8px;
+    }
+    
+    .detail-row:last-child {
+        border-bottom: none;
+    }
+    
+    .detail-label {
+        min-width: auto;
+        background-color: rgba(30, 58, 138, 0.2);
+        padding: 5px 10px;
+        border-radius: 4px;
+        text-align: left;
+    }
+    
+    .detail-content {
+        padding-left: 10px;
+    }
+}
+
+/* 小螢幕設備優化 */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+    
+    .time-block {
+        padding: 12px;
+    }
+    
+    .time-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .time-header::before {
+        margin-right: 5px;
+    }
+    
+    .detail-row {
+        padding: 8px;
+    }
+    
+    .detail-content {
+        padding-left: 5px;
+    }
+}

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基督城植物園行程規劃</title>
+    <link rel="stylesheet" href="css/common-comment-model-styles.css">
+    <style>
+        /* 專屬此頁面的額外樣式 */
+        h2 {
+            color: #93c5fd;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #334155;
+        }
+        
+        /* 停車資訊區塊 */
+        .parking-info {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background-color: rgba(30, 58, 138, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #60a5fa;
+        }
+        
+        .info-item strong {
+            color: #93c5fd;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .info-item p {
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        .cost-highlight {
+            background-color: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .cost-highlight strong {
+            color: #10b981;
+            font-size: 1.1rem;
+        }
+        
+        /* 行程區域區塊 */
+        .zone-section {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .zone-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .zone-title {
+            color: #60a5fa;
+            font-size: 1.3rem;
+        }
+        
+        .duration-badge {
+            background-color: rgba(234, 179, 8, 0.2);
+            color: #fbbf24;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+        
+        .must-visit {
+            display: inline-block;
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .driving-note {
+            background-color: rgba(96, 165, 250, 0.15);
+            color: #93c5fd;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #60a5fa;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .driving-note::before {
+            content: "🚗";
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .info-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .zone-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .zone-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>基督城植物園行程規劃</h1>
+            <p style="text-align: center; color: #cbd5e1;">停車資訊與行程安排</p>
+        </div>
+        
+        <!-- 停車資訊區塊 -->
+        <div class="parking-info">
+            <h2>🅿️ 基督城植物園 停車資訊與費用</h2>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>停車區域</strong>
+                    <p>植物園/海格利公園（Hagley Park）指定停車區</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>停車時限</strong>
+                    <p>最長 180 分鐘 (3 小時)</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>收費時段</strong>
+                    <p>每週七天，上午 8:00 至下午 5:00</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>第一小時費用</strong>
+                    <p>$2.00 NZD</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>之後每小時費用</strong>
+                    <p>$1.30 NZD</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>付費方式</strong>
+                    <p>停車計費器（可使用信用卡/金融卡）或 PayMyPark 應用程式</p>
+                </div>
+            </div>
+            
+            <div class="cost-highlight">
+                <strong>3 小時總費用：$4.60 NZD</strong>
+                <p style="margin-top: 5px; color: #a7f3d0;">這是 3 小時的最高收費</p>
+            </div>
+        </div>
+        
+        <!-- 第一區行程 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第一區：城市核心與文化探索 (City Centre & Culture)</div>
+                <div class="duration-badge">活動時長：3 小時</div>
+            </div>
+            
+            <p style="color: #cbd5e1; margin-bottom: 15px; padding-left: 5px;">配合停車時限規劃的行程</p>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>10:00</span>
+                    <span class="duration">抵達</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🅿️</span> 抵達植物園停車場
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">繳費並開始計算 3 小時停車時間。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>10:15</span>
+                    <span class="duration">遊覽</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🏞️</span> 基督城植物園 (Christchurch Botanic Gardens)
+                            <span class="must-visit">必去景點</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">在此度過悠閒的時光，幫助身體適應時差。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>11:30</span>
+                    <span class="duration">參觀</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🏛️</span> 坎特伯雷博物館 (Canterbury Museum)
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">位於植物園旁，可順道參觀館藏。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 4 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>12:30</span>
+                    <span class="duration">探索</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🏛️</span> 探索藝術中心 (The Arts Centre Te Matatiki Toi Ora)
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">欣賞哥德式建築，逛逛特色小店，並在此附近解決午餐。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 5 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>13:00</span>
+                    <span class="duration">離開</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🚗</span> 駕車離開
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <div class="important-note">
+                                準時回到車上，避免超時罰款
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二區行程 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第二區：河畔步道</div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>13:30</span>
+                    <span class="duration">拍照</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">📸</span> 市區地標巡禮
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>在離開市中心前往河濱步道前，開車經過並短暫停留：</p>
+                            <ul style="margin-top: 5px; padding-left: 20px;">
+                                <li>紙板大教堂 (Cardboard Cathedral)</li>
+                                <li>追憶橋 (Bridge of Remembrance)</li>
+                            </ul>
+                            <p style="margin-top: 5px;">拍個照留念。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>14:30</span>
+                    <span class="duration">步行</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🚶‍♀️</span> 雅芳河畔步道 (Avon River Walk)
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <div class="driving-note">
+                                開車前往新地點：開車至 Avon Park (Lowe Street) 停車
+                            </div>
+                            <p style="margin-top: 10px;">沿著 3.4 公里長的步道散步，欣賞貝克韋爾山景，非常放鬆。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>16:30</span>
+                    <span class="duration">採購</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🛒</span> 採買（超市）
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>結束步道後，開車前往大型超市進行晚餐食材採購。</p>
+                            <p style="margin-top: 5px; color: #93c5fd;">推薦超市：Countdown 或 New World</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 頁尾資訊 -->
+        <div style="text-align: center; margin-top: 30px; padding: 15px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #334155;">
+            <p>行程規劃注意事項：</p>
+            <p style="margin-top: 5px;">1. 請務必遵守停車時間限制，避免罰款</p>
+            <p>2. 所有時間為預估，請根據實際情況調整</p>
+            <p>3. 建議提前下載 PayMyPark 應用程式方便繳費</p>
+        </div>
+    </div>
+</body>
+</html>

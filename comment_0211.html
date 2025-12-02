@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿卡羅阿 & 班克斯半島一日遊行程方案 (3選1)</title>
+    <link rel="stylesheet" href="css/common-comment-model-styles.css">
+    <style>
+        /* 專屬此頁面的額外樣式 */
+        .scheme-container {
+            margin-bottom: 40px;
+        }
+        
+        .scheme-header {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .scheme-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #60a5fa;
+            font-size: 1.4rem;
+        }
+        
+        .scheme-icon {
+            font-size: 1.8rem;
+            margin-right: 12px;
+        }
+        
+        .scheme-subtitle {
+            color: #93c5fd;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: rgba(96, 165, 250, 0.1);
+            border-radius: 8px;
+            border-left: 3px solid #60a5fa;
+        }
+        
+        .navigation-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .nav-item {
+            background-color: rgba(30, 58, 138, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            background-color: rgba(30, 58, 138, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .nav-content {
+            flex: 1;
+        }
+        
+        .nav-title {
+            color: #60a5fa;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .nav-desc {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+        
+        .highlight-route {
+            background-color: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        
+        .food-highlight {
+            background-color: rgba(234, 179, 8, 0.15);
+            color: #fbbf24;
+            padding: 8px;
+            border-radius: 6px;
+            border-left: 3px solid #fbbf24;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        
+        .flexible-option {
+            background-color: rgba(148, 163, 184, 0.1);
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #94a3b8;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        
+        .time-range {
+            display: inline-block;
+            background-color: rgba(30, 58, 138, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+        
+        .efficiency-note {
+            background-color: rgba(16, 185, 129, 0.15);
+            border-left: 4px solid #10b981;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        
+        .scenic-note {
+            background-color: rgba(96, 165, 250, 0.15);
+            border-left: 4px solid #60a5fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .navigation-menu {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .nav-item {
+                flex: 1;
+                min-width: 300px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .nav-item {
+                min-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗺️ 阿卡羅阿 & 班克斯半島 一日遊行程方案 (3選1)</h1>
+            <div class="subtitle">根據您的偏好選擇最適合的行程：風景優先、效率優先或景觀全覽</div>
+        </div>
+        
+        <!-- 導航選單 -->
+        <div class="navigation-menu">
+            <a href="#scheme1" class="nav-item">
+                <div class="nav-icon">⛰️</div>
+                <div class="nav-content">
+                    <div class="nav-title">方案一：風景優先</div>
+                    <div class="nav-desc">山路來回，深度體驗班克斯半島美景</div>
+                </div>
+            </a>
+            
+            <a href="#scheme2" class="nav-item">
+                <div class="nav-icon">⏱️</div>
+                <div class="nav-content">
+                    <div class="nav-title">方案二：效率優先</div>
+                    <div class="nav-desc">海路來回，直達小鎮節省時間</div>
+                </div>
+            </a>
+            
+            <a href="#scheme3" class="nav-item">
+                <div class="nav-icon">🔄</div>
+                <div class="nav-content">
+                    <div class="nav-title">方案三：景觀全覽</div>
+                    <div class="nav-desc">山海路O繞，彈性安排購物時間</div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- 方案一：風景優先 -->
+        <div class="scheme-container" id="scheme1">
+            <div class="scheme-header">
+                <div class="scheme-title">
+                    <span class="scheme-icon">⛰️</span>
+                    <span>方案一：風景優先 (山路來回，深度體驗班克斯半島美景)</span>
+                </div>
+                <div class="scheme-subtitle">
+                    此方案將展望山路的美景最大化，適合熱愛自然風光、不趕時間且喜歡開車挑戰的旅客。
+                </div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>08:00</span>
+                    <span class="duration">出發</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">從基督城出發</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">請確保油箱充足。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>09:30</span>
+                    <span class="duration">駕駛</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🏞️ 展望山路 (Summit Road) 上山</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            重要： Google 導航請選擇經過山頂的路徑（往左上山）。路小曲折，請小心駕駛。
+                            <div class="scenic-note">
+                                🗺️ 導航提示：選擇經過山頂的路徑，享受山路美景
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>09:30-11:00</span>
+                    <span class="duration">1.5 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">📸 Banks Peninsula 沿路觀景</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            在沿路隱藏小灣與觀景點 (如 Hilltop Tavern 附近) 多停留拍照。網友推此處遠眺風景絕佳。
+                            <div class="food-highlight">
+                                📷 推薦拍照點：Hilltop Tavern 附近有絕佳視野
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 4 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>11:00-11:30</span>
+                    <span class="duration">30 分鐘</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🍴 烤肉捲 Soulvilaki King</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            位於 75 號公路，在進/出半島前的路上。
+                            <div class="food-highlight">
+                                🌯 推薦美食：烤肉捲 Soulvilaki King
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 5 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>12:00-14:30</span>
+                    <span class="duration">2.5 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">📸 Akaroa 法國小鎮 漫步</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            午餐可在小鎮內解決或輕食。享受小鎮氛圍、拍照留念。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 6 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>14:30-15:30</span>
+                    <span class="duration">1 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🍴 Akaroa Salmon</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            品嚐新鮮帝王鮭魚生魚片。建議外帶到海邊享用。
+                            <div class="food-highlight">
+                                🐟 推薦美食：Akaroa 新鮮帝王鮭魚生魚片
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 7 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>15:30</span>
+                    <span class="duration">回程</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🏞️ 回程：走海岸公路 (Coastal Road)</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            體驗不同的風景，路大平坦，加速回程效率。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 8 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>17:00</span>
+                    <span class="duration">抵達</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">抵達基督城市區</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 9 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>17:30-19:30 <span class="time-range">視時間/體力安排</span></span>
+                    <span class="duration">2 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🛒 Dress-Smart Hornby</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            晚餐前可在 Hornby Outlet 購物。
+                            <div class="flexible-option">
+                                🛍️ 可選行程：根據時間和體力決定是否前往
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 方案二：效率優先 -->
+        <div class="scheme-container" id="scheme2">
+            <div class="scheme-header">
+                <div class="scheme-title">
+                    <span class="scheme-icon">⏱️</span>
+                    <span>方案二：效率優先 (海路來回，直達小鎮節省時間)</span>
+                </div>
+                <div class="scheme-subtitle">
+                    此方案將交通時間最小化，適合時間有限、目標明確在阿卡羅阿和購物的旅客。
+                </div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>08:30</span>
+                    <span class="duration">出發</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">從基督城出發</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>09:45</span>
+                    <span class="duration">用餐</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🍴 烤肉捲 Soulvilaki King</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            位於 75 號公路。在進半島前解決早午餐。
+                            <div class="food-highlight">
+                                🌯 推薦美食：烤肉捲 Soulvilaki King (早午餐)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>10:15</span>
+                    <span class="duration">駕駛</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🛣️ 沿岸公路 (Coastal Road) 直達</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            重要： Google 導航請選擇貼著海岸的路徑（往右走海岸線）。路大平坦，快速抵達。
+                            <div class="efficiency-note">
+                                🚗 效率路線：選擇海岸線路徑，路況好且快速
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 4 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>11:00-13:00</span>
+                    <span class="duration">2 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">📸 Akaroa 法國小鎮 漫步</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            拍照、逛小店。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 5 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>13:00-14:00</span>
+                    <span class="duration">1 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🍴 Akaroa Salmon</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            新鮮帝王鮭魚生魚片，可搭配簡單午餐。
+                            <div class="food-highlight">
+                                🐟 推薦美食：Akaroa 新鮮帝王鮭魚生魚片
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 6 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>14:00-15:30</span>
+                    <span class="duration">1.5 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">📸 Banks Peninsula 沿路風景</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            回程時，在沿岸公路找幾個容易抵達的觀景點稍作停留。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 7 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>15:30</span>
+                    <span class="duration">回程</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">回程：沿岸公路</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 8 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>16:45</span>
+                    <span class="duration">抵達</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">抵達 Dress-Smart Hornby</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 9 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>17:00-19:30</span>
+                    <span class="duration">2.5 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🛒 Dress-Smart Hornby (重點購物)</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            Canterbury, Icebreaker 等品牌，價格優惠。
+                            <div class="food-highlight">
+                                🛍️ 購物重點：Canterbury, Icebreaker 等品牌，價格優惠
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 10 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>19:30</span>
+                    <span class="duration">返回</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">返回市區/晚餐</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 方案三：景觀全覽 -->
+        <div class="scheme-container" id="scheme3">
+            <div class="scheme-header">
+                <div class="scheme-title">
+                    <span class="scheme-icon">🔄</span>
+                    <span>方案三：景觀全覽 (山海路O繞，彈性安排購物時間)</span>
+                </div>
+                <div class="scheme-subtitle">
+                    此方案結合了山路的壯觀與海路的效率，讓您能同時看到兩種景色，並將購物行程彈性放在傍晚。
+                </div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>08:00</span>
+                    <span class="duration">出發</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">從基督城出發</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>09:30</span>
+                    <span class="duration">去程</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🏞️ 去程：展望山路 (Summit Road)</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            往左上山。欣賞並拍攝山景。
+                            <div class="scenic-note">
+                                🗺️ 去程選擇山路：欣賞班克斯半島壯觀山景
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>09:30-11:00</span>
+                    <span class="duration">1.5 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">📸 Banks Peninsula 沿路觀景</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            在觀景點停留，建議不要停留太久，以保持後續行程時間。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 4 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>11:30-13:30</span>
+                    <span class="duration">2 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">📸 Akaroa 法國小鎮 漫步</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            逛小鎮、拍照。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 5 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>13:30-14:30</span>
+                    <span class="duration">1 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🍴 Akaroa Salmon + 烤肉捲</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            兩個餐點合併在小鎮或回程路上一起享用，節省時間。
+                            <div class="food-highlight">
+                                🍽️ 美食組合：Akaroa Salmon + 烤肉捲，一次品嚐兩種美食
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 6 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>14:30</span>
+                    <span class="duration">回程</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🛣️ 回程：沿岸公路 (Coastal Road)</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            往右走海岸線。體驗不同的沿海風光。
+                            <div class="efficiency-note">
+                                🚗 回程選擇海岸線：路況平坦，加快回程速度
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 7 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>16:00</span>
+                    <span class="duration">抵達</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">抵達 Dress-Smart Hornby</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 8 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>16:00-18:30</span>
+                    <span class="duration">2.5 小時</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🛒 Dress-Smart Hornby (購物)</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            在體力充足時進行購物。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 9 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>18:30</span>
+                    <span class="duration">備選用餐</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">🍴 烤肉捲 Soulvilaki King (備選)</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content">
+                            如果午餐沒時間享用烤肉捲，可將此餐點安排在回程快到基督城時的 75 號公路。
+                            <div class="flexible-option">
+                                🌯 彈性安排：如果午餐時間不足，可在此享用烤肉捲
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 10 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>19:00</span>
+                    <span class="duration">結束</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動/行程</div>
+                        <div class="detail-content">返回市區/晚餐</div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註/重點</div>
+                        <div class="detail-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 行程比較與建議 -->
+        <div class="time-block" style="margin-top: 30px; background-color: rgba(30, 58, 138, 0.3);">
+            <div class="time-header" style="background: linear-gradient(90deg, #1e3a8a, #1e40af);">
+                <span>📊 方案比較與選擇建議</span>
+            </div>
+            <div class="activity-details">
+                <div class="detail-row">
+                    <div class="detail-label">方案一：風景優先</div>
+                    <div class="detail-content">
+                        <ul class="activity-list">
+                            <li><strong>適合對象：</strong>熱愛自然風光、不趕時間、喜歡挑戰山路駕駛</li>
+                            <li><strong>優點：</strong>最大化班克斯半島山景體驗，拍照機會多</li>
+                            <li><strong>注意：</strong>山路曲折，駕駛需謹慎，行程時間較長</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">方案二：效率優先</div>
+                    <div class="detail-content">
+                        <ul class="activity-list">
+                            <li><strong>適合對象：</strong>時間有限、目標明確、重視購物行程</li>
+                            <li><strong>優點：</strong>交通時間最短，最大化購物時間</li>
+                            <li><strong>注意：</strong>山景體驗較少，以海岸風景為主</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">方案三：景觀全覽</div>
+                    <div class="detail-content">
+                        <ul class="activity-list">
+                            <li><strong>適合對象：</strong>想體驗兩種風景、行程安排彈性、體力較好</li>
+                            <li><strong>優點：</strong>山海景觀都能體驗，行程安排最彈性</li>
+                            <li><strong>注意：</strong>行程緊湊，需良好時間管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 頁尾資訊 -->
+        <div style="text-align: center; margin-top: 30px; padding: 15px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #334155;">
+            <p>行程規劃注意事項：</p>
+            <p style="margin-top: 5px;">1. 山路駕駛請注意安全，保持適當車速</p>
+            <p>2. 所有時間為預估，請根據實際情況調整</p>
+            <p>3. 建議提前查看天氣預報，山區天氣變化較大</p>
+            <p style="margin-top: 10px;">
+                <a href="#scheme1" style="color: #60a5fa; text-decoration: none;">方案一</a> | 
+                <a href="#scheme2" style="color: #60a5fa; text-decoration: none;">方案二</a> | 
+                <a href="#scheme3" style="color: #60a5fa; text-decoration: none;">方案三</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

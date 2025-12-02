@@ -7,31 +7,40 @@
       {
         "date": "02/08(日)",
         "activities": [
-          "🛒 五點前往超市「PAK'nSAVE」採買"
-        ]
-      },
-      {
-        "date": "02/09(一)",
-        "activities": [
-          "📸 探索基督城市區 ＠zhi"
-        ]
-      },
-      {
-        "date": "02/10(二)",
-        "activities": [
-          "📸 Lyttelton  @Jane",
-          "🥾 Taylor's Mistake/ Head to head coastal cliffs 健行 ",
-          "🍴 Akarosa Salmon 很新鮮的帝王鮭魚生魚片",
-          "🍴 Theo’s Fisheries 紐西蘭海鮮專賣店 ",
+          "🛒 五點前往超市「PAK'nSAVE」採買",
           "🍴 Pedro’s House of Lamb  烤羊肉 只能外帶。 涼拌高麗菜 coleslaw"
         ]
       },
       {
-        "date": "02/11(三)",
+        "date": "02/09(一)",
+        "comments": "comment_0209.html",
+        "activities": [          
+          "📸 探索基督城市區",
+          "🏞️基督城植物園 (Christchurch Botanic Garden)",
+          "🏛️ 探索藝術中心 & 坎特伯雷博物館",
+          "📸紙板大教堂 (Cardboard Cathedral) 和 追憶橋 (Bridge of Remembrance)",
+          "🚶‍♀️ 雅芳河畔步道 (Avon River Walk",
+          "採買（超市)"
+        ]
+      },
+      {
+        "date": "02/10(二)",
+        "comments": "comment_0210.html",
         "activities": [
-          "📸 Akaroa 法國小鎮 or 沿海步道 Taylor's Mistake @Jane",
+          "📸 Lyttelton (隧道/山路)",
+          "🥾 沿海步道 Taylor's Mistake 健行 ",
+          "🍴 Theo’s Fisheries 紐西蘭海鮮專賣店 "
+
+        ]
+      },
+      {
+        "date": "02/11(三)",
+        "comments": "comment_0211.html",
+        "activities": [
+          "📸 Akaroa 法國小鎮",
           "📸 Banks Peninsula 沿路風景很美有很多隱藏小灣與觀景點＠zhi",
           "🍴 烤肉捲 soulvilaki king. 75 公路 基督城",
+          "🍴 Akarosa Salmon 很新鮮的帝王鮭魚生魚片",
           "🛒 Dress-Smart Hornby: 基督城 outlet, Canterbury, Icebreaker 很好買，價格蠻優惠"
         ]
       }
