@@ -222,13 +222,15 @@
   {
     "stage_id": 5,
     "dates": "2月25日至2月26日",
-    "location": "Twizel/Mt Cook",
+    "location": "Twizel/Mt Cook",    
     "itinerary": [
       {
         "date": "02/25(三)",
         "webpage":" https://timtingtravel.com/cromwell/",
+        "comments": "day_Cromwell.html",    
         "activities": [
           "注意: 從瓦納卡前往Mt Cook，車程2.5小時（200公里）",
+          "📸 Cromwell Heritage Precinct (克倫威爾遺產區)",
           "📸 Cromwell-水果鎮 採櫻桃 @zhi",
           "🍴 Cromwell-The Stoaker Room 木桶烤肉餐廳。如果想在Cromwell吃飯的話可推薦這裡。 54/人",
           "📸 Lindis Scenic hill spot/Lindis pass viewpoint",
