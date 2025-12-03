@@ -68,6 +68,7 @@
       },
       {
         "date": "02/13(五)",
+        "comments": "day_Routeburn_Track.html",        
         "activities": [
           "注意: 從皇后鎮前往Glenorchy，車程1小時（50公里）",
           "🥾 Glenorchy Routeburn Track 東側健行 一天",
@@ -79,6 +80,7 @@
       {
         "date": "02/14(六)",
         "activities": [
+          "休息ㄖ",
           "🛒 週六機場附近農夫市集 半天",
           "📸 皇后鎮觀賞日落",
           " 🍴 Chur Fish and Chips 鱼薯店",
@@ -108,6 +110,7 @@
       },
       {
         "date": "02/16(一)",
+        "comments": "day_kepler_Luxmore_Hut.html",        
         "webpage":"https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk",
         "activities": [
           "🥾 Kepler Track Luxmore Hut 一日挑戰 (約 7-9 小時)",
@@ -179,6 +182,7 @@
       },
       {
         "date": "02/21(六)",
+        "comments": "day_brewster_glacier.html",        
         "activities": [
           "🥾 Brewster Glacier 健行一天"
         ]
@@ -198,6 +202,7 @@
       },
       {
         "date": "02/23(一)",
+        "comments": "day_IsthmusPeak_RoysPeak.html",    
         "activities": [
           "🥾 Isthmus Peak or Roy’s Peak 步道健行 健行一天 清晨出發，避開夏季中午的烈日曝曬"
         ]

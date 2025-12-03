@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewster Glacier 一日健行行程規劃</title>
+    <link rel="stylesheet" href="css/common-comment-model-styles.css">
+    <style>
+        /* 專屬此頁面的額外樣式 */
+        h2 {
+            color: #93c5fd;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #334155;
+        }
+        
+        /* 健行資訊區塊 */
+        .hike-info {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background-color: rgba(30, 58, 138, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #60a5fa;
+        }
+        
+        .info-item strong {
+            color: #93c5fd;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .info-item p {
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        .difficulty-highlight {
+            background-color: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .difficulty-highlight strong {
+            color: #f87171;
+            font-size: 1.1rem;
+        }
+        
+        /* 行程區域區塊 */
+        .zone-section {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .zone-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .zone-title {
+            color: #60a5fa;
+            font-size: 1.3rem;
+        }
+        
+        .duration-badge {
+            background-color: rgba(234, 179, 8, 0.2);
+            color: #fbbf24;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+        
+        .must-visit {
+            display: inline-block;
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .driving-note {
+            background-color: rgba(96, 165, 250, 0.15);
+            color: #93c5fd;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #60a5fa;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .driving-note::before {
+            content: "🚗";
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .gear-note {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #10b981;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .gear-note::before {
+            content: "🎒";
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .map-link {
+            display: inline-block;
+            background-color: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .map-link:hover {
+            background-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .alltrails-link {
+            display: inline-block;
+            background-color: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            margin-left: 10px;
+        }
+        
+        .alltrails-link:hover {
+            background-color: rgba(34, 197, 94, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .link-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .info-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .zone-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .zone-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .link-container {
+                flex-direction: column;
+            }
+            
+            .alltrails-link {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Brewster Glacier 一日健行行程規劃</h1>
+            <p style="text-align: center; color: #cbd5e1;">高山冰川健行 - 需要較好體能與適當裝備</p>
+        </div>
+        
+        <!-- 健行資訊區塊 -->
+        <div class="hike-info">
+            <h2>🏔️ Brewster Glacier 健行基本資訊</h2>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>路線長度</strong>
+                    <p>約 4.6-5 公里 (單程)</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>總爬升高度</strong>
+                    <p>約 1320 公尺</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>預估時間</strong>
+                    <p>6-8 小時 (來回，含休息)</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>登山口</strong>
+                    <p>Fantail Falls 停車場</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>路線類型</strong>
+                    <p>高山健行 / 冰川接近路線</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>適合季節</strong>
+                    <p>夏季 (12月-3月)，冬季需專業裝備</p>
+                </div>
+            </div>
+            
+            <div class="difficulty-highlight">
+                <strong>⚠️ 高難度路線警告</strong>
+                <p style="margin-top: 5px; color: #fca5a5;">此路線需要良好的體能，部分路段有坍塌風險，官方建議攜帶雪地技術裝備。不適合新手或體能不佳者。</p>
+            </div>
+            
+            <div class="link-container">
+                <a href="https://maps.app.goo.gl/cdbfvdmY8PpD8YuG8" target="_blank" class="map-link">
+                    📍 查看 Fantail Falls 停車場位置 (Google 地圖)
+                </a>
+                <a href="https://www.alltrails.com/trail/new-zealand/otago/brewster-track-to-brewster-glacier" target="_blank" class="alltrails-link">
+                    🥾 查看 Brewster Glacier 路線 (AllTrails)
+                </a>
+            </div>
+        </div>
+        
+        <!-- 第一區行程：清晨出發與登山口準備 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第一區：清晨準備與登山口</div>
+                <div class="duration-badge">建議清晨出發</div>
+            </div>
+            
+            <p style="color: #cbd5e1; margin-bottom: 15px; padding-left: 5px;">停車位有限，建議清晨出發以確保有停車位</p>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>05:30</span>
+                    <span class="duration">出發</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🚗</span> 出發前往 Fantail Falls 停車場
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">從瓦納卡或附近城鎮出發，預留足夠行車時間。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>07:00</span>
+                    <span class="duration">抵達</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🅿️</span> 抵達 Fantail Falls 停車場
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">檢查裝備、整理行囊，準備開始健行。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>07:30</span>
+                    <span class="duration">開始健行</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🌊</span> 渡過溪流
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">登山口前需渡過一條溪流，注意水流狀況與安全。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二區行程：上山至小屋 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第二區：上山至 Brewster Hut 小屋</div>
+                <div class="duration-badge">約 3 小時</div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>07:45 - 09:00</span>
+                    <span class="duration">陡升路段</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🌳</span> 穿越山毛櫸林
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>沿著步道開始陡峭爬升，穿越美麗的山毛櫸森林。</p>
+                            <div class="important-note">
+                                此路段持續爬升約 1000 公尺，需要良好的體能與適當節奏
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>09:00 - 10:30</span>
+                    <span class="duration">高山路段</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🥾</span> Kaka 鋪設的木屑步道
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>進入高山區域，步道由 Kaka 鋪設的木屑構成，視野逐漸開闊。</p>
+                            <div class="gear-note">
+                                海拔逐漸升高，注意保暖與補充水分
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>10:30</span>
+                    <span class="duration">抵達小屋</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🏠</span> 抵達 Brewster Hut 小屋
+                            <span class="must-visit">休息點</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>在此休息、補充能量、欣賞周圍山景。小屋提供基本的避難設施。</p>
+                            <p style="margin-top: 5px; color: #93c5fd;">建議休息 30-45 分鐘，準備前往冰川。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三區行程：前往冰川 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第三區：前往 Brewster Glacier</div>
+                <div class="duration-badge">約 1-2 小時</div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>11:15</span>
+                    <span class="duration">出發前往冰川</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">❄️</span> 從小屋出發前往冰川
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>從小屋再徒步約 2 公里即可抵達冰川。</p>
+                            <div class="warning">
+                                ⚠️ 注意：部分路段有坍塌風險，官方建議攜帶雪地技術裝備
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>12:30</span>
+                    <span class="duration">抵達冰川</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🏔️</span> Brewster Glacier 觀景點
+                            <span class="must-visit">主要景點</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>抵達冰川觀景點，欣賞壯觀的冰川景致。在此享用午餐、拍照留念。</p>
+                            <p style="margin-top: 5px; color: #93c5fd;">注意安全，勿過於接近冰川邊緣或冰裂隙。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第四區行程：返回下山 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第四區：返回與下山</div>
+                <div class="duration-badge">約 3-4 小時</div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>13:30</span>
+                    <span class="duration">開始下山</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">⬇️</span> 從冰川返回小屋
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>開始返回小屋，下山時注意膝蓋保護與步伐穩定。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>15:00</span>
+                    <span class="duration">返回小屋</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🏠</span> 返回 Brewster Hut 小屋
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>短暫休息，補充水分與能量，準備最後的下山路段。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>17:30</span>
+                    <span class="duration">返回停車場</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🅿️</span> 返回 Fantail Falls 停車場
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>完成一日健行，返回停車場。建議在附近城鎮享用晚餐慶祝。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+        <!-- 頁尾資訊 -->
+        <div style="text-align: center; margin-top: 30px; padding: 15px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #334155;">
+            <p>行程規劃注意事項：</p>
+            <p style="margin-top: 5px;">1. 所有時間為預估，請根據個人體能與天氣狀況調整</p>
+            <p>2. 高山天氣變化迅速，務必準備防雨防寒裝備</p>
+            <p>3. 建議與有經驗的登山者同行，或考慮聘請當地嚮導</p>
+            <p>4. 遵循「無痕山林」原則，帶走所有垃圾</p>
+            <p style="margin-top: 10px; color: #60a5fa;">
+                📱 建議下載 AllTrails 應用程式，可下載離線地圖與GPS導航
+            </p>
+        </div>
+    </div>
+</body>
+</html>

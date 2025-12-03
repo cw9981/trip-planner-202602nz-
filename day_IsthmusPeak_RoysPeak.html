@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isthmus Peak vs Roy's Peak 步道比較分析</title>
+    <link rel="stylesheet" href="css/common-comment-model-styles.css">
+    <style>
+        /* 專屬此頁面的額外樣式 */
+        h2 {
+            color: #93c5fd;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #334155;
+        }
+        
+        /* 健行資訊區塊 */
+        .hike-info {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background-color: rgba(30, 58, 138, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #60a5fa;
+        }
+        
+        .info-item strong {
+            color: #93c5fd;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .info-item p {
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        .difficulty-highlight {
+            background-color: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .difficulty-highlight strong {
+            color: #f87171;
+            font-size: 1.1rem;
+        }
+        
+        .recommendation-highlight {
+            background-color: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .recommendation-highlight strong {
+            color: #10b981;
+            font-size: 1.1rem;
+        }
+        
+        /* 行程區域區塊 */
+        .zone-section {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .zone-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .zone-title {
+            color: #60a5fa;
+            font-size: 1.3rem;
+        }
+        
+        .must-visit {
+            display: inline-block;
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .map-link {
+            display: inline-block;
+            background-color: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .map-link:hover {
+            background-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .alltrails-link {
+            display: inline-block;
+            background-color: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            margin-left: 10px;
+        }
+        
+        .alltrails-link:hover {
+            background-color: rgba(34, 197, 94, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .link-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* 比較表格 */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(90deg, #1e3a8a, #1e40af);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #334155;
+            color: #e2e8f0;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: rgba(30, 58, 138, 0.1);
+        }
+        
+        .comparison-table tr:hover {
+            background-color: rgba(30, 58, 138, 0.2);
+        }
+        
+        .pros-cons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .pros, .cons {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .pros {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+        }
+        
+        .cons {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+        }
+        
+        .pros h4, .cons h4 {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .pros h4 {
+            color: #10b981;
+        }
+        
+        .cons h4 {
+            color: #ef4444;
+        }
+        
+        .trail-section {
+            margin-bottom: 40px;
+        }
+        
+        .trail-header {
+            background: linear-gradient(90deg, #1e3a8a, #1e40af);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .trail-icon {
+            font-size: 2rem;
+        }
+        
+        .trail-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .key-point {
+            background-color: rgba(30, 58, 138, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #60a5fa;
+        }
+        
+        .key-point strong {
+            color: #93c5fd;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .key-point p {
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        @media (min-width: 768px) {
+            .info-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .key-points {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pros-cons {
+                flex-direction: row;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .key-points {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .link-container {
+                flex-direction: column;
+            }
+            
+            .alltrails-link {
+                margin-left: 0;
+            }
+            
+            .pros-cons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Isthmus Peak vs Roy's Peak 步道比較分析</h1>
+            <p style="text-align: center; color: #cbd5e1;">瓦納卡湖畔兩大經典步道選擇 - 詳細比較與建議</p>
+        </div>
+        
+        <!-- 快速比較區塊 -->
+        <div class="hike-info">
+            <h2>🏔️ 兩大步道快速比較</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>Roy's Peak</th>
+                        <th>Isthmus Peak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>步道長度</strong></td>
+                        <td>約 16 公里 (來回)</td>
+                        <td>約 16 公里 (來回)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>爬升高度</strong></td>
+                        <td>約 1,300 公尺</td>
+                        <td>約 1,300 公尺</td>
+                    </tr>
+                    <tr>
+                        <td><strong>預估時間</strong></td>
+                        <td>5-7 小時</td>
+                        <td>6-8 小時</td>
+                    </tr>
+                    <tr>
+                        <td><strong>難度等級</strong></td>
+                        <td>中等至困難</td>
+                        <td>中等至困難</td>
+                    </tr>
+                    <tr>
+                        <td><strong>風景特色</strong></td>
+                        <td>俯瞰瓦納卡湖與城鎮</td>
+                        <td>同時俯瞰瓦納卡湖與哈威亞湖</td>
+                    </tr>
+                    <tr>
+                        <td><strong>登山口位置</strong></td>
+                        <td>瓦納卡鎮附近 (5分鐘車程)</td>
+                        <td>瓦納卡鎮東南方 (20分鐘車程)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>旺季人潮</strong></td>
+                        <td>非常多，尤其日出時段</td>
+                        <td>相對較少</td>
+                    </tr>
+                    <tr>
+                        <td><strong>步道特色</strong></td>
+                        <td>之字形步道，幾乎全程曝曬</td>
+                        <td>穿越牧場，部分路段有樹蔭</td>
+                    </tr>
+                    <tr>
+                        <td><strong>設施</strong></td>
+                        <td>停車場有公共廁所</td>
+                        <td>無公共設施</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Roy's Peak 優點</h4>
+                    <ul>
+                        <li>經典地標，Instagram 熱門拍照點</li>
+                        <li>登山口距離瓦納卡鎮近</li>
+                        <li>步道維護良好，路線明確</li>
+                        <li>日出與日落時分景色絕佳</li>
+                        <li>停車場有公共廁所</li>
+                        <li>社群分享照片多，容易參考</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ Roy's Peak 缺點</h4>
+                    <ul>
+                        <li>旺季人潮非常多</li>
+                        <li>停車位有限，需提早到達</li>
+                        <li>步道幾乎全程曝曬，無遮蔭</li>
+                        <li>拍照點可能需要排隊</li>
+                        <li>夏季中午炎熱，需大量飲水</li>
+                        <li>隱私性較低</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h4>✅ Isthmus Peak 優點</h4>
+                    <ul>
+                        <li>可同時欣賞兩個湖泊</li>
+                        <li>相對寧靜，人潮較少</li>
+                        <li>有部分樹蔭遮擋</li>
+                        <li>更野生自然的感覺</li>
+                        <li>隱私性較高，適合喜歡安靜的人</li>
+                        <li>步道變化較多</li>
+                    </ul>
+                </div>
+                <div class="cons">
+                    <h4>⚠️ Isthmus Peak 缺點</h4>
+                    <ul>
+                        <li>登山口較遠</li>
+                        <li>部分路段較陡峭</li>
+                        <li>無公共廁所設施</li>
+                        <li>知名度較低，資訊相對少</li>
+                        <li>山頂風勢可能較強</li>
+                        <li>需穿越私人牧場，需關好柵門</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="recommendation-highlight">
+                <strong>🏆 選擇建議與綜合分析</strong>
+                <div style="margin-top: 10px;">
+                    <p style="color: #a7f3d0; margin-bottom: 10px;"><strong>• 選擇 Roy's Peak 如果：</strong></p>
+                    <ul style="color: #a7f3d0; margin-left: 20px; margin-bottom: 15px;">
+                        <li>想要經典網美照且不怕人潮</li>
+                        <li>是第一次來瓦納卡，想要經典體驗</li>
+                        <li>不想開太遠的車到登山口</li>
+                        <li>不介意在熱門拍照點排隊</li>
+                        <li>體能中等，可以應對持續爬升</li>
+                    </ul>
+                    
+                    <p style="color: #a7f3d0; margin-bottom: 10px;"><strong>• 選擇 Isthmus Peak 如果：</strong></p>
+                    <ul style="color: #a7f3d0; margin-left: 20px; margin-bottom: 15px;">
+                        <li>想要寧靜體驗且欣賞雙湖景</li>
+                        <li>不喜歡人擠人的觀光景點</li>
+                        <li>想要更有挑戰性、變化多的步道</li>
+                        <li>已經去過Roy's Peak，想嘗試不同路線</li>
+                        <li>體能較好，可以應對較陡峭路段</li>
+                    </ul>
+                    
+                    <p style="color: #a7f3d0; margin-top: 15px; font-weight: bold;">🔥 夏季健行重要提醒：</p>
+                    <p style="color: #a7f3d0; margin-top: 5px;">
+                        兩條步道都建議<strong>清晨出發</strong>以避開中午烈陽，攜帶充足飲水(至少2-3公升)與防曬用品。紐西蘭夏季紫外線非常強烈，務必做好防曬措施。
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Roy's Peak 詳細資訊 -->
+        <div class="trail-section">
+            <div class="trail-header">
+                <div class="trail-icon">🏔️</div>
+                <div class="trail-name">Roy's Peak 步道詳細資訊</div>
+            </div>
+            
+            <div class="hike-info">
+                <h2>📊 Roy's Peak 基本資訊</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>路線長度</strong>
+                        <p>約 16 公里 (來回)</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>總爬升高度</strong>
+                        <p>約 1,300 公尺</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>預估時間</strong>
+                        <p>5-7 小時 (來回，含休息)</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>登山口</strong>
+                        <p>Roy's Peak Track 起點停車場</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>路線類型</strong>
+                        <p>牧場步道 / 之字形爬升</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>最佳季節</strong>
+                        <p>10月-4月 (夏季需注意防曬)</p>
+                    </div>
+                </div>
+                
+                <div class="difficulty-highlight">
+                    <strong>⚠️ Roy's Peak 特別注意事項</strong>
+                    <p style="margin-top: 5px; color: #fca5a5;">
+                        1. 步道幾乎全程曝曬無遮蔭，夏季中午炎熱，必須攜帶充足飲水(建議至少2-3公升)與防曬用品。<br>
+                        2. 旺季停車位有限，建議清晨出發(05:00前)。<br>
+                        3. 最著名的拍照點並非山頂，從拍照點到山頂還需約30-45分鐘。<br>
+                        4. 旺季時拍照點可能需要排隊等待。
+                    </p>
+                </div>
+                
+                <h2 style="margin-top: 25px;">📍 重要地點與資源</h2>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <strong>登山口位置</strong>
+                        <p>距離瓦納卡鎮約5-10分鐘車程，有標示清晰的停車場。</p>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>經典拍照點</strong>
+                        <p>距離山頂約30-45分鐘路程，是懸崖邊的絕佳觀景點，可俯瞰瓦納卡湖全景。</p>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>山頂景觀</strong>
+                        <p>海拔1,578公尺，360度全景視野，可欣賞瓦納卡湖、阿斯帕林山國家公園等景色。</p>
+                    </div>
+                </div>
+                
+                <div class="link-container">
+                    <a href="https://goo.gl/maps/JFb7jLd9V9qngeRN8" target="_blank" class="map-link">
+                        📍 Roy's Peak 登山口位置 (Google 地圖)
+                    </a>
+                    <a href="https://www.alltrails.com/trail/new-zealand/otago/roys-peak-track" target="_blank" class="alltrails-link">
+                        🥾 Roy's Peak 路線詳情 (AllTrails)
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Isthmus Peak 詳細資訊 -->
+        <div class="trail-section">
+            <div class="trail-header">
+                <div class="trail-icon">🏔️</div>
+                <div class="trail-name">Isthmus Peak 步道詳細資訊</div>
+            </div>
+            
+            <div class="hike-info">
+                <h2>📊 Isthmus Peak 基本資訊</h2>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>路線長度</strong>
+                        <p>約 16 公里 (來回)</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>總爬升高度</strong>
+                        <p>約 1,300 公尺</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>預估時間</strong>
+                        <p>6-8 小時 (來回，含休息)</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>登山口</strong>
+                        <p>Isthmus Peak Track 起點 (Mt Aspiring Rd)</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>路線類型</strong>
+                        <p>牧場步道 / 高山步道</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <strong>最佳季節</strong>
+                        <p>11月-4月 (注意防曬與風勢)</p>
+                    </div>
+                </div>
+                
+                <div class="difficulty-highlight">
+                    <strong>⚠️ Isthmus Peak 特別注意事項</strong>
+                    <p style="margin-top: 5px; color: #fca5a5;">
+                        1. 步道部分路段陡峭，山頂風勢可能強勁，需準備防風外套。<br>
+                        2. 登山口無公共設施，請在瓦納卡鎮先使用廁所。<br>
+                        3. 需穿越私人牧場，請務必關好所有柵門，尊重私人財產。<br>
+                        4. 相較Roy's Peak有部分樹蔭，但夏季仍需注意防曬。
+                    </p>
+                </div>
+                
+                <h2 style="margin-top: 25px;">📍 重要地點與資源</h2>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <strong>登山口位置</strong>
+                        <p>距離瓦納卡鎮約20分鐘車程，位於Mt Aspiring Road旁，有路邊停車區。</p>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>雙湖景觀</strong>
+                        <p>步道中後段可同時欣賞瓦納卡湖與哈威亞湖，是此步道的最大特色。</p>
+                    </div>
+                    
+                    <div class="key-point">
+                        <strong>山頂景觀</strong>
+                        <p>海拔1,385公尺，360度全景視野，同時欣賞兩個湖泊，視野開闊。</p>
+                    </div>
+                </div>
+                
+                <div class="link-container">
+                    <a href="https://goo.gl/maps/QCJzDYPngVvV93ee9" target="_blank" class="map-link">
+                        📍 Isthmus Peak 登山口位置 (Google 地圖)
+                    </a>
+                    <a href="https://www.alltrails.com/trail/new-zealand/otago/isthmus-peak-track" target="_blank" class="alltrails-link">
+                        🥾 Isthmus Peak 路線詳情 (AllTrails)
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 通用裝備與安全注意事項 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">📋 兩大步道通用裝備與安全注意事項</div>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>必備裝備</strong>
+                    <p>
+                        • 堅固的登山鞋<br>
+                        • 分層穿衣系統（洋蔥式穿法）<br>
+                        • 充足飲水（至少2-3公升）<br>
+                        • 高能量食物與零食<br>
+                        • 防曬用品（帽子、太陽眼鏡、防曬乳）<br>
+                        • 個人急救包
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>建議裝備</strong>
+                    <p>
+                        • 登山杖（減輕膝蓋壓力）<br>
+                        • 防風外套<br>
+                        • 保暖層（山頂可能寒冷）<br>
+                        • 雨衣/防水外套<br>
+                        • 頭燈（清晨出發需要）<br>
+                        • 相機與備用電池
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>安全注意</strong>
+                    <p>
+                        • 檢查天氣預報，避免惡劣天氣<br>
+                        • 告知他人行程與預計返回時間<br>
+                        • 攜帶離線地圖或GPS裝置<br>
+                        • 隨時評估體能狀況，必要時折返<br>
+                        • 尊重私人土地，關好柵門<br>
+                        • 遵循無痕山林原則
+                    </p>
+                </div>
+            </div>
+            
+            <div class="link-container">
+                <a href="https://www.alltrails.com/trail/new-zealand/otago/roys-peak-track" target="_blank" class="alltrails-link">
+                    🥾 Roy's Peak 詳細路線資訊 (AllTrails)
+                </a>
+                <a href="https://www.alltrails.com/trail/new-zealand/otago/isthmus-peak-track" target="_blank" class="alltrails-link">
+                    🥾 Isthmus Peak 詳細路線資訊 (AllTrails)
+                </a>
+            </div>
+            
+            <div class="warning" style="margin-top: 20px;">
+                ⚠️ 重要提醒：兩條步道都屬於中等至困難等級，需要良好體能。夏季紐西蘭紫外線強烈，務必做好防曬。高山天氣變化快速，必須做好充分準備。如遇惡劣天氣或體能不足，應立即折返。
+            </div>
+        </div>
+        
+        <!-- 頁尾資訊 -->
+        <div style="text-align: center; margin-top: 30px; padding: 15px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #334155;">
+            <p>行程規劃注意事項：</p>
+            <p style="margin-top: 5px;">1. 所有時間為預估，請根據個人體能、天氣狀況與步道實際狀況調整</p>
+            <p>2. 高山天氣變化迅速，務必準備防風防雨裝備</p>
+            <p>3. 夏季建議清晨出發，以避開中午烈日與人潮</p>
+            <p>4. 遵循「無痕山林」原則，帶走所有垃圾，尊重自然環境</p>
+            <p style="margin-top: 10px; color: #60a5fa;">
+                📱 建議下載 AllTrails 應用程式，可下載離線地圖與GPS導航
+            </p>
+        </div>
+    </div>
+</body>
+</html>

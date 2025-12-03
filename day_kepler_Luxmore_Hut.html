@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepler Track Luxmore Hut 一日健行行程規劃 (含水上Taxi)</title>
+    <link rel="stylesheet" href="css/common-comment-model-styles.css">
+    <style>
+        /* 專屬此頁面的額外樣式 - 主色調為紫色 */
+        h2 {
+            color: #a78bfa;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #334155;
+        }
+        
+        /* 健行資訊區塊 */
+        .hike-info {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .info-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background-color: rgba(139, 92, 246, 0.15);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #a78bfa;
+        }
+        
+        .info-item strong {
+            color: #a78bfa;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .info-item p {
+            color: #e2e8f0;
+            line-height: 1.5;
+        }
+        
+        .difficulty-highlight {
+            background-color: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .difficulty-highlight strong {
+            color: #f59e0b;
+            font-size: 1.1rem;
+        }
+
+        /* 水上Taxi特別區塊 */
+        .water-taxi-alert {
+            background-color: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 18px;
+            margin: 20px 0;
+            color: #93c5fd;
+        }
+        
+        .water-taxi-alert strong {
+            color: #60a5fa;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .water-taxi-alert a {
+            color: #a78bfa;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        
+        /* 行程區域區塊 */
+        .zone-section {
+            background: linear-gradient(145deg, #121828, #1a2035);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .zone-header {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .zone-title {
+            color: #a78bfa;
+            font-size: 1.3rem;
+        }
+        
+        .duration-badge {
+            background-color: rgba(234, 179, 8, 0.2);
+            color: #fbbf24;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            align-self: flex-start;
+        }
+        
+        .must-visit {
+            display: inline-block;
+            background-color: rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        
+        .scenic-note {
+            background-color: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #a78bfa;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .scenic-note::before {
+            content: "🌄";
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .boat-note {
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #3b82f6;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .boat-note::before {
+            content: "🚢";
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .cave-note {
+            background-color: rgba(107, 114, 128, 0.15);
+            color: #d1d5db;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 3px solid #9ca3af;
+            margin-top: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        
+        .cave-note::before {
+            content: "🕳️";
+            font-size: 1.2em;
+            flex-shrink: 0;
+        }
+        
+        .map-link {
+            display: inline-block;
+            background-color: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .map-link:hover {
+            background-color: rgba(139, 92, 246, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .alltrails-link {
+            display: inline-block;
+            background-color: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            margin-left: 10px;
+        }
+        
+        .alltrails-link:hover {
+            background-color: rgba(34, 197, 94, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .doc-link {
+            display: inline-block;
+            background-color: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            padding: 8px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+        
+        .doc-link:hover {
+            background-color: rgba(239, 68, 68, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .link-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        /* 水上Taxi時間表樣式 */
+        .timetable {
+            background-color: rgba(30, 58, 138, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
+        .timetable h3 {
+            color: #60a5fa;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .timetable-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        .timetable-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            border-bottom: 1px solid rgba(96, 165, 250, 0.3);
+        }
+        
+        .timetable-item:last-child {
+            border-bottom: none;
+        }
+        
+        .timetable-direction {
+            color: #93c5fd;
+            font-weight: bold;
+        }
+        
+        .timetable-times {
+            color: #e2e8f0;
+        }
+        
+        @media (min-width: 768px) {
+            .info-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .zone-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .timetable-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .zone-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .link-container {
+                flex-direction: column;
+            }
+            
+            .alltrails-link, .doc-link {
+                margin-left: 0;
+            }
+        }
+        
+        .kepler-feature {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        
+        .kepler-feature h3 {
+            color: #10b981;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .kepler-feature ul {
+            padding-left: 20px;
+            color: #e2e8f0;
+        }
+        
+        .kepler-feature li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kepler Track Luxmore Hut 一日健行行程規劃 (含水上Taxi)</h1>
+            <p style="text-align: center; color: #cbd5e1;">搭乘水上Taxi跳過平路段，直攻高山山屋的挑戰路線</p>
+        </div>
+        
+        <!-- 健行資訊區塊 -->
+        <div class="hike-info">
+            <h2>🚢 Kepler Track 一日挑戰基本資訊</h2>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>路線長度 (單程)</strong>
+                    <p>從 Brod Bay 至 Luxmore Hut：約 8.6 公里</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>總爬升高度</strong>
+                    <p>約 880 公尺 (持續爬升)</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>預估時間 (單程)</strong>
+                    <p>約 3.5-4.5 小時 (Brod Bay 到 Luxmore Hut)</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>集合點</strong>
+                    <p>Te Anau 碼頭 (搭乘水上Taxi)</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>路線類型</strong>
+                    <p>世界級高山步道 (Great Walk) / 一日挑戰</p>
+                </div>
+                
+                <div class="info-item">
+                    <strong>適合季節</strong>
+                    <p>夏季至秋季 (11月-4月)，冬季不建議</p>
+                </div>
+            </div>
+            
+            <!-- 水上Taxi資訊區塊 -->
+            <div class="water-taxi-alert">
+                <strong>🚢 水上Taxi服務說明與預訂</strong>
+                <p>此行程需搭乘水上Taxi以節省時間與體力，跳過步道前段平坦的湖岸森林路段。</p>
+                <p><strong>服務資訊：</strong> Fiordland Outdoors Company (參考自 <a href="https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk" target="_blank">官方網站</a>)</p>
+                <p><strong>費用：</strong> 單程約 30 紐元 (請以預訂時最新價格為準)</p>
+                <p><strong>重要：</strong> 水上Taxi班次有限，<strong>必須提前預訂</strong>以確保有位。天氣惡劣時可能取消。</p>
+            </div>
+
+            <!-- 水上Taxi時間表 -->
+            <div class="timetable">
+                <h3>📅 水上Taxi參考時間表 (請以預訂確認時間為準)</h3>
+                <div class="timetable-grid">
+                    <div class="timetable-item">
+                        <div class="timetable-direction">Te Anau 碼頭 → Brod Bay</div>
+                        <div class="timetable-times">08:30, 09:30, 10:30, 14:30</div>
+                    </div>
+                    <div class="timetable-item">
+                        <div class="timetable-direction">Brod Bay → Te Anau 碼頭</div>
+                        <div class="timetable-times">08:45, 09:45, 14:45, 16:30</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="difficulty-highlight">
+                <strong>⚠️ 高難度挑戰路線</strong>
+                <p style="margin-top: 5px; color: #fbbf24;">此路線從Brod Bay開始即為<strong>持續陡峭爬升</strong>，需極佳體能與耐力。不適合新手或體能不佳者。請誠實評估自身體能狀況。</p>
+            </div>
+            
+            <div class="kepler-feature">
+                <h3>🌟 Kepler Track 一日挑戰特色亮點</h3>
+                <ul>
+                    <li>搭乘水上Taxi遊覽蒂阿瑙湖，節省體力與時間</li>
+                    <li>挑戰持續爬升880公尺的高強度路線</li>
+                    <li>抵達高山山屋Luxmore Hut，欣賞壯麗湖景與山景</li>
+                    <li>有機會探索Luxmore Cave石灰岩洞穴</li>
+                    <li>俯瞰整個蒂阿瑙湖盆地與南阿爾卑斯山脈</li>
+                </ul>
+            </div>
+            
+            <div class="link-container">
+                <a href="https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk" target="_blank" class="doc-link">
+                    🚢 水上Taxi預訂與詳情 (Fiordland Outdoors)
+                </a>
+                <a href="https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/kepler-track/" target="_blank" class="doc-link">
+                    🏞️ 官方 DOC Kepler Track 指南
+                </a>
+                <a href="https://www.alltrails.com/trail/new-zealand/southland/kepler-track" target="_blank" class="alltrails-link">
+                    🥾 查看 AllTrails 路線詳情
+                </a>
+            </div>
+        </div>
+        
+        <!-- 第一區行程：上午準備與水上Taxi -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第一區：上午準備與水上Taxi接駁</div>
+                <div class="duration-badge">預訂上午班次</div>
+            </div>
+            
+            <p style="color: #cbd5e1; margin-bottom: 15px; padding-left: 5px;">強烈建議預訂上午的班次，以確保有足夠時間完成挑戰並在天黑前返回。</p>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>08:00</span>
+                    <span class="duration">集合準備</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">📍</span> Te Anau 碼頭集合
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">提前15-20分鐘抵達碼頭，辦理報到手續。檢查裝備、整理行囊。</div>
+                        <div class="boat-note">
+                            <strong>確認預訂：</strong> 出示水上Taxi預訂確認信，聽取安全簡報。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>08:30</span>
+                    <span class="duration">水上Taxi出發</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🚢</span> 搭乘水上Taxi前往 Brod Bay
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">約15-20分鐘船程，欣賞蒂阿瑙湖晨間美景。船上可能有其他健行者。</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>08:50</span>
+                    <span class="duration">開始健行</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🥾</span> 抵達 Brod Bay，開始徒步
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">從 Brod Bay 正式開始 Kepler Track 爬升段。步道標誌清晰，一路向上。</div>
+                        <div class="important-note">
+                            從此處開始即是持續陡峭爬升，請調整呼吸與步調，為長達4小時的上坡做好準備。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二區行程：持續爬升至 Luxmore Hut -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第二區：持續爬升至 Luxmore Hut</div>
+                <div class="duration-badge">約 3.5-4.5 小時</div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>08:50 - 10:30</span>
+                    <span class="duration">森林爬升段</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🌲</span> 穿越山毛櫸森林
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>在茂密的山毛櫸森林中持續爬升，坡度陡峭。</p>
+                            <div class="scenic-note">
+                                透過樹林間隙可逐漸看到蒂阿瑙湖的景色，隨著海拔升高，視野愈發開闊。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>10:30 - 12:30</span>
+                    <span class="duration">亞高山帶</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">⛰️</span> 進入開闊的亞高山帶
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>樹林逐漸稀疏，進入灌木與草甸區域，視野完全打開。</p>
+                            <div class="warning">
+                                ⚠️ <strong>天氣暴露警告：</strong> 此路段完全暴露於山區天氣中，無遮蔭。天氣變化極快，務必注意防風、防雨、防曬。
+                            </div>
+                            <div class="cave-note">
+                                <strong>岔路選擇：</strong> 途中會經過通往 Luxmore Cave 的岔路。若時間與體力允許，可花20-30分鐘探索這個石灰岩洞穴（需頭燈）。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>12:30 - 13:00</span>
+                    <span class="duration">抵達山屋</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🏠</span> 抵達 Luxmore Hut (海拔 1085m)
+                            <span class="must-visit">主要目標/折返點</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>抵達今日目標 Luxmore Hut！這座現代化山屋擁有絕佳視野。在此休息、享用午餐、補充水分。</p>
+                            <p style="margin-top: 5px; color: #a78bfa;"><strong>重要決策點：</strong> 評估體力、時間與天氣。可選擇在山屋周圍短程探索，但必須預留至少3小時下山與接駁時間。</p>
+                            <div class="scenic-note">
+                                從山屋觀景台可360度欣賞蒂阿瑙湖、南阿爾卑斯山脈及周圍山峰的壯麗全景。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三區行程：下山與返回接駁 -->
+        <div class="zone-section">
+            <div class="zone-header">
+                <div class="zone-title">第三區：下山與水上Taxi返回</div>
+                <div class="duration-badge">約 3-3.5 小時</div>
+            </div>
+            
+            <!-- 時間區塊 1 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>13:30</span>
+                    <span class="duration">開始下山</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">⬇️</span> 從 Luxmore Hut 下山
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>開始原路返回。下山對膝蓋衝擊較大，建議使用登山杖，並注意步伐穩定。</p>
+                            <div class="important-note">
+                                務必計算好時間，以趕上預訂的返程水上Taxi班次（建議預訂下午4:30的班次）。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 2 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>16:15</span>
+                    <span class="duration">抵達 Brod Bay</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🚢</span> 返回 Brod Bay 碼頭
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>抵達 Brod Bay，休息等待水上Taxi。確認預訂的班次時間。</p>
+                            <div class="boat-note">
+                                <strong>接駁提醒：</strong> 最後一班返回 Te Anau 的水上Taxi通常在下午4:30左右，請務必準時。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 3 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>16:30</span>
+                    <span class="duration">水上Taxi返回</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🚢</span> 搭乘水上Taxi返回 Te Anau
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>放鬆享受湖上風光，慶祝完成挑戰。約16:50抵達 Te Anau 碼頭。</p>
+                            <div class="scenic-note">
+                                傍晚的蒂阿瑙湖通常較為平靜，有機會看到美麗的夕陽景色。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 時間區塊 4 -->
+            <div class="time-block">
+                <div class="time-header">
+                    <span>17:15</span>
+                    <span class="duration">行程結束</span>
+                </div>
+                <div class="activity-details">
+                    <div class="detail-row">
+                        <div class="detail-label">活動</div>
+                        <div class="detail-content">
+                            <span class="emoji">🍽️</span> Te Anau 晚餐與休息
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <div class="detail-label">備註</div>
+                        <div class="detail-content">
+                            <p>在 Te Anau 小鎮享用豐盛晚餐，慶祝完成 Kepler Track 一日挑戰。建議充分休息，因第二天肌肉可能會酸痛。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 頁尾資訊 -->
+        <div style="text-align: center; margin-top: 30px; padding: 15px; color: #94a3b8; font-size: 0.9rem; border-top: 1px solid #334155;">
+            <p><strong>Kepler Track 一日挑戰重要注意事項：</strong></p>
+            <p style="margin-top: 5px;">1. <strong>水上Taxi預訂是必須的</strong>：此行程依賴水上接駁，務必提前預訂並確認班次時間。惡劣天氣（強風、大雨）時服務可能取消。</p>
+            <p>2. <strong>極高體能要求</strong>：此路線為持續陡升，全程無輕鬆路段，是對體能與意志力的嚴峻考驗。請誠實評估自身能力。</p>
+            <p>3. <strong>時間管理至關重要</strong>：必須計算好上山、休息與下山的時間，以趕上返程班次。錯過最後一班船將面臨困境。</p>
+            <p>4. <strong>高山天氣應變</strong>：Luxmore Hut 以上區域天氣極端且多變。即使Te Anau天氣晴朗，山區也可能颳強風、下大雨或起濃霧。必須攜帶全套防風、防水、保暖裝備及頭燈。</p>
+            <p>5. <strong>裝備檢查清單</strong>：結實登山鞋、登山杖（強烈建議）、充足的水（至少2-3升）與高能量食物、防水外套與褲子、多層保暖衣物、帽子手套、防曬霜、太陽眼鏡、急救包、個人藥品、頭燈、地圖/GPS。</p>
+            <p style="margin-top: 10px; color: #a78bfa;">
+                📱 出發前務必查看 <a href="https://www.metservice.com/mountains/kepler-track" style="color:#a78bfa;" target="_blank">Metservice 山區天氣預報</a>，並將行程計劃告知他人。
+            </p>
+        </div>
+    </div>
+</body>
+</html>
