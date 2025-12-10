@@ -50,7 +50,7 @@ class CommonHeader {
     // 载入旅行资讯
     async loadTripInfo() {
         try {
-            const response = await fetch('../data/trip-info.json');
+            const response = await fetch('data/trip-info.json');
             const tripInfo = await response.json();
             return tripInfo;
         } catch (error) {
@@ -62,7 +62,7 @@ class CommonHeader {
     // 载入语言资料
     async loadLanguageData() {
         try {
-            const response = await fetch('../data/language.json');
+            const response = await fetch('data/language.json');
             const languageData = await response.json();
             return languageData;
         } catch (error) {

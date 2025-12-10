@@ -15,7 +15,7 @@ function detectLanguage() {
 async function loadLanguageData() {
     try {
         currentLang = detectLanguage();
-        const response = await fetch('../data/language.json');
+        const response = await fetch('data/language.json');
         const data = await response.json();
         translations = data[currentLang] || data['zh-TW'];
         document.documentElement.lang = currentLang;
@@ -141,7 +141,7 @@ async function initFlightsPage() {
     
     try {
         // 獲取航班數據
-        const response = await fetch('../data/data_flights.json');
+        const response = await fetch('data/data_flights.json');
         if (!response.ok) {
             throw new Error('網絡響應不正常');
         }
