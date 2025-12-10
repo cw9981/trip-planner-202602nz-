@@ -13,7 +13,7 @@ async function loadTranslations() {
   try {
     const lang = detectLanguage();
     currentLang = lang;
-    const res = await fetch('/data/language.json');
+    const res = await fetch('data/language.json');
     const all = await res.json();
     translations = all[lang] || all.en;
     document.documentElement.lang = lang;

@@ -17,11 +17,8 @@
       "住宿 預訂",
       "租車 預訂",
       "準備-額外帶煎鍋",
-      "安排 - 02/13, 02/14  皇后鎮-Glenorchy",
-      "安排 - 02/21 Brewster Glacier track", 
-      "安排 - 02/25 Wanaka-Twizel",   
       "安排 - 02/27 Twizel-Springfield",     
-      "安排 - 03/01 Springfield-基督城",      
+      "安排 - 03/01 Springfield-基督城",
       "gpx - Rakaia Gorge Walkway  02/27 ",
       "gpx - Routeburn Track 2/13",
       "gpx - Kepler Track Luxmore Hut side  2/16",
@@ -39,14 +36,14 @@
       "國際駕照",
       "安排 - 02/15 皇后鎮-Te Anau",
       "安排 - 02/20 Te Anau-Wanaka",   
-      "安排 - 02/26 Mt.Cook", 
-      "安排 - 02/28 Arthur's Pass"
+      "安排 - 02/26 Mt.Cook"
     ]
   },
   {
     "name": "黃德芝",
     "tasks": [
       "旅行 - 02/11 基督城 Banks Peninsula",
+      "安排 - 02/28 Arthur's Pass",
       "安排 - 2/25 Cromwell-水果鎮 採櫻桃",
       "安排 - 基督城 採藍莓",
       "安排 - 薰衣草園",
@@ -61,7 +58,12 @@
       "安排 - 02/10  Lyttelton",
       "安排 - 02/11 基督城 Akaroa",     
       "安排 - 02/12 基督城-皇后鎮",
-      "安排 - 02/17  02/18 "
+      "安排 - 02/17  02/18 ",
+      "安排 - 02/13, 02/14  皇后鎮-Glenorchy",
+      "安排 - 02/21 Brewster Glacier track", 
+      "安排 - 02/23 ",
+      "安排 - 02/25 Wanaka-Twizel"
+
     ]
   }
 ]
