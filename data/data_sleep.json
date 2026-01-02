@@ -86,17 +86,5 @@
     }
   ],
   "canceled": [
-    {
-      "date_start": "2026-02-25",
-      "date_end": "2026-02-27",
-      "nights": 2,
-      "location": "Mt Cook",
-      "accommodation": "Haka House Hostel Aoraki Mt Cook",
-      "booking_source": "Booking",
-      "details": "宿舍床位",
-      "check_in": "2026-02-27 14:00-22:00",
-      "check_out": "2026-03-01 05:00-10:00",
-      "links": "https://hakahouse.com/aoraki-mt-cook/"
-    }
   ]
 }
