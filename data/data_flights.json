@@ -7,9 +7,9 @@
       "destination": "HKG T1/Hong Kong International Airport T1/香港國際機場 第一航廈",
       "date": "2026-02-07",
       "departure_time": "15:50",
-      "arrival_time": "17:55",
-      "flight_duration": "02:05",
-       "layover": "01:10"
+      "arrival_time": "18:00",
+      "flight_duration": "02:10",
+       "layover": "01:05"
     },
     {
       "flight": "CX135",
@@ -37,8 +37,8 @@
       "departure": "CHC T1/Christchurch Airport/基督城機場",
       "destination": "SYD/Sydney Kingsford Smith Airport T1/悉尼金斯福德史密斯機場 第一航廈",
       "date": "2026-03-02",
-      "departure_time": "06:00",
-      "arrival_time": "07:30",
+      "departure_time": "06:05",
+      "arrival_time": "07:35",
       "flight_duration": "03:30",
       "layover": "01:15"
     },
@@ -48,7 +48,7 @@
       "destination": "HKG T1/Hong Kong International Airport T1/香港國際機場 第一航廈",
       "date": "2026-03-02",
       "departure_time": "08:45",
-      "arrival_time": "15:10",
+      "arrival_time": "15:05",
       "flight_duration": "09:25",
       "layover": "03:20"
     },
@@ -57,7 +57,7 @@
       "departure": "HKG T1/Hong Kong International Airport T1/香港國際機場 第一航廈",
       "destination": "TPE T1/Taipei Taoyuan International Airport T1/台北桃園國際機場 第一航廈",
       "date": "2026-03-02",
-      "departure_time": "18:30",
+      "departure_time": "18:35",
       "arrival_time": "20:15",
       "flight_duration": "01:45"
     }

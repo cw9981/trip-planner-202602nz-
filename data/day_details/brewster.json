@@ -1,0 +1,271 @@
+{
+    "id": "brewster",
+    "meta": {
+        "title": "Brewster Glacier 一日健行行程規劃",
+        "subtitle": "高山冰川健行 - 需要較好體能與適當裝備"
+    },
+    "sections": [
+        {
+            "type": "hike-info",
+            "title": "🏔️ Brewster Glacier 健行基本資訊",
+            "items": [
+                {
+                    "label": "路線長度",
+                    "value": "約 4.6-5 公里 (單程)"
+                },
+                {
+                    "label": "總爬升高度",
+                    "value": "約 1320 公尺"
+                },
+                {
+                    "label": "預估時間",
+                    "value": "6-8 小時 (來回，含休息)"
+                },
+                {
+                    "label": "登山口",
+                    "value": "Fantail Falls 停車場"
+                },
+                {
+                    "label": "路線類型",
+                    "value": "高山健行 / 冰川接近路線"
+                },
+                {
+                    "label": "適合季節",
+                    "value": "夏季 (12月-3月)，冬季需專業裝備"
+                }
+            ],
+            "highlight": {
+                "text": "⚠️ 高難度路線警告",
+                "detail": "此路線需要良好的體能，部分路段有坍塌風險，官方建議攜帶雪地技術裝備。不適合新手或體能不佳者。",
+                "color": "red"
+            },
+            "links": [
+                {
+                    "text": "📍 查看 Fantail Falls 停車場位置 (Google 地圖)",
+                    "url": "https://maps.app.goo.gl/cdbfvdmY8PpD8YuG8",
+                    "type": "map"
+                },
+                {
+                    "text": "🥾 查看 Brewster Glacier 路線 (AllTrails)",
+                    "url": "https://www.alltrails.com/trail/new-zealand/otago/brewster-track-to-brewster-glacier",
+                    "type": "alltrails"
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第一區：清晨準備與登山口",
+            "badge": "建議清晨出發",
+            "description": "<p style=\"color: #cbd5e1; margin-bottom: 15px; padding-left: 5px;\">停車位有限，建議清晨出發以確保有停車位</p>",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "05:30",
+                        "label": "出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🚗</span> 出發前往 Fantail Falls 停車場"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "從瓦納卡或附近城鎮出發，預留足夠行車時間。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "07:00",
+                        "label": "抵達"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🅿️</span> 抵達 Fantail Falls 停車場"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "檢查裝備、整理行囊，準備開始健行。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "07:30",
+                        "label": "開始健行"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🌊</span> 渡過溪流"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "登山口前需渡過一條溪流，注意水流狀況與安全。"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第二區：上山至 Brewster Hut 小屋",
+            "badge": "約 3 小時",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "07:45 - 09:00",
+                        "label": "陡升路段"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🌳</span> 穿越山毛櫸林"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>沿著步道開始陡峭爬升，穿越美麗的山毛櫸森林。</p><div class=\"important-note\">此路段持續爬升約 1000 公尺，需要良好的體能與適當節奏</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "09:00 - 10:30",
+                        "label": "高山路段"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🥾</span> Kaka 鋪設的木屑步道"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>進入高山區域，步道由 Kaka 鋪設的木屑構成，視野逐漸開闊。</p><div class=\"gear-note\">海拔逐漸升高，注意保暖與補充水分</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "10:30",
+                        "label": "抵達小屋"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🏠</span> 抵達 Brewster Hut 小屋 <span class=\"must-visit\">休息點</span>"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>在此休息、補充能量、欣賞周圍山景。小屋提供基本的避難設施。</p><p style=\"margin-top: 5px; color: #93c5fd;\">建議休息 30-45 分鐘，準備前往冰川。</p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第三區：前往 Brewster Glacier",
+            "badge": "約 1-2 小時",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "11:15",
+                        "label": "出發前往冰川"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">❄️</span> 從小屋出發前往冰川"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>從小屋再徒步約 2 公里即可抵達冰川。</p><div class=\"warning\">⚠️ 注意：部分路段有坍塌風險，官方建議攜帶雪地技術裝備</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "12:30",
+                        "label": "抵達冰川"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🏔️</span> Brewster Glacier 觀景點 <span class=\"must-visit\">主要景點</span>"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>抵達冰川觀景點，欣賞壯觀的冰川景致。在此享用午餐、拍照留念。</p><p style=\"margin-top: 5px; color: #93c5fd;\">注意安全，勿過於接近冰川邊緣或冰裂隙。</p>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第四區：返回與下山",
+            "badge": "約 3-4 小時",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "13:30",
+                        "label": "開始下山"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">⬇️</span> 從冰川返回小屋"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>開始返回小屋，下山時注意膝蓋保護與步伐穩定。</p>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "15:00",
+                        "label": "返回小屋"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🏠</span> 返回 Brewster Hut 小屋"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>短暫休息，補充水分與能量，準備最後的下山路段。</p>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "17:30",
+                        "label": "返回停車場"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🅿️</span> 返回 Fantail Falls 停車場"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>完成一日健行，返回停車場。建議在附近城鎮享用晚餐慶祝。</p>"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "footer": {
+        "title": "行程規劃注意事項：",
+        "notes": [
+            "1. 所有時間為預估，請根據個人體能與天氣狀況調整",
+            "2. 高山天氣變化迅速，務必準備防雨防寒裝備",
+            "3. 建議與有經驗的登山者同行，或考慮聘請當地嚮導",
+            "4. 遵循「無痕山林」原則，帶走所有垃圾",
+            "NOTE: 📱 建議下載 AllTrails 應用程式，可下載離線地圖與GPS導航"
+        ]
+    }
+}

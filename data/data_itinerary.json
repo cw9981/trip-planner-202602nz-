@@ -13,8 +13,8 @@
       },
       {
         "date": "02/09(一)",
-        "comments": "comment_0209.html",
-        "activities": [          
+        "comments": "day_template.html?day=christchurch_botanic",
+        "activities": [
           "📸 探索基督城市區",
           "🏞️基督城植物園 (Christchurch Botanic Garden)",
           "停在Park Terrace Garden。有2h免费车位，比市中心车位多 基督城 不需要刻意找景点，只需要放慢脚步去感受",
@@ -26,24 +26,26 @@
       },
       {
         "date": "02/10(二)",
-        "comments": "comment_0210.html",
+        "comments": "day_template.html?day=lyttelton_godley",
         "activities": [
           "📸 Lyttelton (隧道/山路)",
           "🥾 沿海步道 Taylor's Mistake 健行 ",
+          "🥾 步道 Lyttelton Bridle Path 山顶看港口'",
           "🍴 Theo’s Fisheries 紐西蘭海鮮專賣店 ",
           "Mount Pleasant Loop from Lyttelton"
-
         ]
       },
       {
         "date": "02/11(三)",
-        "comments": "comment_0211.html",
+        "comments": "day_template.html?day=akaroa",
         "activities": [
           "📸 Akaroa 法國小鎮",
           "📸 Banks Peninsula 沿路風景很美有很多隱藏小灣與觀景點＠zhi",
           "🍴 烤肉捲 soulvilaki king. 75 公路 基督城",
           "🍴 Akarosa Salmon 很新鮮的帝王鮭魚生魚片",
-          "🛒 Dress-Smart Hornby: 基督城 outlet, Canterbury, Icebreaker 很好買，價格蠻優惠"
+          "🛒 Dress-Smart Hornby: 基督城 outlet, Canterbury, Icebreaker 很好買，價格蠻優惠",
+          "採果 藍莓: Blueberry Bliss/  Berries Direct/ Boyds Blueberries",
+          "Barnett Cave walk,  https://maps.app.goo.gl/HXsQJ9xzo7WttndBA"
         ]
       }
     ]
@@ -55,7 +57,7 @@
     "itinerary": [
       {
         "date": "02/12(四)",
-        "comments": "comment_0212.html",
+        "comments": "day_template.html?day=tekapo_transfer",
         "activities": [
           "注意:從基督城出發至皇后鎮，車程6小時（500公里）早上10點出發，晚上7點左右到達 ",
           "📸 Geraldine Fairlie lookout",
@@ -63,6 +65,7 @@
           "📸 Burkes pass -> Dog Kennel Corner -> Lake Tekopo -> Lake Pukaki",
           "🍴 Omarama 買杯咖啡和汽油",
           "📸 Lindis Scenic hill spot/Lindis pass viewpoint",
+          "📸 Cromwell-Jackson Orchards 杏桃",
           "📸 Cromwell-水果鎮 瓊斯太太的水果攤(Jones Family Fruit Stall)",
           "📸 Kawarau Gorge Suspension bridge:高空彈跳的發源地",
           "🛒 皇后鎮外大超市採買"
@@ -70,13 +73,14 @@
       },
       {
         "date": "02/13(五)",
-        "comments": "day_Routeburn_Track.html",        
+        "comments": "day_template.html?day=routeburn",
         "activities": [
           "注意: 從皇后鎮前往Glenorchy，車程1小時（50公里）",
           "🥾 Glenorchy Routeburn Track 東側健行 一天",
           "📸 Wilson Bay有湖有山堪稱紐西蘭最美湖濱公路之一",
           "📸 Glenorchy Wharf（碼頭）鎮上最具代表性的景點 Glenorchy 落日",
-          "🥾 Glenorchy Lagoon Walkway湖邊濕地步道可欣賞倒影湖景、雪山、鳥類生態"
+          "🥾 Glenorchy Lagoon Walkway湖邊濕地步道可欣賞倒影湖景、雪山、鳥類生態",
+          "Bennetts Bluff 是唯一有合適停車場的觀景點、停車位也相當寬敞，還有廁所"
         ]
       },
       {
@@ -112,8 +116,8 @@
       },
       {
         "date": "02/16(一)",
-        "comments": "day_kepler_Luxmore_Hut.html",        
-        "webpage":"https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk",
+        "comments": "day_template.html?day=kepler",
+        "webpage": "https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk",
         "activities": [
           "🥾 Kepler Track Luxmore Hut 一日挑戰 (約 7-9 小時)",
           "🚢 預約水上 taxi  從 Te Anau 碼頭至 Brod Bay [8:30am, 9:30am, 10:30am and 2.30pm] 30 NZ ",
@@ -122,7 +126,7 @@
       },
       {
         "date": "02/17(二)",
-        "comments": "comment_0217.html",
+        "comments": "day_template.html?day=milford_stops",
         "activities": [
           "📸 Mirror Lakes（鏡湖）- 共同觀光",
           "📸 Eglinton Valley（大草原）- 共同觀光",
@@ -139,7 +143,7 @@
       },
       {
         "date": "02/18(三)",
-        "comments": "comment_0218.html",
+        "comments": "day_template.html?day=milford_hikes",
         "activities": [
           "🚗 早起出發，前往 The Divide",
           "🧗 Gertrude Saddle Track (高難度攀爬, 6-7小時) 或 🥾 Key Summit Track (中等難度, 3.5小時) - 挑戰者依體能二選一",
@@ -160,7 +164,7 @@
           "📸 Control Gates / Lake Te Anau 出水口 - 順路觀景",
           "📸 Lake Te Anau (蒂阿瑙湖) 湖岸散步，捕捉夕陽時分風光絕佳",
           "🍴 吃 Te Anau — Miles Better Pie (鹹派料理)",
-          "🍴 吃 Te Anau - Ristorante Pizzeria Paradiso 主打「正宗義大利窯烤披薩」"
+          "🍴 吃 Te Anau - Ristorante Pizzeria Paradiso 正宗義大利窯烤披薩 , 特色 点鹿肉 "
         ]
       }
     ]
@@ -184,7 +188,7 @@
       },
       {
         "date": "02/21(六)",
-        "comments": "day_brewster_glacier.html",        
+        "comments": "day_template.html?day=brewster",
         "activities": [
           "🥾 Brewster Glacier 健行一天"
         ]
@@ -197,14 +201,17 @@
           "📸 That Wanaka Tree紐西蘭最有名的樹之一清晨或黃昏",
           "📸 Lake Wanaka",
           "🍴 吃 Big Fig：中東風格便餐，自選熱食（很受當地人歡迎）",
-          "🍴 吃 餐車 Eat Superb 餐車 点hand cut venison burger/Hand cut 鹿肉漢堡",
-          "🍴 吃 餐車 滿滿蛋白質的慢煮肉——Kai Kikokik",
-          "🍴 吃 印度連鎖餐廳——Bombay Palace 坐窗邊能看到湖景房。 --> 基督城皇后鎮也有"
+          "🍴 餐車 Eat Superb 餐車 点hand cut venison burger/Hand cut 鹿肉漢堡",
+          "🍴 Johnny’s Fish & Chips",
+          "🍴 餐車 滿滿蛋白質的慢煮肉——Kai Kikokik",
+          "🍴 吃 印度連鎖餐廳——Bombay Palace 坐窗邊能看到湖景房。 --> 基督城皇后鎮也有",
+          "採 桃子、李子、大顆水果 🍑 ⮕ 去 Cromwell (首選 Jackson Orchards)。",
+          "採 草莓 🍓 ⮕ 去 Wanaka (Red Bridge Berries)。"
         ]
       },
       {
         "date": "02/23(一)",
-        "comments": "day_IsthmusPeak_RoysPeak.html",    
+        "comments": "day_template.html?day=isthmus_roys",
         "activities": [
           "🥾 Isthmus Peak or Roy’s Peak 步道健行 健行一天 清晨出發，避開夏季中午的烈日曝曬"
         ]
@@ -224,20 +231,21 @@
   {
     "stage_id": 5,
     "dates": "2月25日至2月26日",
-    "location": "Twizel/Mt Cook",    
+    "location": "Twizel/Mt Cook",
     "itinerary": [
       {
         "date": "02/25(三)",
-        "webpage":" https://timtingtravel.com/cromwell/",
-        "comments": "day_Cromwell.html",    
+        "webpage": " https://timtingtravel.com/cromwell/",
+        "comments": "day_template.html?day=cromwell",
         "activities": [
           "注意: 從瓦納卡前往Mt Cook，車程2.5小時（200公里）",
           "📸 Cromwell Heritage Precinct (克倫威爾遺產區)",
-          "📸 Cromwell-水果鎮 採櫻桃 @zhi",
+          "📸 Cromwell-水果鎮 採櫻桃 Dam Good Fruit PYO Cherries),每年11∼2月是採櫻桃的旺季， 該園免收入場費並可現採現吃，帶出購買",
           "🍴 Cromwell-The Stoaker Room 木桶烤肉餐廳。如果想在Cromwell吃飯的話可推薦這裡。 54/人",
           "📸 Lindis Scenic hill spot/Lindis pass viewpoint",
+          "📸 Devil's Staircase Lookout Point",
           "🍴 Musterer's Hut Cafe (Omarama) The Wrinkly Ram Cafe & Store",
-          "📸 Lake Ruataniwha/Lake Pukaki", 
+          "📸 Lake Ruataniwha/Lake Pukaki",
           "🍴 Twizel High country salmon"
         ]
       },
@@ -265,6 +273,7 @@
         "activities": [
           "注意: Twizel → State Hwy 8 → Inland Scenic Rte 72 → Springfield：5小時，400公里",
           "📸 Lake Tekapo",
+          "Tekapo原環湖地區所設的免費的公用洗手間,已改收費(每人/次NZ$1.5~$2),請自備妥零錢.",
           "📸 Burkes pass 富含古蹟的街道",
           "🛒 購買 Geraldine 2/28 食物. 中型超市- Fresh Choice Geraldine  ",
           "🥾 Rakaia Gorge Walkway 二月顏色沒春天漂亮，待確認值不值得去，離73公路近 @chingwen",

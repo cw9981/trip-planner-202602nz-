@@ -1,0 +1,86 @@
+{
+  "id": "cromwell",
+  "meta": {
+    "title": "紐西蘭南島行程規劃 (02/25)",
+    "subtitle": "瓦納卡 (Wanaka) → 經克倫威爾 (Cromwell) → 抵達特威澤爾 (Twizel)",
+    "drivingNote": "今日路線：從 Wanaka 開車經 8 號公路 (SH8) 前往 Twizel"
+  },
+  "sections": [
+    {
+      "type": "zone",
+      "title": "第一區：Cromwell 水果鎮與特色午餐",
+      "badge": "停留建議：約 3.5 - 4 小時",
+      "timeBlocks": [
+        {
+          "header": { "time": "上午", "label": "活動" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">🍒</span> Cromwell 水果鎮 (Fruit Town) - 採櫻桃 <span class=\"must-visit\">季節性</span>" },
+            { "label": "備註", "content": "<p>2 月底已接近櫻桃產季尾聲甚至結束，**務必事先致電確認是否仍開放自助採摘 (PYO)**。如櫻桃季已過，可改採杏桃或李子。</p><p style=\"margin-top: 10px; color: #93c5fd;\">以下為可參考的農場/店家資訊：</p><div class=\"cherry-detail\"><strong>🍒 Cheeki Cherries</strong><p>從 12 月 1 日起，每天 8am–6pm 營業（聖誕節休息）。靠著顯眼的大紅谷倉就能找到。這裡有小禮品店、超好吃的純水果冰淇淋。如果不想採，也可以買園裡準備好的預采水果。不需要預約。</p></div><div class=\"cherry-detail\"><strong>🍒 Smithy’s PYO Cherries</strong><p>將於 2025 年 12 月下旬開園。他們家的櫻桃樹是架式種植，60% 的櫻桃站地面就能摘，高一點的有梯子提供，小朋友也輕鬆勝任。園裡還有羊和羊駝可以餵，草地寬敞，適合野餐、休息。</p></div><div class=\"cherry-detail\"><strong>🍒 Cherry tree farm</strong><p>12 月中旬開園，採摘無需預約。</p></div><div class=\"cherry-detail\"><strong>🍒 Off Our Tree</strong><p>這家不能自摘，但 26 年的種植經驗讓他們家出品非常穩定，顆顆大粒、甜脆、成熟度剛好。商店提供當天現摘的櫻桃。</p></div>" }
+          ]
+        },
+        {
+          "header": { "time": "上午", "label": "遊覽" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">🏘️</span> Cromwell Heritage Precinct (克倫威爾舊鎮)" },
+            { "label": "備註", "content": "位於水壩邊的舊時石砌建築群，適合散步與拍照留念。" }
+          ]
+        },
+        {
+          "header": { "time": "中午", "label": "午餐" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">🍴</span> The Stoaker Room 木桶烤肉餐廳 <span class=\"must-visit\">推薦午餐</span>" },
+            { "label": "備註", "content": "<div class=\"important-note\">餐廳每日中午 12 點營業。建議將其作為午餐，以確保下午有充足時間走完景點。</div>" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "zone",
+      "title": "第二區：庫克山景觀大道 (Scenic Route SH8)",
+      "badge": "車程與遊覽：約 2.5 - 3.5 小時",
+      "timeBlocks": [
+        {
+          "header": { "time": "下午", "label": "拍照" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">📸</span> Lindis Scenic hill spot/Lindis Pass Viewpoint" },
+            { "label": "備註", "content": "林迪斯隘口的經典觀景點，短暫停留 10-15 分鐘即可。" }
+          ]
+        },
+        {
+          "header": { "time": "下午", "label": "經過" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">⛽</span> 經過 Omarama (奧瑪拉瑪)" },
+            { "label": "備註", "content": "作為上洗手間或補充油料的快速休息站，無需停留用餐。" }
+          ]
+        },
+        {
+          "header": { "time": "下午", "label": "景觀" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">🏞️</span> Lake Ruataniwha (魯瓦塔尼瓦湖)" },
+            { "label": "備註", "content": "路邊的寧靜藍色湖泊，經過時可視情況短暫停留。" }
+          ]
+        },
+        {
+          "header": { "time": "傍晚", "label": "必拍" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">📸</span> Lake Pukaki (普卡基湖) / Peter's Lookout <span class=\"must-visit\">最佳角度</span>" },
+            { "label": "備註", "content": "<p>欣賞著名的「牛奶藍」湖水與遠方的 Mt Cook，請務必在 Peter's Lookout 停留，這是最經典的拍照點。</p>" }
+          ]
+        },
+        {
+          "header": { "time": "傍晚", "label": "抵達" },
+          "rows": [
+            { "label": "活動", "content": "<span class=\"emoji\">🏠</span> 抵達 Twizel (特威澤爾) 住宿" },
+            { "label": "備註", "content": "<p>Twizel 鎮上有超市和多樣餐廳可供選擇。</p>" }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "notes": [
+      "1. 所有時間為預估，請根據實際情況調整。",
+      "2. 櫻桃季節性強，請務必事先確認開放狀況。"
+    ]
+  }
+}

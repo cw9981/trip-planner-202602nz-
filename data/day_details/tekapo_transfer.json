@@ -1,0 +1,173 @@
+{
+    "id": "tekapo_transfer",
+    "meta": {
+        "title": "Christchurch → Queenstown 公路旅行",
+        "subtitle": "02/12 (星期四) 移動日"
+    },
+    "sections": [
+        {
+            "type": "hike-info",
+            "title": "基本資訊",
+            "items": [
+                {
+                    "label": "出發時間",
+                    "value": "09:00 AM (基督城)"
+                },
+                {
+                    "label": "預計抵達",
+                    "value": "18:50 PM (皇后鎮)"
+                },
+                {
+                    "label": "總車程",
+                    "value": "約 6 小時 (不含停留)"
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "行程時間軸",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "09:00",
+                        "label": "出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Christchurch (基督城) 出發"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "建議加滿油並準備好零食。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "11:30",
+                        "label": "午餐"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Fairlie Bakehouse (午餐)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<div class=\"important-note\">🥧 預留 45 分鐘排隊買派與用餐。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "13:20",
+                        "label": "觀光"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Lake Tekapo (特卡波湖)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "湖景與牧羊人教堂，停留 30 分鐘。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "14:00",
+                        "label": "觀光"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Lake Pukaki (普卡基湖)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "欣賞牛奶藍湖景。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "14:50",
+                        "label": "補給"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Omarama (加油/咖啡)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "重要的加油補給站。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "15:25",
+                        "label": "觀景"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Lindis Pass Viewpoint"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "欣賞金黃色高山草甸景觀。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:35",
+                        "label": "採購"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Cromwell - 瓊斯太太的水果攤"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "快速採購當季水果。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "17:45",
+                        "label": "採買"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "PAK'nSAVE Queenstown"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "60 分鐘採買隔日健行食物與日用品。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "18:50",
+                        "label": "抵達"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "抵達 Queenstown 住宿點"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

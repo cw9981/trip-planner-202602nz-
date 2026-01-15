@@ -11,7 +11,7 @@ class ItineraryRenderer {
     renderStages(stagesData) {
         // 清空容器
         this.container.innerHTML = '';
-        
+
         // 先渲染阶段内容，不包含意见数据
         stagesData.forEach(stage => {
             const stageElement = this.createStageElement(stage);
@@ -43,7 +43,7 @@ class ItineraryRenderer {
         const stageElement = document.createElement('div');
         stageElement.className = 'itinerary-stage expanded';
         stageElement.dataset.stageId = stage.stage_id;
-        
+
         stageElement.innerHTML = `
             <div class="stage-header">
                 <div>
@@ -70,34 +70,34 @@ class ItineraryRenderer {
                 </div>
             </div>
         `;
-        
+
         // 添加点击事件
         const header = stageElement.querySelector('.stage-header');
         header.addEventListener('click', () => {
             stageElement.classList.toggle('expanded');
         });
-        
+
         // 添加意见展开/收起按钮事件
         const toggleBtn = stageElement.querySelector('.toggle-notes-btn');
         toggleBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             this.toggleNotes(stage.stage_id, toggleBtn);
         });
-        
+
         // 添加编辑按钮事件
         const editBtn = stageElement.querySelector('.edit-notes-btn');
         editBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             this.handleEditStage(stage.stage_id, stage.location);
         });
-        
+
         return stageElement;
     }
 
     // 渲染行程详情
     renderItinerary(itinerary) {
         let html = '';
-        
+
         itinerary.forEach(day => {
             // 生成按钮HTML
             let buttonsHtml = '';
@@ -107,7 +107,7 @@ class ItineraryRenderer {
             if (day.comments) {
                 buttonsHtml += `<button class="comments-btn" data-comment-file="${day.comments}">📝 查看備註</button>`;
             }
-            
+
             html += `
                 <div class="itinerary-date">
                     <div class="date-header">
@@ -116,23 +116,23 @@ class ItineraryRenderer {
                     </div>
                     <ul class="activity-list">
                         ${day.activities.map(activity => {
-                            if (activity.includes('注意:')) {
-                                const parts = activity.split('注意:');
-                                return `
+                if (activity.includes('注意:')) {
+                    const parts = activity.split('注意:');
+                    return `
                                     <li class="activity-item">
                                         <div class="normal-activity">${parts[0]}</div>
                                         <div class="important-note">注意:${parts[1]}</div>
                                     </li>
                                 `;
-                            } else {
-                                return `<li class="activity-item">${activity}</li>`;
-                            }
-                        }).join('')}
+                } else {
+                    return `<li class="activity-item">${activity}</li>`;
+                }
+            }).join('')}
                     </ul>
                 </div>
             `;
         });
-        
+
         return html;
     }
 
@@ -140,7 +140,7 @@ class ItineraryRenderer {
     toggleNotes(stageId, toggleBtn) {
         const notesContent = document.getElementById(`notes-${stageId}`);
         const editBtn = toggleBtn.closest('.notes-actions').querySelector('.edit-notes-btn');
-        
+
         if (notesContent.classList.contains('expanded')) {
             // 收起
             notesContent.classList.remove('expanded');
@@ -177,7 +177,7 @@ class ItineraryRenderer {
                     resolve();
                 }
             }, 100);
-            
+
             // 10秒超时
             setTimeout(() => {
                 clearInterval(checkInterval);
@@ -190,15 +190,15 @@ class ItineraryRenderer {
     renderNotesContent(stageId) {
         const notesContent = document.getElementById(`notes-${stageId}`);
         const stageNotes = this.getStageNotes(stageId);
-        
+
         if (!stageNotes || stageNotes.length === 0) {
             notesContent.innerHTML = '<p class="no-notes">尚無意見</p>';
             return;
         }
 
         let html = '';
-        const people = ['chingwen', 'zhi' , 'jane'];
-        
+        const people = ['chingwen', 'zhi', 'jane'];
+
         people.forEach(person => {
             const personNotes = stageNotes.filter(note => note.person === person);
             if (personNotes.length > 0) {
@@ -217,24 +217,24 @@ class ItineraryRenderer {
     // 格式化意見文本，支持換行且避免额外空格
     formatNoteText(text) {
         if (!text) return '';
-        
+
         // 1. 先分割成行
         const lines = text.split('\n');
-        
+
         // 2. 對每一行進行處理
         const processedLines = lines.map(line => {
             // 移除行首和行尾的空格
             const trimmedLine = line.trim();
-            
+
             // 轉義HTML特殊字符
             return trimmedLine
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
         });
-        
+
         // 3. 過濾掉空行，然後用 <br> 連接
         const nonEmptyLines = processedLines.filter(line => line.length > 0);
-        
+
         return nonEmptyLines.join('<br>');
     }
 
@@ -279,7 +279,7 @@ class ItineraryRenderer {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            
+
             // 将数据转换为内部格式
             return this.transformNotesData(data);
         } catch (error) {
@@ -314,7 +314,7 @@ class ItineraryRenderer {
     openEditModal(stageId, location) {
         // 获取该阶段的现有意见
         const currentNotes = this.getStageNotes(stageId);
-        
+
         // 创建模态框
         const modal = document.createElement('div');
         modal.className = 'edit-modal';
@@ -375,15 +375,15 @@ class ItineraryRenderer {
 
         // 设置事件监听器
         const closeModal = () => document.body.removeChild(modal);
-        
+
         modal.querySelector('.close-modal').addEventListener('click', closeModal);
         modal.querySelector('.cancel-btn').addEventListener('click', closeModal);
-        
+
         // 保存按钮事件
         modal.querySelector('.save-btn').addEventListener('click', () => {
             const selectedPerson = modal.querySelector('input[name="person"]:checked').value;
             const noteContent = modal.querySelector('#note-content').value;
-            
+
             this.saveNote(stageId, selectedPerson, noteContent)
                 .then(() => {
                     closeModal();
@@ -437,9 +437,9 @@ class ItineraryRenderer {
 
             // 1. 从响应中获取 JSON 数据（避免浏览器直接显示）
             const result = await response.json();
-            
+
             console.log('意见已保存:', result);
-            
+
             // 2. 仅当成功时提示（不跳转页面）
             if (result.success) {
                 alert('保存成功！'); // 或用 Toast 提示
@@ -458,7 +458,13 @@ class ItineraryRenderer {
         this.container.addEventListener('click', (e) => {
             if (e.target.classList.contains('comments-btn')) {
                 const commentFile = e.target.getAttribute('data-comment-file');
-                this.openCommentModal(commentFile);
+                // 如果是新的模板頁面，直接在新分頁開啟，不使用 Modal
+                if (commentFile && commentFile.includes('day_template.html')) {
+                    // Mobile-friendly: navigate in same tab
+                    window.location.href = commentFile;
+                } else {
+                    this.openCommentModal(commentFile);
+                }
             }
             if (e.target.classList.contains('webpage-btn')) {
                 const webpageUrl = e.target.getAttribute('data-webpage-url');
@@ -472,18 +478,18 @@ class ItineraryRenderer {
         try {
             // 显示加载中的模态框
             const modal = this.createCommentModal('載入中...', true);
-            
+
             // 加载备注文件内容
             const response = await fetch(commentFile);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
+
             const commentContent = await response.text();
-            
+
             // 更新模态框内容
             this.updateCommentModalContent(modal, commentContent);
-            
+
         } catch (error) {
             console.error('加载备注文件失败:', error);
             // 显示错误信息的模态框
@@ -495,9 +501,9 @@ class ItineraryRenderer {
     createCommentModal(content, isLoading = false) {
         const modal = document.createElement('div');
         modal.className = 'edit-modal comment-modal';
-        
+
         const loadingClass = isLoading ? 'loading-comment' : '';
-        
+
         modal.innerHTML = `
             <div class="modal-content">
                 <div class="modal-header">
@@ -519,10 +525,10 @@ class ItineraryRenderer {
 
         // 设置关闭事件
         const closeModal = () => document.body.removeChild(modal);
-        
+
         modal.querySelector('.close-modal').addEventListener('click', closeModal);
         modal.querySelector('.cancel-btn').addEventListener('click', closeModal);
-        
+
         // 点击模态框外部关闭
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {

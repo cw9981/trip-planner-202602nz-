@@ -1,0 +1,278 @@
+{
+    "id": "kepler",
+    "meta": {
+        "title": "Kepler Track Luxmore Hut 一日健行行程規劃 (含水上Taxi)",
+        "subtitle": "搭乘水上Taxi跳過平路段，直攻高山山屋的挑戰路線"
+    },
+    "sections": [
+        {
+            "type": "hike-info",
+            "title": "🚢 Kepler Track 一日挑戰基本資訊",
+            "items": [
+                {
+                    "label": "路線長度 (單程)",
+                    "value": "從 Brod Bay 至 Luxmore Hut：約 8.6 公里"
+                },
+                {
+                    "label": "總爬升高度",
+                    "value": "約 880 公尺 (持續爬升)"
+                },
+                {
+                    "label": "預估時間 (單程)",
+                    "value": "約 3.5-4.5 小時 (Brod Bay 到 Luxmore Hut)"
+                },
+                {
+                    "label": "集合點",
+                    "value": "Te Anau 碼頭 (搭乘水上Taxi)"
+                },
+                {
+                    "label": "路線類型",
+                    "value": "世界級高山步道 (Great Walk) / 一日挑戰"
+                },
+                {
+                    "label": "適合季節",
+                    "value": "夏季至秋季 (11月-4月)，冬季不建議"
+                }
+            ],
+            "waterTaxi": {
+                "title": "🚢 水上Taxi服務說明與預訂",
+                "description": "<p>此行程需搭乘水上Taxi以節省時間與體力，跳過步道前段平坦的湖岸森林路段。</p><p><strong>服務資訊：</strong> Fiordland Outdoors Company (參考自 <a href=\"https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk\" target=\"_blank\">官方網站</a>)</p><p><strong>費用：</strong> 單程約 30 紐元 (請以預訂時最新價格為準)</p><p><strong>重要：</strong> 水上Taxi班次有限，<strong>必須提前預訂</strong>以確保有位。天氣惡劣時可能取消。</p>",
+                "schedule": [
+                    {
+                        "direction": "Te Anau 碼頭 → Brod Bay",
+                        "times": "08:30, 09:30, 10:30, 14:30"
+                    },
+                    {
+                        "direction": "Brod Bay → Te Anau 碼頭",
+                        "times": "08:45, 09:45, 14:45, 16:30"
+                    }
+                ]
+            },
+            "highlight": {
+                "text": "⚠️ 高難度挑戰路線",
+                "detail": "此路線從Brod Bay開始即為<strong>持續陡峭爬升</strong>，需極佳體能與耐力。不適合新手或體能不佳者。請誠實評估自身體能狀況。",
+                "color": "amber"
+            },
+            "feature": {
+                "title": "🌟 Kepler Track 一日挑戰特色亮點",
+                "list": [
+                    "搭乘水上Taxi遊覽蒂阿瑙湖，節省體力與時間",
+                    "挑戰持續爬升880公尺的高強度路線",
+                    "抵達高山山屋Luxmore Hut，欣賞壯麗湖景與山景",
+                    "有機會探索Luxmore Cave石灰岩洞穴",
+                    "俯瞰整個蒂阿瑙湖盆地與南阿爾卑斯山脈"
+                ]
+            },
+            "links": [
+                {
+                    "text": "🚢 水上Taxi預訂與詳情 (Fiordland Outdoors)",
+                    "url": "https://www.fiordlandoutdoors.co.nz/transport-and-experiences/kepler-track-day-walk",
+                    "type": "doc"
+                },
+                {
+                    "text": "🏞️ 官方 DOC Kepler Track 指南",
+                    "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/kepler-track/",
+                    "type": "doc"
+                },
+                {
+                    "text": "🥾 查看 AllTrails 路線詳情",
+                    "url": "https://www.alltrails.com/trail/new-zealand/southland/kepler-track",
+                    "type": "alltrails"
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第一區：上午準備與水上Taxi接駁",
+            "badge": "預訂上午班次",
+            "description": "<p style=\"color: #cbd5e1; margin-bottom: 15px; padding-left: 5px;\">強烈建議預訂上午的班次，以確保有足夠時間完成挑戰並在天黑前返回。</p>",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "08:00",
+                        "label": "集合準備"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">📍</span> Te Anau 碼頭集合"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "提前15-20分鐘抵達碼頭，辦理報到手續。檢查裝備、整理行囊。<div class=\"boat-note\"><strong>確認預訂：</strong> 出示水上Taxi預訂確認信，聽取安全簡報。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "08:30",
+                        "label": "水上Taxi出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🚢</span> 搭乘水上Taxi前往 Brod Bay"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "約15-20分鐘船程，欣賞蒂阿瑙湖晨間美景。船上可能有其他健行者。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "08:50",
+                        "label": "開始健行"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🥾</span> 抵達 Brod Bay，開始徒步"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "從 Brod Bay 正式開始 Kepler Track 爬升段。步道標誌清晰，一路向上。<div class=\"important-note\">從此處開始即是持續陡峭爬升，請調整呼吸與步調，為長達4小時的上坡做好準備。</div>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第二區：持續爬升至 Luxmore Hut",
+            "badge": "約 3.5-4.5 小時",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "08:50 - 10:30",
+                        "label": "森林爬升段"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🌲</span> 穿越山毛櫸森林"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>在茂密的山毛櫸森林中持續爬升，坡度陡峭。</p><div class=\"scenic-note\">透過樹林間隙可逐漸看到蒂阿瑙湖的景色，隨著海拔升高，視野愈發開闊。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "10:30 - 12:30",
+                        "label": "亞高山帶"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">⛰️</span> 進入開闊的亞高山帶"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>樹林逐漸稀疏，進入灌木與草甸區域，視野完全打開。</p><div class=\"warning\">⚠️ <strong>天氣暴露警告：</strong> 此路段完全暴露於山區天氣中，無遮蔭。天氣變化極快，務必注意防風、防雨、防曬。</div><div class=\"cave-note\"><strong>岔路選擇：</strong> 途中會經過通往 Luxmore Cave 的岔路。若時間與體力允許，可花20-30分鐘探索這個石灰岩洞穴（需頭燈）。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "12:30 - 13:00",
+                        "label": "抵達山屋"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🏠</span> 抵達 Luxmore Hut (海拔 1085m) <span class=\"must-visit\">主要目標/折返點</span>"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>抵達今日目標 Luxmore Hut！這座現代化山屋擁有絕佳視野。在此休息、享用午餐、補充水分。</p><p style=\"margin-top: 5px; color: #a78bfa;\"><strong>重要決策點：</strong> 評估體力、時間與天氣。可選擇在山屋周圍短程探索，但必須預留至少3小時下山與接駁時間。</p><div class=\"scenic-note\">從山屋觀景台可360度欣賞蒂阿瑙湖、南阿爾卑斯山脈及周圍山峰的壯麗全景。</div>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第三區：下山與水上Taxi返回",
+            "badge": "約 3-3.5 小時",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "13:30",
+                        "label": "開始下山"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">⬇️</span> 從 Luxmore Hut 下山"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>開始返回 Routeburn Shelter，下山時注意膝蓋保護與步伐穩定，尤其在陡峭路段。</p><div class=\"important-note\">務必計算好時間，以趕上預訂的返程水上Taxi班次（建議預訂下午4:30的班次）。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:15",
+                        "label": "抵達 Brod Bay"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🚢</span> 返回 Brod Bay 碼頭"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>抵達 Brod Bay，休息等待水上Taxi。確認預訂的班次時間。</p><div class=\"boat-note\"><strong>接駁提醒：</strong> 最後一班返回 Te Anau 的水上Taxi通常在下午4:30左右，請務必準時。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:30",
+                        "label": "水上Taxi返回"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🚢</span> 搭乘水上Taxi返回 Te Anau"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>放鬆享受湖上風光，慶祝完成挑戰。約16:50抵達 Te Anau 碼頭。</p><div class=\"scenic-note\">傍晚的蒂阿瑙湖通常較為平靜，有機會看到美麗的夕陽景色。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "17:15",
+                        "label": "行程結束"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🍽️</span> Te Anau 晚餐與休息"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>在 Te Anau 小鎮享用豐盛晚餐，慶祝完成 Kepler Track 一日挑戰。建議充分休息，因第二天肌肉可能會酸痛。</p>"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "footer": {
+        "title": "Kepler Track 一日挑戰重要注意事項：",
+        "notes": [
+            "1. <strong>水上Taxi預訂是必須的</strong>：此行程依賴水上接駁，務必提前預訂並確認班次時間。惡劣天氣（強風、大雨）時服務可能取消。",
+            "2. <strong>極高體能要求</strong>：此路線為持續陡升，全程無輕鬆路段，是對體能與意志力的嚴峻考驗。請誠實評估自身能力。",
+            "3. <strong>時間管理至關重要</strong>：必須計算好上山、休息與下山的時間，以趕上返程班次。錯過最後一班船將面臨困境。",
+            "4. <strong>高山天氣應變</strong>：Luxmore Hut 以上區域天氣極端且多變。即使Te Anau天氣晴朗，山區也可能颳強風、下大雨或起濃霧。必須攜帶全套防風、防水、保暖裝備及頭燈。",
+            "5. <strong>裝備檢查清單</strong>：結實登山鞋、登山杖（強烈建議）、充足的水（至少2-3升）與高能量食物、防水外套與褲子、多層保暖衣物、帽子手套、防曬霜、太陽眼鏡、急救包、個人藥品、頭燈、地圖/GPS。",
+            "NOTE: 📱 出發前務必查看 <a href=\"https://www.metservice.com/mountains/kepler-track\" style=\"color:#a78bfa;\" target=\"_blank\">Metservice 山區天氣預報</a>，並將行程計劃告知他人。"
+        ]
+    }
+}

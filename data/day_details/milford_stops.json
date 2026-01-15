@@ -1,0 +1,140 @@
+{
+    "id": "milford_stops",
+    "meta": {
+        "title": "米佛公路分流與觀光日",
+        "subtitle": "02/17 (二) 遊船與健行分流"
+    },
+    "sections": [
+        {
+            "type": "zone",
+            "title": "上午行程 (分流前)",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "08:00 - 09:30",
+                        "label": "共同"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "Te Anau 出發 & 共同觀光"
+                        },
+                        {
+                            "label": "推薦",
+                            "content": "📸 Mirror Lakes, 📸 Eglinton Valley"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "09:30",
+                        "label": "抵達"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "抵達 Lake Marian/The Divide"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<div class=\"important-note\">重要分流點：鑰匙由遊船者 (A) 保管</div>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "分流時段 (10:45 - 15:00)",
+            "badge": "4.25 小時",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "健行組 (B/C)",
+                        "label": "挑戰"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🥾 <strong>Lake Marian Track</strong>"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "中高難度步道，來回約 3-4 小時"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "遊船組 (A)",
+                        "label": "輕鬆"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "米佛峽灣遊船"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "建議預約 12:00 或 12:30 船班"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "下午行程 (會合後)",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "15:00",
+                        "label": "會合"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "會合與午餐"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "享用自備午餐"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:00 - 18:30",
+                        "label": "觀光"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "共同回程精華"
+                        },
+                        {
+                            "label": "推薦",
+                            "content": "📸 Homer Tunnel, 📸 Monkey Creek (裝水), 📸 Pop's Viewpoint"
+                        },
+                        {
+                            "label": "挑戰",
+                            "content": "🥾 The Chasm (短步道 30min)"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "18:30+",
+                        "label": "晚餐"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "返回 Te Anau 晚餐"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

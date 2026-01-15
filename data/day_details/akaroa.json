@@ -1,0 +1,374 @@
+{
+    "id": "akaroa",
+    "meta": {
+        "title": "阿卡羅阿 & 班克斯半島一日遊",
+        "subtitle": "行程方案 3 選 1：風景優先 / 效率優先 / 景觀全覽"
+    },
+    "sections": [
+        {
+            "type": "zone",
+            "title": "💡 選擇您的行程方案",
+            "description": "<div style=\"display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:20px;\"><a href=\"#scheme1\" style=\"padding:10px; background:#1e3a8a; color:white; border-radius:8px; text-decoration:none;\">⛰️ 方案一：風景優先</a><a href=\"#scheme2\" style=\"padding:10px; background:#1e3a8a; color:white; border-radius:8px; text-decoration:none;\">⏱️ 方案二：效率優先</a><a href=\"#scheme3\" style=\"padding:10px; background:#1e3a8a; color:white; border-radius:8px; text-decoration:none;\">🔄 方案三：景觀全覽</a></div>"
+        },
+        {
+            "type": "zone",
+            "title": "方案一：風景優先 ⛰️",
+            "badge": "山路來回",
+            "description": "<div id=\"scheme1\"></div><p style=\"color: #93c5fd; margin-bottom: 15px; padding: 10px; background: rgba(96,165,250,0.1); border-left: 3px solid #60a5fa;\">此方案將展望山路的美景最大化，適合熱愛自然風光、不趕時間且喜歡開車挑戰的旅客。</p>",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "08:00",
+                        "label": "出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "從基督城出發"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "請確保油箱充足。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "09:30",
+                        "label": "駕駛"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🏞️ 展望山路 (Summit Road) 上山"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<div class=\"scenic-note\">🗺️ 導航提示：選擇經過山頂的路徑 (往左上山)，路小曲折需小心駕駛。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "09:30-11:00",
+                        "label": "1.5h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "📸 Banks Peninsula 沿路觀景"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "Hilltop Tavern 附近有絕佳視野，多停留拍照。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "11:00-11:30",
+                        "label": "30m"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🍴 烤肉捲 Soulvilaki King"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "位於 75 號公路，推薦美食。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "12:00-14:30",
+                        "label": "2.5h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "📸 Akaroa 法國小鎮 漫步"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "享受小鎮氛圍、拍照留念。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "14:30-15:30",
+                        "label": "1h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🍴 Akaroa Salmon"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "品嚐新鮮帝王鮭魚生魚片，建議外帶到海邊享用。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "15:30",
+                        "label": "回程"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🏞️ 回程：走海岸公路 (Coastal Road)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "體驗不同的風景，路大平坦，加速回程效率。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "17:30",
+                        "label": "備選"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🛒 Dress-Smart Hornby"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "晚餐前可購物。視時間體力而定。"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "方案二：效率優先 ⏱️",
+            "badge": "海路來回",
+            "description": "<div id=\"scheme2\"></div><p style=\"color: #93c5fd; margin-bottom: 15px; padding: 10px; background: rgba(96,165,250,0.1); border-left: 3px solid #60a5fa;\">此方案交通時間最小化，適合時間有限、目標明確在阿卡羅阿和購物的旅客。</p>",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "08:30",
+                        "label": "出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "從基督城出發"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "09:45",
+                        "label": "用餐"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🍴 烤肉捲 Soulvilaki King"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "在進半島前解決早午餐。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "10:15",
+                        "label": "駕駛"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🛣️ 沿岸公路 (Coastal Road) 直達"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<div class=\"efficiency-note\">🚗 導航提示：選貼著海岸的路徑 (往右)，路況好且快速。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "11:00-13:00",
+                        "label": "2h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "📸 Akaroa 法國小鎮"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "拍照、逛小店。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "13:00-14:00",
+                        "label": "1h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🍴 Akaroa Salmon"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "新鮮帝王鮭魚生魚片，可搭簡單午餐。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "14:00-15:30",
+                        "label": "1.5h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "📸 Banks Peninsula 沿路風景"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "在沿岸公路找幾個觀景點稍作停留。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "15:30",
+                        "label": "回程"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "回程：沿岸公路"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "17:00-19:30",
+                        "label": "2.5h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🛒 Dress-Smart Hornby (重點購物)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "Canterbury, Icebreaker 等品牌，價格優惠。"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "方案三：景觀全覽 🔄",
+            "badge": "山去海回",
+            "description": "<div id=\"scheme3\"></div><p style=\"color: #93c5fd; margin-bottom: 15px; padding: 10px; background: rgba(96,165,250,0.1); border-left: 3px solid #60a5fa;\">結合山路壯觀與海路效率，同時看到兩種景色。</p>",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "08:00",
+                        "label": "出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "從基督城出發"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "09:30",
+                        "label": "去程"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🏞️ 去程：展望山路 (Summit Road)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "往左上山。欣賞班克斯半島壯觀山景。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "11:30-13:30",
+                        "label": "2h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "📸 Akaroa 法國小鎮"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "13:30-14:30",
+                        "label": "1h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🍴 Akaroa Salmon + 烤肉捲"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "合併在小鎮或回程路上享用。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "14:30",
+                        "label": "回程"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🛣️ 回程：沿岸公路 (Coastal Road)"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "往右走海岸線，路況平坦。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:00-18:30",
+                        "label": "2.5h"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🛒 Dress-Smart Hornby"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "體力充足時進行購物。"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

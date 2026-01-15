@@ -7,7 +7,8 @@
       "電子入境卡（New Zealand Traveller Online Declaration），在搭機前24小時內先上網填妥入境申報表單 快速通關",      
       "購買旅行保險",
       "兌換紐西蘭幣: 100紐幣",
-      "準備網卡: sim/eSim"
+      "準備網卡: sim/eSim",
+      "國泰會員: 提早至起飛前 48 小時 辦理預辦登機並免費劃位"      
     ]
   },
   {
@@ -18,16 +19,7 @@
       "租車 預訂",
       "準備-額外帶煎鍋",
       "安排 - 02/27 Twizel-Springfield",     
-      "安排 - 03/01 Springfield-基督城",
-      "gpx - Rakaia Gorge Walkway  02/27 ",
-      "gpx - Routeburn Track 2/13",
-      "gpx - Kepler Track Luxmore Hut side  2/16",
-      "gpx - Kepler Track - Rainbow Reach  2/16 ",
-      "gpx - Gertrude Saddle track 2/16",
-      "gpx - Lake Marian Track",
-      "gpx - Brewster Glacier track 2/21",
-      "gpx - Isthmus Peak 2/21",
-      "gpx - Roy’s Peak 2/21"
+      "安排 - 03/01 Springfield-基督城"
     ]
   },
   {
@@ -45,7 +37,6 @@
       "旅行 - 02/11 基督城 Banks Peninsula",
       "安排 - 02/28 Arthur's Pass",
       "安排 - 2/25 Cromwell-水果鎮 採櫻桃",
-      "安排 - 基督城 採藍莓",
       "安排 - 薰衣草園",
       "交通 - Te Anau, Kepler Track 水上計程車",
       "超市 New World 直接到櫃檯索取旅客專屬的 Tourist Club Deals Card "
@@ -62,8 +53,16 @@
       "安排 - 02/13, 02/14  皇后鎮-Glenorchy",
       "安排 - 02/21 Brewster Glacier track", 
       "安排 - 02/23 ",
-      "安排 - 02/25 Wanaka-Twizel"
-
+      "安排 - 02/25 Wanaka-Twizel",
+      "gpx - Rakaia Gorge Walkway  02/27 ",
+      "gpx - Routeburn Track 2/13",
+      "gpx - Kepler Track Luxmore Hut side  2/16",
+      "gpx - Kepler Track - Rainbow Reach  2/16 ",
+      "gpx - Gertrude Saddle track 2/16",
+      "gpx - Lake Marian Track",
+      "gpx - Brewster Glacier track 2/21",
+      "gpx - Isthmus Peak 2/21",
+      "gpx - Roy’s Peak 2/21"
     ]
   }
 ]

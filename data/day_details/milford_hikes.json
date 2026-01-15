@@ -1,0 +1,142 @@
+{
+    "id": "milford_hikes",
+    "meta": {
+        "title": "頂級步道挑戰與生態緩衝",
+        "subtitle": "02/18 (三) Gertrude Saddle 或 Key Summit"
+    },
+    "sections": [
+        {
+            "type": "zone",
+            "title": "步道選擇",
+            "description": "<div class=\"warning\">警告：Gertrude Saddle 難度極高，需視天氣和體能決定。若不適合，應選擇 Key Summit。</div>",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "選項 A",
+                        "label": "高難度"
+                    },
+                    "rows": [
+                        {
+                            "label": "步道",
+                            "content": "<strong>Gertrude Saddle Track</strong>"
+                        },
+                        {
+                            "label": "時間",
+                            "content": "7 小時"
+                        },
+                        {
+                            "label": "適合",
+                            "content": "挑戰者 (需體力、好天氣)"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "選項 B",
+                        "label": "中難度"
+                    },
+                    "rows": [
+                        {
+                            "label": "步道",
+                            "content": "<strong>Key Summit Track</strong>"
+                        },
+                        {
+                            "label": "時間",
+                            "content": "3 小時"
+                        },
+                        {
+                            "label": "適合",
+                            "content": "大多數人。 (天氣不好時視野受限)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "行程安排",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "07:00",
+                        "label": "出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "早起出發前往 The Divide"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "07:30 - 14:30",
+                        "label": "健行"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "進行所選步道健行"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "14:30",
+                        "label": "午餐"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "The Divide 附近享用遲來的午餐"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:00",
+                        "label": "緩衝"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "🥾 Lake Gunn Nature Walk"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "輕鬆步道，放鬆高強度健行後的肌肉。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:30",
+                        "label": "觀景"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "📸 Cascade Creek"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "濕地生態與水鳥觀賞。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "17:00+",
+                        "label": "回程"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "結束活動，前往皇后鎮或下一站"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

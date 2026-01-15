@@ -1,0 +1,301 @@
+{
+    "id": "routeburn",
+    "meta": {
+        "title": "Routeburn Track 一日健行行程規劃 (東側 Routeburn Shelter 出發)",
+        "subtitle": "世界級高山步道一日精華段 - 最受歡迎的一日健行起點"
+    },
+    "sections": [
+        {
+            "type": "hike-info",
+            "title": "🏔️ Routeburn Track 健行基本資訊",
+            "items": [
+                {
+                    "label": "路線長度 (一日往返)",
+                    "value": "至 Routeburn Falls：約 6-8 公里往返<br>至 Harris Saddle：約 25-28 公里往返"
+                },
+                {
+                    "label": "總爬升高度",
+                    "value": "至 Routeburn Falls：約 400 公尺<br>至 Harris Saddle：約 850 公尺"
+                },
+                {
+                    "label": "預估時間 (往返)",
+                    "value": "至 Routeburn Falls：4-5 小時<br>至 Harris Saddle：7-9 小時"
+                },
+                {
+                    "label": "登山口",
+                    "value": "Routeburn Shelter (格林諾奇 Glenorchy 附近)"
+                },
+                {
+                    "label": "路線類型",
+                    "value": "世界級高山步道 (Great Walk) / 一日健行"
+                },
+                {
+                    "label": "最佳季節",
+                    "value": "夏季至秋季 (11月-4月)，冬季需專業裝備與經驗"
+                }
+            ],
+            "highlight": {
+                "text": "⚠️ 中等至高等難度路線",
+                "detail": "此路線需要良好的體能，部分路段有陡峭爬升。Harris Saddle 路線較長，適合有長距離健行經驗者。新手建議選擇 Routeburn Falls 往返。",
+                "color": "amber"
+            },
+            "feature": {
+                "title": "🌿 Routeburn Track 特色亮點",
+                "list": [
+                    "穿越壯麗的山毛櫸原始森林",
+                    "欣賞 Routeburn Falls 瀑布美景",
+                    "抵達 Harris Saddle 欣賞高山湖與冰川景觀",
+                    "沿途有多座吊橋與觀景平台",
+                    "有機會看到紐西蘭本土鳥類如奇異鳥 (kiwi) 與啄羊鸚鵡 (kea)"
+                ]
+            },
+            "links": [
+                {
+                    "text": "🏞️ 官方 DOC 路線指南與預訂",
+                    "url": "https://www.doc.govt.nz/parks-and-recreation/places-to-go/fiordland/places/fiordland-national-park/things-to-do/tracks/routeburn-track/",
+                    "type": "doc"
+                },
+                {
+                    "text": "📍 查看 Routeburn Shelter 位置",
+                    "url": "https://maps.app.goo.gl/example",
+                    "type": "map"
+                },
+                {
+                    "text": "🥾 查看 AllTrails 路線詳情",
+                    "url": "https://www.alltrails.com/trail/new-zealand/otago/routeburn-track",
+                    "type": "alltrails"
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第一區：清晨準備與前往登山口",
+            "badge": "建議清晨出發",
+            "description": "<p style=\"color: #cbd5e1; margin-bottom: 15px; padding-left: 5px;\">Routeburn Shelter 停車位有限，建議清晨出發以確保有停車位。從格林諾奇 (Glenorchy) 前往的最後一段為土路。</p>",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "06:00",
+                        "label": "出發"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🚗</span> 出發前往 Routeburn Shelter"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "從皇后鎮出發車程約 <strong>1-1.5小時</strong>，從格林諾奇出發約 <strong>15-30分鐘</strong>。"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "07:30",
+                        "label": "抵達"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🅿️</span> 抵達 Routeburn Shelter"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "檢查裝備、整理行囊，在步道入口登記，準備開始健行。<div class=\"road-note\"><strong>路況提示：</strong> 從 Glenorchy 到 Routeburn Shelter 的最後約 25 公里為「路特本路 (Routeburn Road)」，其中部分路段是<strong>未鋪砌的土路/礫石路</strong>，請小心駕駛。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "08:00",
+                        "label": "開始健行"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🌳</span> 進入 Routeburn Track"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "從 Routeburn Shelter 開始，沿著步道進入山毛櫸森林。請確認已了解自己的目的地（Falls 或 Saddle）及所需時間。"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第二區：前往 Routeburn Falls (一日遊熱門折返點)",
+            "badge": "約 2-2.5 小時 (單程)",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "08:00 - 09:30",
+                        "label": "森林路段"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🌲</span> 穿越原始山毛櫸森林"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>沿著 Routeburn River 前進，穿越壯麗的原始山毛櫸森林。</p><div class=\"scenic-note\">沿途有數座吊橋跨越溪流，風景優美，是拍照的好地方。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "09:30 - 10:30",
+                        "label": "爬升路段"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">⬆️</span> 開始爬升至瀑布"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>步道開始持續爬升，前往 Routeburn Falls。</p><div class=\"important-note\">此路段持續爬升，需要適當節奏與體能。若感到吃力，可隨時調整步調或折返。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "10:30",
+                        "label": "抵達瀑布"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">💧</span> 抵達 Routeburn Falls 與山屋 <span class=\"must-visit\">主要景點/折返點</span>"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>欣賞壯觀的 Routeburn Falls 瀑布，參觀 Routeburn Falls Hut。在此休息、補充能量、拍照。</p><p style=\"margin-top: 5px; color: #10b981;\"><strong>重要決策點：</strong> 由此繼續前往 Harris Saddle 單程還需約2-2.5小時。請根據體力、時間和天氣狀況慎重決定是否繼續前行。</p><div class=\"waterfall-note\">瀑布旁有觀景平台，是拍照和休息的最佳地點。山屋有廁所和飲用水源。</div>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第三區：前往 Harris Saddle (體力與時間充足者可選)",
+            "badge": "約 2-2.5 小時 (從瀑布單程)",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "11:00",
+                        "label": "出發前往 Saddle"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🏔️</span> 從瀑布出發前往 Harris Saddle"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>從 Routeburn Falls 繼續前進，進入開闊的高山地區。</p><div class=\"warning\">⚠️ <strong>高海拔與天氣警告：</strong> 此路段完全暴露於高山天氣中，變化極快。務必確認天氣良好且已準備防風、防雨、防曬及保暖裝備。惡劣天氣下請勿繼續前行。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "11:00 - 13:00",
+                        "label": "高山路段"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">⛰️</span> 高山地形健行"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>穿越高山草甸與岩石地形，視野開闊，風景壯麗。</p><div class=\"scenic-note\">沿途可欣賞 Darran 山脈與 Hollyford Valley 的絕佳全景。</div>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "13:00",
+                        "label": "抵達 Harris Saddle"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🏞️</span> 抵達 Harris Saddle (海拔 1270m) <span class=\"must-visit\">步道最高點之一</span>"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>抵達步道最高點之一的 Harris Saddle，欣賞周圍高山湖、冰川與峽谷的壯麗景觀。在此享用午餐。</p><p style=\"margin-top: 5px; color: #10b981;\"><strong>注意：</strong> 風勢可能非常強勁，注意保暖與安全。請務必預留足夠的體力和時間（約3-3.5小時）在天黑前返回停車場。</p><div class=\"important-note\">Harris Saddle 是 Routeburn Track 的精華景觀點，但往返路程長、消耗大，必須量力而行。</div>"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "zone",
+            "title": "第四區：返回與下山",
+            "badge": "約 3-4 小時 (從Saddle返回)",
+            "timeBlocks": [
+                {
+                    "header": {
+                        "time": "13:30",
+                        "label": "開始下山"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">⬇️</span> 從 Harris Saddle 返回"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>開始返回 Routeburn Shelter，下山時注意膝蓋保護與步伐穩定，尤其在陡峭路段。</p>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "16:00",
+                        "label": "返回 Routeburn Falls"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">💧</span> 經過 Routeburn Falls 山屋"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>再次經過 Routeburn Falls，可做最後一次較長時間的休息與補給。</p>"
+                        }
+                    ]
+                },
+                {
+                    "header": {
+                        "time": "17:30 - 18:30",
+                        "label": "返回停車場"
+                    },
+                    "rows": [
+                        {
+                            "label": "活動",
+                            "content": "<span class=\"emoji\">🅿️</span> 返回 Routeburn Shelter 停車場"
+                        },
+                        {
+                            "label": "備註",
+                            "content": "<p>完成一日健行，返回停車場。建議在 Glenorchy 或皇后鎮享用晚餐慶祝，並充分休息。</p><div class=\"road-note\">回程再次行經土路，天黑後駕駛請格外小心。</div>"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "footer": {
+        "title": "行程規劃重要注意事項：",
+        "notes": [
+            "2. <strong>步道非環狀</strong>：Routeburn Track 是點到點步道，兩端 (Routeburn Shelter 與 The Divide) 相距 325公里車程。一日往返請務必從原路返回起點。",
+            "3. <strong>天氣至上</strong>：高山天氣變化極快，全年都可能遭遇嚴寒、強風、大雨甚至大雪。出行前務必查看 <a href=\"https://www.metservice.com/mountains/routeburn-track\" style=\"color:#60a5fa;\" target=\"_blank\">Metservice 山區天氣預報</a>，並準備全套應對惡劣天氣的裝備。",
+            "4. <strong>裝備齊全</strong>：必須包括結實的登山鞋、防水外套和褲子、多層保暖衣物、充足的高能量食物和水、頭燈、急救包、地圖/GPS。",
+            "NOTE: 📱 建議同時下載 DOC 的 「NZ Great Walks」 應用程式及離線地圖，並將行程計劃告知他人。"
+        ]
+    }
+}
