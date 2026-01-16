@@ -8,8 +8,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #e2e8f0; /* 浅灰色文字 */
-    background-color: #0f172a; /* 深蓝背景，与header一致 */
+    color: #e2e8f0;
+    /* 浅灰色文字 */
+    background-color: #0f172a;
+    /* 深蓝背景，与header一致 */
 }
 
 main {
@@ -27,7 +29,8 @@ main {
 
 /* 单个阶段样式 - 暗色版 */
 .itinerary-stage {
-    background: linear-gradient(145deg, #121828, #1a2035); /* 深蓝渐变背景 */
+    background: linear-gradient(145deg, #121828, #1a2035);
+    /* 深蓝渐变背景 */
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(96, 165, 250, 0.1);
     overflow: hidden;
@@ -42,7 +45,8 @@ main {
 
 /* 阶段头部 - 蓝色渐变 */
 .stage-header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); /* 深蓝色渐变 */
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    /* 深蓝色渐变 */
     color: white;
     padding: 1.2rem 1.5rem;
     cursor: pointer;
@@ -95,7 +99,8 @@ main {
 .itinerary-date {
     margin-bottom: 1.2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #334155; /* 深色分隔线 */
+    border-bottom: 1px solid #334155;
+    /* 深色分隔线 */
 }
 
 .itinerary-date:last-child {
@@ -105,12 +110,13 @@ main {
 
 .date-header {
     font-weight: 600;
-    color: #e2e8f0; /* 浅灰色 */
+    color: #e2e8f0;
+    /* 浅灰色 */
     margin-bottom: 0.7rem;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
@@ -128,13 +134,15 @@ main {
 .activity-item {
     margin-bottom: 0.5rem;
     position: relative;
-    color: #cbd5e1; /* 稍浅的灰色 */
+    color: #cbd5e1;
+    /* 稍浅的灰色 */
     line-height: 1.5;
 }
 
 .activity-item::before {
     content: "•";
-    color: #60a5fa; /* 蓝色圆点 */
+    color: #60a5fa;
+    /* 蓝色圆点 */
     font-weight: bold;
     position: absolute;
     left: -1rem;
@@ -142,12 +150,14 @@ main {
 
 /* 重要注意事项样式 */
 .important-note {
-    background-color: rgba(234, 179, 8, 0.15); /* 黄色背景，透明度降低 */
+    background-color: rgba(234, 179, 8, 0.15);
+    /* 黄色背景，透明度降低 */
     border: 1px solid rgba(234, 179, 8, 0.3);
     border-radius: 6px;
     padding: 0.5rem;
     margin-top: 0.3rem;
-    color: #fbbf24; /* 亮黄色 */
+    color: #fbbf24;
+    /* 亮黄色 */
     font-weight: bold;
     font-size: 0.95rem;
     position: relative;
@@ -169,7 +179,8 @@ main {
 .stage-notes {
     margin-top: 1.5rem;
     padding-top: 1rem;
-    border-top: 1px solid #334155; /* 深色分隔线 */
+    border-top: 1px solid #334155;
+    /* 深色分隔线 */
 }
 
 .notes-header {
@@ -253,13 +264,15 @@ main {
 .person-notes {
     margin-bottom: 1rem;
     padding: 1rem;
-    background: rgba(30, 41, 59, 0.7); /* 深蓝灰色背景 */
+    background: rgba(30, 41, 59, 0.7);
+    /* 深蓝灰色背景 */
     border-radius: 8px;
     border: 1px solid #334155;
 }
 
 .person-notes strong {
-    color: #60a5fa; /* 蓝色 */
+    color: #60a5fa;
+    /* 蓝色 */
     display: block;
     margin-bottom: 0.5rem;
     font-size: 1rem;
@@ -274,10 +287,12 @@ main {
 .person-notes li {
     margin-bottom: 0.5rem;
     padding: 0.5rem 0;
-    border-bottom: 1px solid #475569; /* 深灰色分隔线 */
+    border-bottom: 1px solid #475569;
+    /* 深灰色分隔线 */
     color: #cbd5e1;
     line-height: 1.4;
-    white-space: pre-line; /* 支持换行显示 */
+    white-space: pre-line;
+    /* 支持换行显示 */
 }
 
 .person-notes li:last-child {
@@ -298,7 +313,8 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* 深色半透明背景 */
+    background: rgba(0, 0, 0, 0.7);
+    /* 深色半透明背景 */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,7 +412,7 @@ main {
     color: #cbd5e1;
 }
 
-.person-option input[type="radio"]:checked + .person-name {
+.person-option input[type="radio"]:checked+.person-name {
     color: #60a5fa;
     font-weight: bold;
 }
@@ -430,7 +446,8 @@ main {
     gap: 1rem;
 }
 
-.cancel-btn, .save-btn {
+.cancel-btn,
+.save-btn {
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 6px;
@@ -467,6 +484,7 @@ main {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin-left: auto;
 }
 
 .comments-btn {
@@ -585,74 +603,76 @@ main {
         align-items: flex-start;
         gap: 0.5rem;
     }
-    
+
     .stage-meta {
         flex-direction: column;
         gap: 0.2rem;
     }
-    
+
     .stage-toggle {
         align-self: flex-end;
         margin-top: -2rem;
     }
-    
+
     .modal-content {
         width: 95%;
         margin: 1rem;
     }
-    
+
     .modal-header h2 {
         font-size: 1.1em;
     }
-    
+
     .modal-footer {
         flex-direction: column;
     }
-    
-    .cancel-btn, .save-btn {
+
+    .cancel-btn,
+    .save-btn {
         width: 100%;
     }
-    
+
     .person-options {
         gap: 0.3rem;
     }
-    
+
     .person-option {
         padding: 0.6rem;
     }
-    
+
     .notes-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
     }
-    
+
     .notes-actions {
         width: 100%;
         justify-content: space-between;
     }
-    
-    .toggle-notes-btn, .edit-notes-btn {
+
+    .toggle-notes-btn,
+    .edit-notes-btn {
         flex: 1;
         text-align: center;
     }
-    
+
     .date-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .date-buttons {
         width: 100%;
         margin-top: 0.5rem;
     }
-    
+
     .comments-btn,
     .webpage-btn {
         flex: 1;
         text-align: center;
     }
-    
+
     .comment-modal .modal-content {
         width: 95%;
         margin: 1rem;
