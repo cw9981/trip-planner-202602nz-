@@ -21,7 +21,7 @@
           "🏛️ 探索藝術中心 & 坎特伯雷博物館",
           "📸紙板大教堂 (Cardboard Cathedral) 和 追憶橋 (Bridge of Remembrance)",
           "🚶‍♀️ 雅芳河畔步道 (Avon River Walk",
-          "採買（超市)"
+          "🛒 Dress-Smart Hornby: 基督城 outlet, Canterbury, Icebreaker 很好買，價格蠻優惠"
         ]
       },
       {
@@ -29,10 +29,12 @@
         "comments": "day_template.html?day=lyttelton_godley",
         "activities": [
           "📸 Lyttelton (隧道/山路)",
-          "🥾 沿海步道 Taylor's Mistake 健行 ",
+          "🥾 summer beach 沿海步道 Taylor's Mistake 健行 ",
           "🥾 步道 Lyttelton Bridle Path 山顶看港口'",
-          "🍴 Theo’s Fisheries 紐西蘭海鮮專賣店 ",
-          "Mount Pleasant Loop from Lyttelton"
+          "Mount Pleasant Loop from Lyttelton",
+          "Barnett Cave walk,  https://maps.app.goo.gl/HXsQJ9xzo7WttndBA",
+          "Adventure Park的Uphill walk 走路上山兩小時",
+          "Godley Head Walkway 海線與山線的分叉。建議先走海線Godley Beach Park，回程再走山線"
         ]
       },
       {
@@ -43,9 +45,7 @@
           "📸 Banks Peninsula 沿路風景很美有很多隱藏小灣與觀景點＠zhi",
           "🍴 烤肉捲 soulvilaki king. 75 公路 基督城",
           "🍴 Akarosa Salmon 很新鮮的帝王鮭魚生魚片",
-          "🛒 Dress-Smart Hornby: 基督城 outlet, Canterbury, Icebreaker 很好買，價格蠻優惠",
-          "採果 藍莓: Blueberry Bliss/  Berries Direct/ Boyds Blueberries",
-          "Barnett Cave walk,  https://maps.app.goo.gl/HXsQJ9xzo7WttndBA"
+          "採果 藍莓: Blueberry Bliss/  Berries Direct/ Boyds Blueberries"
         ]
       }
     ]
@@ -67,6 +67,7 @@
           "📸 Lindis Scenic hill spot/Lindis pass viewpoint",
           "📸 Cromwell-Jackson Orchards 杏桃",
           "📸 Cromwell-水果鎮 瓊斯太太的水果攤(Jones Family Fruit Stall)",
+          " Cromwell.  Highlands Motorsport Park  去上厕所",
           "📸 Kawarau Gorge Suspension bridge:高空彈跳的發源地",
           "🛒 皇后鎮外大超市採買"
         ]
@@ -90,7 +91,8 @@
           "🛒 週六機場附近農夫市集 半天",
           "📸 皇后鎮觀賞日落 Lake wakatipu viewpoint 免费，可停车，可从市中心步行上来",
           " 🍴 Chur Fish and Chips 鱼薯店",
-          " 🍴 大份又好吃的越南菜Saigon Kingdom"
+          " 🍴 大份又好吃的越南菜Saigon Kingdom",
+          "Ferg's Mince pie is lowkey one of the best traditional pies in this country."
         ]
       }
     ]
@@ -282,6 +284,7 @@
       },
       {
         "date": "02/28(六)",
+        "comments": "day_template.html?day=arthurs_pass",
         "activities": [
           "🥾 於73號公路（Arthur's Pass）健行一日，車程1小時60公里. @Zhi",
           "📸 Castle Hill",
